@@ -9,7 +9,10 @@
     in: k => k * k * k,
     io: k => (k < 0.5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2),
     back: k => { const c = 1.70158; return 1 + (c + 1) * Math.pow(k - 1, 3) + c * Math.pow(k - 1, 2); },
-    snap: k => 1 - Math.pow(1 - k, 5)
+    snap: k => 1 - Math.pow(1 - k, 5),
+    spring: k => k >= 1 ? 1 : 1 - Math.exp(-7.5 * k) * Math.cos(12 * k),          // overshoot + assenta
+    spring2: k => k >= 1 ? 1 : 1 - Math.exp(-5 * k) * Math.cos(8 * k),             // mais suave
+    anticip: k => k < 0.22 ? -0.16 * Math.sin(k / 0.22 * Math.PI / 2) : (function (u) { return -0.16 + 1.16 * (1 - Math.pow(1 - u, 3)); })((k - 0.22) / 0.78)
   };
   // mistura recursiva de números / arrays / objetos
   function blend(a, b, k) {

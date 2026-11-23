@@ -23,3 +23,8 @@ Da teoria à prática: regras de domínio visual, roteiro original, storyboard t
 - [`docs/producao/07_storyboard_tecnico.md`](docs/producao/07_storyboard_tecnico.md): storyboard plano a plano.
 - [`docs/producao/08_validacao_piloto.md`](docs/producao/08_validacao_piloto.md): comparação com as referências, falhas e correções.
 - [`producao/`](producao/): motor, áudio e o piloto em MP4.
+
+### v2 — autoavaliação, Coco e melhorias
+- [`docs/producao/09_autoavaliacao_v1.md`](docs/producao/09_autoavaliacao_v1.md): crítica do v1, com métrica de fluidez a câmera congelada.
+- [`docs/producao/10_coco_personagem_fixo.md`](docs/producao/10_coco_personagem_fixo.md): o personagem fixo.
+- [`docs/producao/11_autoavaliacao_v2.md`](docs/producao/11_autoavaliacao_v2.md): resultados do v2 e plano do v3.

@@ -71,6 +71,13 @@ put(sfx, 22.6, engine(2.7, 44, 1.0, 260) * env(int(2.7 * SR), 0.05, 0.1), 0.085)
 for k, (dt, f) in enumerate([(0, 430), (0.2, 540)]):                                                         # buzina amiga "pó-pó"
     t = tt(0.16); put(sfx, 24.38 + dt, (np.sin(2 * np.pi * f * t) + 0.5 * np.sin(2 * np.pi * f * 2 * t) + 0.2 * np.sin(2 * np.pi * f * 3 * t)) * env(len(t), 0.01, 0.04), 0.06)
 d = 4.4; t = tt(d); eng = engine(d, 44, 1.0, 400) * np.linspace(1, 0.05, len(t)) ** 1.6; put(sfx, 25.35, eng, 0.075)
+# Coco: reações (boing de susto no P4; murchar no P10), passos, pulos
+t = tt(0.16); put(sfx, 5.30, np.sin(2 * np.pi * np.cumsum(500 + 1100 * (t / 0.16)) / SR) * env(len(t), 0.005, 0.05), 0.05, -0.3)
+t = tt(0.34); put(sfx, 20.17, np.sin(2 * np.pi * np.cumsum(900 - 520 * (t / 0.34) + 40 * np.sin(2 * np.pi * 18 * t)) / SR) * env(len(t), 0.01, 0.1), 0.05, 0.3)
+def step(tm, g=0.05): put(sfx, tm, lp(noise(0.06), 600) * np.exp(-60 * tt(0.06)), g)
+for k in range(8): step(6.95 + k * 0.278)
+for k in range(5): step(12.55 + k * 0.296, 0.04)
+for k in range(2): put(sfx, 24.05 + 0.85 * (k + 1) - 0.02, lp(noise(0.08), 400) * np.exp(-45 * tt(0.08)), 0.05)
 # ---- escreve ----
 def wr(path, a):
     a = np.clip(a, -1, 1); i16 = (a.T * 32767).astype(np.int16)

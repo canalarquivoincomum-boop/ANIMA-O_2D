@@ -1,0 +1,15 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0}svg{display:block}</style>
+<script src="lib.js"></script><script src="ch.js"></script></head><body><div id="r"></div>
+<script>
+function render(t){
+  const {drawChar,EXPR,POSE}=CH; let s='<rect width="1300" height="900" fill="#f1dfc0"/><rect y="640" width="1300" height="260" fill="#d6a273"/>';
+  const L={ox:1,oy:-0.7,rim:'#fff1c8'};
+  s+=drawChar({cast:'isis',x:150,y:420,s:0.95,pose:POSE.stand,expr:EXPR.warm,look:[400,300],t,light:L}).svg;
+  s+=drawChar({cast:'genaro',x:380,y:420,s:0.95,pose:POSE.pinch,expr:EXPR.warm,look:[150,300],t,turn:0.2,light:L}).svg;
+  s+=drawChar({cast:'alcides',x:610,y:420,s:0.95,pose:POSE.stand,expr:EXPR.resigned,t,turn:-.3,light:L}).svg;
+  s+=drawChar({cast:'isis',x:850,y:420,s:0.95,pose:POSE.stand,expr:EXPR.shock,t,flip:-1,turn:0.5,light:L}).svg;
+  s+=drawChar({cast:'isis',x:1080,y:420,s:0.95,pose:POSE.point,expr:EXPR.hope,t,light:L,look:[1300,300]}).svg;
+  for(let i=0;i<6;i++){ s+=drawChar({cast:i%2?'genaro':'isis',x:120+i*200,y:860,s:0.8,pose:POSE.stand,expr:EXPR.calm,t:i*0.2,walk:{ph:i/6,amp:1},light:L,idle:0}).svg; }
+  document.getElementById('r').innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="900" viewBox="0 0 1300 900">${s}</svg>`;
+}
+</script></body></html>

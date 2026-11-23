@@ -10,3 +10,6 @@ Motor 2D em SVG renderizado por quadro (`render(t)`) com Playwright + ffmpeg, no
 Documentação: `docs/producao/05`–`08`. Reprodução: `docs/producao/08_validacao_piloto.md`, seção 9.
 
 A narração é uma **voz-guia sintética provisória**; a final será a do usuário.
+
+## v2
+`piloto/piloto_v2_1080x1920.mp4` é a versão atual; o v1 está em `piloto/v1/`. `engine/coco.js` é o personagem fixo; `engine/story_pilot2.js` e `engine/sets2.js` são a re-direção e as camadas de vida/luz do v2. Veja `docs/producao/09`, `10` e `11`.

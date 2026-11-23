@@ -1,0 +1,7 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0}svg{display:block}</style>
+<script src="lib.js"></script><script src="ch.js"></script><script src="coco.js"></script></head><body><div id="r"></div>
+<script>
+function render(t){ const names=['neutral','curious','worried','happy','sad','surprise','listen','touched']; let s='<rect width="1200" height="600" fill="#f1dfc0"/><rect y="380" width="1200" height="220" fill="#d6a273"/>';
+  names.forEach((n,i)=>{ const x=150+(i%4)*300, y=i<4?240:540; s+=COCO.drawCoco({x,y,s:1.35,t:t+i*.4,ph:i,expr:n,look:[0.5,-0.1]}); s+=`<text x="${x}" y="${y+26}" text-anchor="middle" font-size="18" fill="#333">${n}</text>`;});
+  document.getElementById('r').innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600">${s}</svg>`; }
+</script></body></html>

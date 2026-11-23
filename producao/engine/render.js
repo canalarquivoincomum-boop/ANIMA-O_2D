@@ -10,7 +10,7 @@ const path = require('path'), fs = require('fs');
   const times = opt('times') ? opt('times').split(',').map(Number) : null;
   const browser = await chromium.launch(); const ctx = await browser.newContext({ viewport: { width: W, height: H }, deviceScaleFactor: 1 });
   const p = await ctx.newPage(); p.on('pageerror', e => console.error('PAGEERROR', e.message)); p.on('console', m => { if (m.type() === 'error') console.error('CONSOLE', m.text()); });
-  await p.goto('file://' + page_); await p.waitForTimeout(150);
+  await p.goto('file://' + page_ + (opt('q') ? '?' + opt('q') : '')); await p.waitForTimeout(150);
   fs.mkdirSync(out, { recursive: true });
   if (times) { for (const t of times) { await p.evaluate(t => render(t), t); await p.screenshot({ path: path.join(out, 't' + t.toFixed(2) + '.png') }); } }
   else for (let i = from; i <= to; i++) { await p.evaluate(t => render(t), i / fps); await p.screenshot({ path: path.join(out, 'f' + String(i).padStart(5, '0') + '.png') }); }
