@@ -29,12 +29,12 @@
     s += `<defs><pattern id="ht" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(40)"><line x1="0" y1="0" x2="0" y2="9" stroke="#6b7bd8" stroke-width="3"/></pattern></defs>`;
     s += R(148, 205, 78, 160, '#26306a') + R(148, 205, 78, 160, 'url(#ht)', 0, '#8d99e6', 3);
     s += T(187, 290, 'TERRENO', 13, '#cfd6ff', 800, 'middle') + C(187, 232, 13, RED, '#fff', 3) + T(187, 237, '14', 12, '#fff', 800, 'middle');
-    s += `</g>` + R(0, 44, 300, 60, '#3a1f26') + T(16, 70, '⚠ Endereço sem edificação', 16, '#ffb4a8', 800) + T(16, 92, 'Imóvel demolido em 1994', 14, '#ffcfc8', 600);
+    { const wk = o.warnAt === undefined ? 1 : E.spring2(clamp((lt - o.warnAt) / 0.35)); s += `</g>` + `<g transform="translate(0,${f((1 - wk) * -70)})">` + R(0, 44, 300, 60, '#3a1f26') + T(16, 70, '⚠ Endereço sem edificação', 16, '#ffb4a8', 800) + T(16, 92, 'Imóvel demolido em 1994', 14, '#ffcfc8', 600) + '</g>'; }
     return s;
   };
   UI.timer = (lt, o = {}) => {
     const sec = Math.max(0, (o.start === undefined ? 660 : o.start) - lt * (o.rate === undefined ? 1 : o.rate)), mm = Math.floor(sec / 60), ss = Math.floor(sec % 60), txt = String(mm).padStart(2, '0') + ':' + String(ss).padStart(2, '0');
-    const frac = sec / 660, col = sec < 180 ? RED : YEL;
+    const frac = Math.min(1, sec / (o.total || 660)), col = sec < 180 ? RED : YEL;
     let s = R(0, 0, 300, 600, BG) + status('23:48') + T(150, 120, 'TEMPO PARA ENTREGAR', 15, '#9aa6e8', 700, 'middle');
     s += `<circle cx="150" cy="270" r="112" fill="none" stroke="#242c5e" stroke-width="16"/><circle cx="150" cy="270" r="112" fill="none" stroke="${col}" stroke-width="16" stroke-linecap="round" stroke-dasharray="${f(704 * frac)} 800" transform="rotate(-90 150 270)"/>`;
     s += T(150, 296, txt, 76, '#fff', 800, 'middle') + T(150, 440, 'Rua das Acácias, 14', 18, '#fff', 800, 'middle') + T(150, 466, 'Forno Vivo • sem cebola', 14, '#aab4ee', 600, 'middle') + R(40, 510, 220, 52, '#2a3160', 14) + T(150, 544, 'CANCELAR PEDIDO', 15, '#ff9a8d', 800, 'middle');

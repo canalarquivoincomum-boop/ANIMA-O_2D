@@ -1,0 +1,257 @@
+{
+ "dur": 105.52,
+ "frases": [
+  {
+   "id": "L01",
+   "quem": "N",
+   "texto": "Onze e quarenta e sete da noite. Chegou um pedido.",
+   "ini": 0.0,
+   "fim": 2.648
+  },
+  {
+   "id": "L02",
+   "quem": "N",
+   "texto": "Rua das Acácias, número catorze.",
+   "ini": 2.936,
+   "fim": 4.729
+  },
+  {
+   "id": "L03",
+   "quem": "N",
+   "texto": "Só que a casa catorze foi demolida há trinta anos.",
+   "ini": 5.697,
+   "fim": 8.403
+  },
+  {
+   "id": "L04",
+   "quem": "N",
+   "texto": "O aplicativo deu onze minutos.",
+   "ini": 8.809,
+   "fim": 10.399
+  },
+  {
+   "id": "L05",
+   "quem": "N",
+   "texto": "Cancelar custava a minha semana inteira.",
+   "ini": 10.623,
+   "fim": 12.486
+  },
+  {
+   "id": "L06",
+   "quem": "N",
+   "texto": "E o aluguel vencia na sexta.",
+   "ini": 12.8,
+   "fim": 14.133
+  },
+  {
+   "id": "L07",
+   "quem": "N",
+   "texto": "Eu fui.",
+   "ini": 14.556,
+   "fim": 15.018
+  },
+  {
+   "id": "L08",
+   "quem": "N",
+   "texto": "No caminho, abri o histórico daquele endereço.",
+   "ini": 15.542,
+   "fim": 17.527
+  },
+  {
+   "id": "L09",
+   "quem": "N",
+   "texto": "Onze pedidos, todos cancelados.",
+   "ini": 17.819,
+   "fim": 19.646
+  },
+  {
+   "id": "L10",
+   "quem": "N",
+   "texto": "Mesmo endereço, mesmo dia, uma vez por ano.",
+   "ini": 19.888,
+   "fim": 22.416
+  },
+  {
+   "id": "L11",
+   "quem": "N",
+   "texto": "E hoje era doze de outubro.",
+   "ini": 22.809,
+   "fim": 24.257
+  },
+  {
+   "id": "L12",
+   "quem": "N",
+   "texto": "Cheguei com um minuto e meio de sobra.",
+   "ini": 25.383,
+   "fim": 27.195
+  },
+  {
+   "id": "L13",
+   "quem": "N",
+   "texto": "Era só mato alto e um portão sem casa.",
+   "ini": 27.482,
+   "fim": 29.591
+  },
+  {
+   "id": "L14",
+   "quem": "N",
+   "texto": "E lá no fundo, uma luz acesa.",
+   "ini": 29.878,
+   "fim": 31.477
+  },
+  {
+   "id": "L15",
+   "quem": "N",
+   "texto": "Uma mesa posta pra dois.",
+   "ini": 31.832,
+   "fim": 33.388
+  },
+  {
+   "id": "L16",
+   "quem": "N",
+   "texto": "E uma senhora, olhando o relógio.",
+   "ini": 33.738,
+   "fim": 35.379
+  },
+  {
+   "id": "L17",
+   "quem": "DONA CIDA",
+   "texto": "Você demorou.",
+   "ini": 36.006,
+   "fim": 36.905
+  },
+  {
+   "id": "L18",
+   "quem": "N",
+   "texto": "Mostrei o celular. Disse que ali não existia casa.",
+   "ini": 37.335,
+   "fim": 39.91
+  },
+  {
+   "id": "L19",
+   "quem": "DONA CIDA",
+   "texto": "Existe pra mim. A cozinha era ali.",
+   "ini": 40.212,
+   "fim": 42.425
+  },
+  {
+   "id": "L20",
+   "quem": "N",
+   "texto": "Ela apontou a parede do vizinho: o azulejo, a mancha do forno, a marca da escada.",
+   "ini": 42.683,
+   "fim": 46.956
+  },
+  {
+   "id": "L21",
+   "quem": "DONA CIDA",
+   "texto": "Senta. Falta um minuto.",
+   "ini": 47.241,
+   "fim": 48.665
+  },
+  {
+   "id": "L22",
+   "quem": "N",
+   "texto": "O relógio do aplicativo contava. Eu podia entregar e ir embora, ou sentar e deixar vencer.",
+   "ini": 48.965,
+   "fim": 54.076
+  },
+  {
+   "id": "L23",
+   "quem": "N",
+   "texto": "Eu sentei.",
+   "ini": 54.464,
+   "fim": 54.962
+  },
+  {
+   "id": "L24",
+   "quem": "N",
+   "texto": "Na cadeira vazia, uma caixa fechada, com laço.",
+   "ini": 55.252,
+   "fim": 57.911
+  },
+  {
+   "id": "L25",
+   "quem": "DONA CIDA",
+   "texto": "Meu marido, o Zé, chegava em seis minutos. Você levou nove e meio.",
+   "ini": 58.217,
+   "fim": 62.325
+  },
+  {
+   "id": "L26",
+   "quem": "DONA CIDA",
+   "texto": "Primeiro entregador do Forno Vivo. Saiu daqui às onze e quarenta e sete, em noventa e quatro. De capacete rachado.",
+   "ini": 62.6,
+   "fim": 69.457
+  },
+  {
+   "id": "L27",
+   "quem": "N",
+   "texto": "Olhei o meu capacete: a fita isolante segurando a rachadura.",
+   "ini": 69.889,
+   "fim": 72.856
+  },
+  {
+   "id": "L28",
+   "quem": "DONA CIDA",
+   "texto": "Faz onze anos que eu peço uma pizza pra cá. Onze rapazes cancelaram.",
+   "ini": 73.157,
+   "fim": 77.032
+  },
+  {
+   "id": "L29",
+   "quem": "DONA CIDA",
+   "texto": "Eu não quero a pizza. Eu procuro quem chegue.",
+   "ini": 77.351,
+   "fim": 79.862
+  },
+  {
+   "id": "L30",
+   "quem": "DONA CIDA",
+   "texto": "O Forno Vivo é meu. Entregador nosso tem salário fixo, plano de saúde e capacete que não racha.",
+   "ini": 80.133,
+   "fim": 85.782
+  },
+  {
+   "id": "L31",
+   "quem": "N",
+   "texto": "O celular vibrou. Pedido expirado. Menos trezentos e quarenta.",
+   "ini": 86.048,
+   "fim": 89.522
+  },
+  {
+   "id": "L32",
+   "quem": "DONA CIDA",
+   "texto": "Esse eu pago em dobro. Abre a caixa.",
+   "ini": 89.804,
+   "fim": 91.877
+  },
+  {
+   "id": "L33",
+   "quem": "N",
+   "texto": "Na sexta, paguei o aluguel com o primeiro salário fixo da minha vida.",
+   "ini": 92.294,
+   "fim": 95.962
+  },
+  {
+   "id": "L34",
+   "quem": "N",
+   "texto": "Guardei o capacete velho. Com a fita e tudo.",
+   "ini": 96.207,
+   "fim": 98.636
+  },
+  {
+   "id": "L35",
+   "quem": "N",
+   "texto": "No ano seguinte, no mesmo terreno: um forno, mesa pra dois e um capacete na cadeira.",
+   "ini": 98.923,
+   "fim": 103.611
+  },
+  {
+   "id": "L36",
+   "quem": "N",
+   "texto": "A casa catorze voltou.",
+   "ini": 103.983,
+   "fim": 105.32
+  }
+ ]
+}

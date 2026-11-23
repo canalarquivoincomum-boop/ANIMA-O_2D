@@ -2,3 +2,6 @@ __pycache__/
 *.pyc
 producao/audio/*.wav
 node_modules/
+producao/eleven/*.wav
+producao/s1/audio/*.wav
+producao/s2/audio/*.wav

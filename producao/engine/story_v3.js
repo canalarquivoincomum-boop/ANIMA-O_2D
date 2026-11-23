@@ -155,5 +155,6 @@
   SH.push({ id: 'P22', t0: 41.12, t1: 43.4, kind: 'screen', draw: (t, lt) => cidaClose(t, lt, { mode: 'speak' }) });
   SH.push({ id: 'END', t0: 43.4, t1: 44.0, kind: 'screen', draw: () => `<rect width="576" height="1024" fill="#05060f"/>` });
 
+  G.V3 = { ride, lotScene, lotBike, bikeRider, cidaClose, streetFront, po, ex, flick, phoneOnBar };
   G.STORY3 = { SHOTS: SH };
 })(window);

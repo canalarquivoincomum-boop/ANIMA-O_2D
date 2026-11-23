@@ -1,0 +1,187 @@
+{
+ "dur": 102.32,
+ "frases": [
+  {
+   "id": "M01",
+   "quem": "N",
+   "texto": "Sexta, onze da noite. O aplicativo me mandou vinte e uma pizzas.",
+   "ini": 0.0,
+   "fim": 3.404
+  },
+  {
+   "id": "M02",
+   "quem": "N",
+   "texto": "Para o mesmo prédio. O mesmo apartamento. Oitenta e dois.",
+   "ini": 3.617,
+   "fim": 6.468
+  },
+  {
+   "id": "M03",
+   "quem": "N",
+   "texto": "Quarenta minutos para entregar tudo. E o elevador estava quebrado.",
+   "ini": 6.663,
+   "fim": 9.724
+  },
+  {
+   "id": "M04",
+   "quem": "N",
+   "texto": "Meu baú leva três pizzas. Oito andares de escada. Sete viagens.",
+   "ini": 9.957,
+   "fim": 13.688
+  },
+  {
+   "id": "M05",
+   "quem": "N",
+   "texto": "A minha nota era quatro vírgula cinquenta e dois. Abaixo de quatro e meio, o aplicativo me tirava da noite.",
+   "ini": 13.942,
+   "fim": 19.379
+  },
+  {
+   "id": "M06",
+   "quem": "N",
+   "texto": "Subi.",
+   "ini": 19.66,
+   "fim": 20.1
+  },
+  {
+   "id": "M07",
+   "quem": "N",
+   "texto": "Na primeira viagem, o porteiro riu: o oitenta e dois é do seu Aníbal, e ninguém fala com ele.",
+   "ini": 20.429,
+   "fim": 25.11
+  },
+  {
+   "id": "M08",
+   "quem": "N",
+   "texto": "Bati duas vezes, como pedia o pedido: ele escuta mal.",
+   "ini": 25.399,
+   "fim": 28.363
+  },
+  {
+   "id": "M09",
+   "quem": "N",
+   "texto": "Ninguém abriu.",
+   "ini": 28.694,
+   "fim": 29.39
+  },
+  {
+   "id": "M10",
+   "quem": "N",
+   "texto": "Na terceira viagem, vi o bilhete preso numa das caixas.",
+   "ini": 29.723,
+   "fim": 32.374
+  },
+  {
+   "id": "M11",
+   "quem": "VIZINHA",
+   "texto": "Obrigada pela torneira, seu Aníbal. Dona Lúcia, apartamento trinta e um.",
+   "ini": 32.598,
+   "fim": 36.16
+  },
+  {
+   "id": "M12",
+   "quem": "N",
+   "texto": "Todas as caixas tinham bilhete, cada um com uma letra: pelo chuveiro, pela luz da escada, pelo berço.",
+   "ini": 36.503,
+   "fim": 41.72
+  },
+  {
+   "id": "M13",
+   "quem": "N",
+   "texto": "Alguém ali devia muito àquele homem. E ninguém tinha coragem de dizer.",
+   "ini": 41.977,
+   "fim": 45.814
+  },
+  {
+   "id": "M14",
+   "quem": "N",
+   "texto": "Na sexta viagem, faltavam quatro minutos e a porta seguia fechada. As minhas pernas tremiam.",
+   "ini": 46.111,
+   "fim": 51.08
+  },
+  {
+   "id": "M15",
+   "quem": "N",
+   "texto": "Foi aí que eu vi a campainha. Um fio solto, pendurado, e uma fita velha: quebrada, bata na porta.",
+   "ini": 51.291,
+   "fim": 56.702
+  },
+  {
+   "id": "M16",
+   "quem": "N",
+   "texto": "E, na porta, um cartaz desbotado: conserto de tudo, grátis, toque a campainha.",
+   "ini": 56.922,
+   "fim": 61.303
+  },
+  {
+   "id": "M17",
+   "quem": "N",
+   "texto": "O homem que consertava tudo nunca teve a campainha consertada. E por isso ninguém ia pedir nada.",
+   "ini": 61.585,
+   "fim": 66.769
+  },
+  {
+   "id": "M18",
+   "quem": "N",
+   "texto": "No meu capacete tem fita isolante há dois anos. Eu emendei o fio com ela.",
+   "ini": 67.062,
+   "fim": 70.518
+  },
+  {
+   "id": "M19",
+   "quem": "N",
+   "texto": "Apertei o botão.",
+   "ini": 70.778,
+   "fim": 71.65
+  },
+  {
+   "id": "M20",
+   "quem": "N",
+   "texto": "Dim-dom.",
+   "ini": 73.02,
+   "fim": 73.826
+  },
+  {
+   "id": "M21",
+   "quem": "N",
+   "texto": "Das escadas, dos andares de cima e de baixo, saíram vinte e uma pessoas, cada uma com um prato.",
+   "ini": 74.155,
+   "fim": 79.3
+  },
+  {
+   "id": "M22",
+   "quem": "N",
+   "texto": "Ninguém tinha pedido pizza pra comer. Pediram pra ter um motivo de bater naquela porta.",
+   "ini": 79.517,
+   "fim": 84.004
+  },
+  {
+   "id": "M23",
+   "quem": "N",
+   "texto": "Seu Aníbal abriu. Ficou parado. Fazia onze anos que ninguém tocava aquela campainha.",
+   "ini": 84.29,
+   "fim": 88.965
+  },
+  {
+   "id": "M24",
+   "quem": "SEU ANÍBAL",
+   "texto": "Eu estava esperando alguém tocar.",
+   "ini": 89.251,
+   "fim": 90.982
+  },
+  {
+   "id": "M25",
+   "quem": "N",
+   "texto": "O celular vibrou: vinte e uma avaliações, todas de cinco estrelas. Nota: quatro vírgula nove.",
+   "ini": 92.625,
+   "fim": 98.163
+  },
+  {
+   "id": "M26",
+   "quem": "N",
+   "texto": "No sábado, o cartaz mudou. Toque a campainha. Ela funciona.",
+   "ini": 98.611,
+   "fim": 102.095
+  }
+ ]
+}
