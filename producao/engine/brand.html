@@ -85,5 +85,62 @@ function avatar2(){
   for(let i=0;i<260;i++) s+=`<circle cx="${f(rnd(i*2.3)*800)}" cy="${f(rnd(i*5.1)*800)}" r="${f(0.6+rnd(i)*0.9)}" fill="#fff" opacity="${f(0.04+rnd(i*7)*0.05)}"/>`;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${innerWidth}" height="${innerHeight}" viewBox="0 0 800 800">${s}</svg>`;
 }
-function render(){ document.getElementById('r').innerHTML = K_==='banner'?banner():(K_==='avatar2'?avatar2():avatar()); }
+
+function burst(cx,cy,R_,n,c1,c2){ let o=''; for(let i=0;i<n;i++){ const a0=i/n*Math.PI*2, a1=(i+1)/n*Math.PI*2; o+=`<path d="M${cx},${cy} L${f(cx+Math.cos(a0)*R_)},${f(cy+Math.sin(a0)*R_)} L${f(cx+Math.cos(a1)*R_)},${f(cy+Math.sin(a1)*R_)}Z" fill="${i%2?c1:c2}"/>`; } return o; }
+function sticker(id,w,h){ return `<filter id="${id}" filterUnits="userSpaceOnUse" x="0" y="0" width="${w}" height="${h}" color-interpolation-filters="sRGB">
+  <feMorphology in="SourceAlpha" operator="dilate" radius="17" result="d1"/><feFlood flood-color="#10163f"/><feComposite in2="d1" operator="in" result="ring1"/>
+  <feMorphology in="SourceAlpha" operator="dilate" radius="11" result="d2"/><feFlood flood-color="#ffffff"/><feComposite in2="d2" operator="in" result="ring2"/>
+  <feGaussianBlur in="d1" stdDeviation="14" result="sb"/><feOffset in="sb" dx="-8" dy="14" result="sbo"/><feFlood flood-color="#7a3a00" flood-opacity=".45"/><feComposite in2="sbo" operator="in" result="dsh"/>
+  <feMerge><feMergeNode in="dsh"/><feMergeNode in="ring1"/><feMergeNode in="ring2"/><feMergeNode in="SourceGraphic"/></feMerge></filter>`; }
+function avatar3(){
+  let s=`<defs>
+  <radialGradient id="sun" cx="0.5" cy="0.5" r="0.72"><stop offset="0" stop-color="#fff6c8"/><stop offset="0.45" stop-color="#ffd23c"/><stop offset="1" stop-color="#ff8f1c"/></radialGradient>
+  <radialGradient id="vg3" cx="0.5" cy="0.5" r="0.7"><stop offset="0.6" stop-color="#7a2a00" stop-opacity="0"/><stop offset="1" stop-color="#7a2a00" stop-opacity=".35"/></radialGradient>
+  <filter id="soft3" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>
+  <filter id="char3" filterUnits="userSpaceOnUse" x="0" y="0" width="800" height="800" color-interpolation-filters="sRGB">
+    <feMorphology in="SourceAlpha" operator="erode" radius="4" result="ai"/>
+    <feOffset in="ai" dx="-9" dy="8" result="o1"/><feComposite in="ai" in2="o1" operator="out" result="e1"/><feGaussianBlur in="e1" stdDeviation="2" result="e1b"/><feFlood flood-color="#fff6d0" flood-opacity=".9"/><feComposite in2="e1b" operator="in" result="rim"/>
+    <feOffset in="ai" dx="12" dy="-10" result="o2"/><feComposite in="ai" in2="o2" operator="out" result="e2"/><feGaussianBlur in="e2" stdDeviation="4" result="e2b"/><feFlood flood-color="#3a0a18" flood-opacity=".5"/><feComposite in2="e2b" operator="in" result="core"/>
+    <feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="core"/><feMergeNode in="rim"/></feMerge></filter>
+  ${sticker('stk',800,800)}
+  <clipPath id="c3"><circle cx="400" cy="400" r="400"/></clipPath></defs>
+  <g><rect width="800" height="800" fill="url(#sun)"/><g opacity=".5">${burst(400,430,1000,28,'#ffe27a','#ffb02a')}</g><rect width="800" height="800" fill="url(#sun)" opacity=".55"/>`;
+  for(let i=0;i<14;i++){ const a=rnd(i*3.1)*Math.PI*2, r=250+rnd(i*7)*130, x=400+Math.cos(a)*r, y=420+Math.sin(a)*r; s+=`<path d="M${f(x)},${f(y-16)} L${f(x+5)},${f(y-5)} L${f(x+16)},${f(y)} L${f(x+5)},${f(y+5)} L${f(x)},${f(y+16)} L${f(x-5)},${f(y+5)} L${f(x-16)},${f(y)} L${f(x-5)},${f(y-5)}Z" fill="#fff" opacity="${f(0.5+rnd(i)*0.4)}"/>`; }
+  s+=`<rect width="800" height="800" fill="url(#vg3)"/></g>`;
+  // Nando enorme, curioso (uma sobrancelha levantada), olhando para o aviso de pedido
+  const ex=Object.assign({},EXPR.curious,{browY:-9,browA:9,brow2:-14,mc:0.9,mw:17,lid:0.02,pup:1.12});
+  const ch=drawChar({cast:'nando',x:400,y:1262,s:4.0,flip:1,t:1,idle:0,pose:Object.assign({},POSE0,{headTilt:-5}),expr:ex,look:[640,120],turn:0.22,helmet:1,light:{ox:1,oy:-0.8,rim:'#fff1c8'}}).svg;
+  s+=`<g><g filter="url(#stk)"><g filter="url(#char3)">${ch}`;
+  // fita isolante em X sobre a rachadura (marca registrada)
+  s+=`<g transform="translate(300,242) rotate(-26) scale(1)">${tape(0,0,0,150,48)}</g><g transform="translate(312,232) rotate(40)">${tape(0,0,0,126,42)}</g>`;
+  s+=`<path d="M598,176 C650,232 662,312 642,392" fill="none" stroke="#fff" stroke-width="11" stroke-linecap="round" opacity=".75"/><circle cx="560" cy="150" r="11" fill="#fff" opacity=".95"/>`;
+  s+=`</g></g></g>`;
+  // aviso de novo pedido (notificação) — o gancho da série
+  s+=`<g><g transform="translate(618,196)"><circle r="84" fill="#10163f" opacity=".95"/><circle r="72" fill="#ff3b3b" stroke="#fff" stroke-width="9"/><path d="M-40,-34 C-48,-60 -14,-72 4,-62" fill="none" stroke="#ff9a9a" stroke-width="7" stroke-linecap="round" opacity=".8"/><text x="0" y="36" text-anchor="middle" font-family="Inter" font-weight="800" font-size="104" fill="#fff">1</text></g></g>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${innerWidth}" height="${innerHeight}" viewBox="0 0 800 800">${s}</svg>`;
+}
+
+function banner2(){
+  const Wd=2560,Hd=1440; const hx=820, hy=720, S_=3.0;
+  let s=`<defs><radialGradient id="sunb" cx="0.32" cy="0.5" r="0.8"><stop offset="0" stop-color="#fff6c8"/><stop offset="0.4" stop-color="#ffd23c"/><stop offset="1" stop-color="#ff8f1c"/></radialGradient><radialGradient id="vgb" cx="0.4" cy="0.5" r="0.8"><stop offset="0.6" stop-color="#7a2a00" stop-opacity="0"/><stop offset="1" stop-color="#7a2a00" stop-opacity=".38"/></radialGradient>
+  <filter id="charb" filterUnits="userSpaceOnUse" x="0" y="0" width="${Wd}" height="${Hd}" color-interpolation-filters="sRGB"><feMorphology in="SourceAlpha" operator="erode" radius="3" result="ai"/><feOffset in="ai" dx="-8" dy="7" result="o1"/><feComposite in="ai" in2="o1" operator="out" result="e1"/><feGaussianBlur in="e1" stdDeviation="2" result="e1b"/><feFlood flood-color="#fff6d0" flood-opacity=".9"/><feComposite in2="e1b" operator="in" result="rim"/><feOffset in="ai" dx="11" dy="-9" result="o2"/><feComposite in="ai" in2="o2" operator="out" result="e2"/><feGaussianBlur in="e2" stdDeviation="4" result="e2b"/><feFlood flood-color="#3a0a18" flood-opacity=".5"/><feComposite in2="e2b" operator="in" result="core"/><feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="core"/><feMergeNode in="rim"/></feMerge></filter>
+  ${sticker('stkb',Wd,Hd)}</defs><rect width="${Wd}" height="${Hd}" fill="url(#sunb)"/><g opacity=".5">${burst(hx,hy,2400,40,'#ffe27a','#ffb02a')}</g><rect width="${Wd}" height="${Hd}" fill="url(#sunb)" opacity=".5"/><rect width="${Wd}" height="${Hd}" fill="url(#vgb)"/>`;
+  for(let i=0;i<34;i++){ const x=rnd(i*3.1)*Wd, y=rnd(i*7.3)*1100, r=10+rnd(i)*16; if(x>500&&x<2060&&y>480&&y<960) continue; s+=`<path d="M${f(x)},${f(y-r)} L${f(x+r*0.3)},${f(y-r*0.3)} L${f(x+r)},${f(y)} L${f(x+r*0.3)},${f(y+r*0.3)} L${f(x)},${f(y+r)} L${f(x-r*0.3)},${f(y+r*0.3)} L${f(x-r)},${f(y)} L${f(x-r*0.3)},${f(y-r*0.3)}Z" fill="#fff" opacity="${f(0.45+rnd(i)*0.4)}"/>`; }
+  // o Nando aparece de cima de uma mureta/calçada (a parte baixa fica escondida): o foco é o rosto
+  const ex=Object.assign({},EXPR.curious,{browY:-9,browA:9,brow2:-14,mc:0.9,mw:17,lid:0.02,pup:1.12});
+  const oy=hy+208*S_;
+  const ch=drawChar({cast:'nando',x:hx,y:oy,s:S_,flip:1,t:1,idle:0,pose:Object.assign({},POSE0,{headTilt:-5}),expr:ex,look:[hx+900,hy-40],turn:0.22,helmet:1,light:{ox:1,oy:-0.8,rim:'#fff1c8'}}).svg;
+  const k=S_/4.0;
+  s+=`<g filter="url(#stkb)"><g filter="url(#charb)">${ch}<g transform="translate(${f(hx-100*k)},${f(hy-188*k)}) rotate(-26) scale(${f(k)})">${tape(0,0,0,150,48)}</g><g transform="translate(${f(hx-88*k)},${f(hy-198*k)}) rotate(40) scale(${f(k)})">${tape(0,0,0,126,42)}</g>`;
+  s+=`<path d="M${f(hx+198*k)},${f(hy-254*k)} C${f(hx+250*k)},${f(hy-198*k)} ${f(hx+262*k)},${f(hy-118*k)} ${f(hx+242*k)},${f(hy-38*k)}" fill="none" stroke="#fff" stroke-width="${f(11*k)}" stroke-linecap="round" opacity=".75"/></g></g>`;
+  s+=`<g transform="translate(${f(hx+218*k)},${f(hy-234*k)}) scale(${f(k*1.0)})"><circle r="84" fill="#10163f"/><circle r="72" fill="#ff3b3b" stroke="#fff" stroke-width="9"/><path d="M-40,-34 C-48,-60 -14,-72 4,-62" fill="none" stroke="#ff9a9a" stroke-width="7" stroke-linecap="round" opacity=".8"/><text x="0" y="36" text-anchor="middle" font-family="Inter" font-weight="800" font-size="104" fill="#fff">1</text></g>`;
+  s+=`<rect x="0" y="1050" width="${Wd}" height="390" fill="#161c52"/><rect x="0" y="1050" width="${Wd}" height="22" fill="#ffd23c"/><rect x="0" y="1072" width="${Wd}" height="10" fill="#0b0f36"/>`; for(let i=0;i<12;i++) s+=R(i*240+60,1260,150,14,'#ffd23c',6);
+  // texto (área segura 507–2053 × 508–932; fica à direita do Nando)
+  const tx=1600, t1='Cada entrega', t2='esconde uma história.';
+  const T3=(y,txt,fill,fs)=>`<text x="${tx}" y="${y}" text-anchor="middle" font-family="Inter" font-weight="800" font-size="${fs}" fill="#10163f" stroke="#10163f" stroke-width="30" stroke-linejoin="round">${txt}</text><text x="${tx}" y="${y}" text-anchor="middle" font-family="Inter" font-weight="800" font-size="${fs}" fill="#fff" stroke="#fff" stroke-width="16" stroke-linejoin="round">${txt}</text><text x="${tx}" y="${y}" text-anchor="middle" font-family="Inter" font-weight="800" font-size="${fs}" fill="${fill}">${txt}</text>`;
+  s+=T3(660,t1,'#10163f',84)+T3(764,t2,'#e8202a',84);
+  s+=`<text x="${tx}" y="842" text-anchor="middle" font-family="Inter" font-weight="800" font-size="38" fill="#10163f">Histórias animadas do Nando, o motoboy</text>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${innerWidth}" height="${innerHeight}" viewBox="0 0 ${Wd} ${Hd}">${s}</svg>`;
+}
+function render(){ document.getElementById('r').innerHTML = K_==='banner2'?banner2():(K_==='banner'?banner():(K_==='avatar3'?avatar3():(K_==='avatar2'?avatar2():avatar()))); }
 </script></body></html>
