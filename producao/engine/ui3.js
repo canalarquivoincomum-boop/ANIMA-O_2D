@@ -12,7 +12,7 @@
     return s;
   };
   UI.order = (lt, o = {}) => {
-    let s = R(0, 0, 300, 600, BG) + status('23:47') + R(0, 44, 300, 52, RED) + T(18, 78, 'NOVO PEDIDO', 24, '#fff', 800) + T(282, 78, 'aceitar em 0:30', 13, '#ffd9d4', 700, 'end');
+    let s = R(0, 0, 300, 600, BG) + status('23:47') + R(0, 44, 300, 52, RED) + T(18, 78, 'NOVO PEDIDO', 21, '#fff', 800) + T(282, 76, '0:30', 15, '#ffd9d4', 800, 'end');
     s += R(14, 112, 272, 112, CARD, 14, LINE, 2) + T(28, 142, 'Forno Vivo Pizzaria', 17, '#fff', 800) + T(28, 166, '1× Pizza grande', 14, '#c9d2ff', 600) + R(28, 178, 150, 28, '#3a2a2a', 8) + T(38, 198, 'sem cebola', 14, '#ffb4a8', 700);
     const hl = o.hl ? 0.5 + 0.5 * Math.sin(lt * 9) : 0;
     s += R(14, 240, 272, 134, CARD, 14, o.hl ? YEL : LINE, o.hl ? 3 : 2) + T(28, 268, 'ENTREGAR EM', 12, '#8d99e6', 700) + T(28, 304, 'Rua das Acácias, 14', 24, '#fff', 800) + T(28, 330, 'Jardim Aurora', 14, '#c9d2ff', 600) + T(28, 358, '3,1 km • R$ 38,90', 15, GREEN, 800);

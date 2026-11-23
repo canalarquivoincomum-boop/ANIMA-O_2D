@@ -30,7 +30,10 @@
       for (let i = -2; i < 12; i++) { const x = i * 300 - wrap(scroll, 300); s += R(x, 962, 170, 12, '#d9d2b4', 5); }
       s += `<g>${lamps.map(x => W.lampGlow(x, o.glow === undefined ? 1 : o.glow).replace('translate(0,0)', 'translate(0,858) scale(0.88)')).join('')}</g>`;
       lamps.forEach(x => { s += `<g transform="translate(${f(x)},858) scale(0.88)">${W.lampPost(0)}</g>`; });
-      if (o.parked) o.parked.forEach(([x, col]) => { s += `<g transform="translate(${f(x - scroll)},870) scale(0.9)">${W.car(0, col)}</g>`; });
+      const carCols = ['#5aa0c8', '#c97b5a', '#8f96c8', '#7fb08a', '#d1a04a'];
+      for (let k = -1; k < 9; k++) { const cx = k * 2350 + 900 - wrap(scroll, 2350 * 1) + (k % 2) * 300; if (o.noCars) break; s += `<g transform="translate(${f(cx)},880) scale(0.93)">${W.car(0, carCols[((k % 5) + 5) % 5])}</g>`; }
+      lamps.forEach(x => { const lx = x + m(1.17) * 0.88; s += `<ellipse cx="${f(lx)}" cy="946" rx="16" ry="74" fill="#ffe9a8" opacity=".20"/><ellipse cx="${f(lx)}" cy="912" rx="120" ry="10" fill="#ffe9a8" opacity=".16"/>`; });
+      for (let i = 0; i < 6; i++) s += `<rect x="${f(-200 + i * 330 - wrap(scroll * 0.2, 330))}" y="${f(930 + (i % 3) * 22)}" width="${f(120 + i * 12)}" height="3" rx="1.5" fill="#8fa0e8" opacity=".10"/>`;
       S.rua._lamps = lamps; return s;
     }
   };

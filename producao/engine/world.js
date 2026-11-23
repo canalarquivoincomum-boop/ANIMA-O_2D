@@ -23,6 +23,9 @@
       s += R(wx, wy, ww, wh, on ? '#ffd88a' : shade(col, -0.35), 3, NAVY, stroke * 0.8);
       if (on) s += `<rect x="${f(wx)}" y="${f(wy)}" width="${f(ww)}" height="${f(wh * 0.5)}" fill="#fff4cc" opacity=".35"/><path d="M${f(wx)},${f(wy + wh)} h${f(ww)}" stroke="${shade(col, -0.4)}" stroke-width="3"/>`;
       else s += `<path d="M${f(wx)},${f(wy + wh * 0.6)} l${f(ww)},${f(-wh * 0.5)}" stroke="#7a86b8" stroke-width="3" opacity=".35"/>`;
+      const rr = rnd(seed * 3 + fl * 5.3 + c * 2.9);
+      if (rr > 0.78) s += R(wx + ww * 0.2, wy + wh + 6, ww * 0.6, m(0.45), '#b9bfd6', 4, NAVY, 2.4) + `<circle cx="${f(wx + ww * 0.5)}" cy="${f(wy + wh + 6 + m(0.22))}" r="${m(0.15)}" fill="#8a90ac" stroke="${NAVY}" stroke-width="1.8"/>`;
+      else if (rr < 0.2) s += `<path d="M${f(wx - 8)},${f(wy + wh + 4)} h${f(ww + 16)} M${f(wx - 8)},${f(wy + wh + 4)} v${f(-m(0.5))} M${f(wx + ww + 8)},${f(wy + wh + 4)} v${f(-m(0.5))}" stroke="#202648" stroke-width="4" fill="none"/>`;
     }
     return s + '</g>';
   }

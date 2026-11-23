@@ -32,3 +32,7 @@ Da teoria à prática: regras de domínio visual, roteiro original, storyboard t
 ### v3 — reinício após as críticas
 - [`docs/producao/12_reboot_v3_pedido_fantasma.md`](docs/producao/12_reboot_v3_pedido_fantasma.md): diagnóstico, bíblia de escala, roteiro "Pedido Fantasma" e autocrítica.
 - Piloto: `producao/v3/piloto_v3_pedido_fantasma_1080x1920.mp4`; conferência frase × imagem: `producao/v3/narracao_x_imagem.jpg`.
+
+### v4 — revisão após o feedback do v3
+- [`docs/producao/13_revisao_v4.md`](docs/producao/13_revisao_v4.md): o que foi corrigido (piloto na moto, capacete, casa demolida, Cida, legenda, profundidade, bugs).
+- Vídeo: `producao/v3/piloto_v4_pedido_fantasma_1080x1920.mp4`.
