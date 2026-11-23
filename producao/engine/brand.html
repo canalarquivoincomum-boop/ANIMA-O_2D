@@ -36,5 +36,54 @@ function banner(){
   s+=`<text x="${tx}" y="836" text-anchor="middle" font-family="Inter" font-weight="700" font-size="38" fill="#c9d2ff" stroke="#10163f" stroke-width="9" stroke-linejoin="round" paint-order="stroke">Histórias animadas do Nando, o motoboy</text>`;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${innerWidth}" height="${innerHeight}" viewBox="0 0 ${Wd} ${Hd}">${s}</svg>`;
 }
-function render(){ document.getElementById('r').innerHTML = K_==='banner'?banner():avatar(); }
+
+function avatar2(){
+  // mesmo desenho, mesmo capacete, mesmo fundo — com iluminação e sombreamento refeitos (luz do poste em cima à direita)
+  let s=`<defs>
+  <radialGradient id="ab" cx="0.5" cy="0.42" r="0.75"><stop offset="0" stop-color="#34459a"/><stop offset="0.6" stop-color="#1a2160"/><stop offset="1" stop-color="#090c28"/></radialGradient>
+  <radialGradient id="ag" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ffe9a8" stop-opacity=".85"/><stop offset="0.45" stop-color="#ffd878" stop-opacity=".28"/><stop offset="1" stop-color="#ffd878" stop-opacity="0"/></radialGradient>
+  <filter id="bk" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="1.8"/></filter>
+  <filter id="bk2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="1.4"/></filter>
+  <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="14"/></filter>
+  <filter id="soft2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>
+  <filter id="char" filterUnits="userSpaceOnUse" x="0" y="0" width="800" height="800" color-interpolation-filters="sRGB">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="14" result="sb"/><feOffset in="sb" dx="-12" dy="16" result="sbo"/><feFlood flood-color="#04061c" flood-opacity=".6"/><feComposite in2="sbo" operator="in" result="dsh"/>
+    <feMorphology in="SourceAlpha" operator="erode" radius="3" result="ai"/><feOffset in="ai" dx="-7" dy="6" result="o1"/><feComposite in="ai" in2="o1" operator="out" result="e1"/><feGaussianBlur in="e1" stdDeviation="1.6" result="e1b"/><feFlood flood-color="#ffe6a0" flood-opacity=".75"/><feComposite in2="e1b" operator="in" result="rim"/>
+    <feOffset in="ai" dx="10" dy="-9" result="o2"/><feComposite in="ai" in2="o2" operator="out" result="e2"/><feGaussianBlur in="e2" stdDeviation="3" result="e2b"/><feFlood flood-color="#0a1040" flood-opacity=".55"/><feComposite in2="e2b" operator="in" result="core"/>
+    <feMerge><feMergeNode in="dsh"/><feMergeNode in="SourceGraphic"/><feMergeNode in="core"/><feMergeNode in="rim"/></feMerge>
+  </filter>
+  <linearGradient id="shell" x1="0.85" y1="0.05" x2="0.15" y2="0.95"><stop offset="0" stop-color="#ffd9a0" stop-opacity=".3"/><stop offset="0.35" stop-color="#ffffff" stop-opacity="0"/><stop offset="1" stop-color="#2a0c28" stop-opacity=".4"/></linearGradient>
+  <radialGradient id="lampL" cx="0.82" cy="0.12" r="0.75"><stop offset="0" stop-color="#ffe9b0" stop-opacity=".55"/><stop offset="0.5" stop-color="#ffcf80" stop-opacity=".12"/><stop offset="1" stop-color="#0a0f40" stop-opacity=".42"/></radialGradient>
+  <radialGradient id="vg" cx="0.5" cy="0.5" r="0.72"><stop offset="0.62" stop-color="#05061a" stop-opacity="0"/><stop offset="1" stop-color="#05061a" stop-opacity=".4"/></radialGradient>
+  <linearGradient id="brimsh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a0a14" stop-opacity=".42"/><stop offset="1" stop-color="#1a0a14" stop-opacity="0"/></linearGradient>
+  <clipPath id="opening"><rect x="246" y="300" width="304" height="196" rx="44"/></clipPath>
+  </defs><rect width="800" height="800" fill="url(#ab)"/>`;
+  // fundo: mesmos bokeh/lua/halo, com borda suave e anel de luz nos bokeh
+  for(let i=0;i<16;i++){ const cx=f(60+rnd(i*3.3)*680), cy=f(60+rnd(i*7.1)*520), r=f(18+rnd(i)*46), col=['#ffd88a','#9fb4ff','#ffb870'][i%3], op=0.08+rnd(i*5)*0.12;
+    s+=`<g filter="url(#bk)"><circle cx="${cx}" cy="${cy}" r="${r}" fill="${col}" opacity="${f(op)}"/></g><circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${col}" stroke-width="2" opacity="${f(op*0.9)}" filter="url(#bk2)"/>`; }
+  s+=`<circle cx="640" cy="150" r="260" fill="url(#ag)"/><circle cx="640" cy="150" r="30" fill="#fff6cf" stroke="${NAVY}" stroke-width="5"/><circle cx="640" cy="150" r="30" fill="none" stroke="#fffbe8" stroke-width="2" opacity=".7" filter="url(#bk2)"/>`;
+  // sombra de contato/ambiente atrás do personagem
+  s+=`<ellipse cx="380" cy="470" rx="300" ry="340" fill="#050830" opacity=".35" filter="url(#soft)"/>`;
+  // personagem (mesma pose, mesmo capacete, mesma expressão) com luz vinda do poste, à direita
+  const ch=drawChar({cast:'nando',x:400,y:1140,s:3.55,flip:1,t:1,idle:0,pose:Object.assign({},POSE0,{headTilt:-2}),expr:Object.assign({},EXPR.smile,{browY:-4,browA:4,lid:0.04,mc:1.1}),look:[400,430],turn:0.1,helmet:1,light:{ox:1,oy:-0.8,rim:'#ffe9a8'}}).svg;
+  s+=`<g filter="url(#char)">${ch}`;
+  // fita isolante sobre a rachadura (mesma posição), agora com rachadura, brilho e sombra de contato
+  s+=`<g transform="translate(300,260) rotate(-24)"><rect x="-22" y="-80" width="44" height="170" rx="3" fill="#000" opacity=".28" filter="url(#bk2)"/></g>`+tape(292,252,-24,170,44);
+  s+=`<g transform="translate(292,252) rotate(-24)"><rect x="-22" y="-85" width="44" height="170" rx="3" fill="url(#tp)" opacity=".0"/><path d="M-14,-80 L-14,80" stroke="#9a9aae" stroke-width="3.5" opacity=".6" stroke-linecap="round"/><path d="M-22,-85 q3,-6 8,-2 M22,85 q-3,6 -8,2" stroke="#26262e" stroke-width="3" fill="none"/></g>`;
+  // brilhos do casco: faixa especular curva à direita, reflexo da janela à esquerda e ponto de brilho
+  s+=`<path d="M560,206 C612,262 626,350 606,430" fill="none" stroke="#fff6dc" stroke-width="15" stroke-linecap="round" opacity=".55" filter="url(#bk2)"/><path d="M566,218 C610,268 620,340 606,408" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" opacity=".8"/>`;
+  s+=`<circle cx="534" cy="176" r="10" fill="#fff" opacity=".9" filter="url(#bk2)"/><circle cx="534" cy="176" r="4.5" fill="#fff"/>`;
+  s+=`<path d="M196,330 C190,260 214,200 262,166" fill="none" stroke="#ffd9d0" stroke-width="8" stroke-linecap="round" opacity=".18"/>`;
+  // sombreamento do casco (gradiente de forma) — luz em cima à direita, sombra embaixo à esquerda
+  s+=`<path d="M400,120 C560,120 642,250 640,400 C638,500 560,552 400,556 C240,552 158,500 160,400 C158,250 240,120 400,120Z" fill="url(#shell)" style="mix-blend-mode:soft-light"/>`;
+  // dentro da abertura do capacete: sombra da aba sobre os olhos + sombra lateral (profundidade do rosto)
+  s+=`<g clip-path="url(#opening)"><rect x="240" y="296" width="320" height="86" fill="url(#brimsh)"/><rect x="240" y="296" width="70" height="210" fill="#120a1e" opacity=".14" filter="url(#soft2)"/><circle cx="520" cy="350" r="70" fill="#ffd9a0" opacity=".16" filter="url(#soft2)"/></g>`;
+  s+=`</g>`;
+  s+=`<ellipse cx="402" cy="598" rx="150" ry="26" fill="#070a2c" opacity=".4" filter="url(#soft2)"/>`;
+  // luz ambiente do poste sobre tudo + vinheta + grão leve
+  s+=`<rect width="800" height="800" fill="url(#lampL)" style="mix-blend-mode:soft-light"/><rect width="800" height="800" fill="url(#vg)"/>`;
+  for(let i=0;i<260;i++) s+=`<circle cx="${f(rnd(i*2.3)*800)}" cy="${f(rnd(i*5.1)*800)}" r="${f(0.6+rnd(i)*0.9)}" fill="#fff" opacity="${f(0.04+rnd(i*7)*0.05)}"/>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${innerWidth}" height="${innerHeight}" viewBox="0 0 800 800">${s}</svg>`;
+}
+function render(){ document.getElementById('r').innerHTML = K_==='banner'?banner():(K_==='avatar2'?avatar2():avatar()); }
 </script></body></html>
