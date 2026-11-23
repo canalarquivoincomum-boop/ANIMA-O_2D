@@ -182,11 +182,10 @@
     return K.pz(UI.bokeh(t * 3) + UI.phone(288, 392, 1.16, sc, { t, shake: vib }), lt, 1.4, 1.0, 1.1, 288, 420); });
   scr('H2', 1.4, A('M02'), (t, lt) => K.pz(UI.bokeh(t * 3) + UI.phone(288, 392, 1.16, order21(lt, 21), { t, shake: lt < 0.3 ? 3 : 0.4 }), lt, A('M02') - 1.4, 1.0, 1.08, 288, 400));
   scr('S_tmr', A('M03'), A('M03') + 1.76, (t, lt) => K.pz(UI.bokeh(t * 3) + UI.phone(288, 392, lerp(1.14, 1.22, E.io(clamp(lt / 1.7))), UI.timer(lt, { start: 2400, total: 2400, rate: 60 }).replace('Rua das Acácias, 14', 'Edifício Aurora, apto 82').replace('Forno Vivo • sem cebola', '21 pizzas • 8º andar'), { t }), lt, 1.76, 1.0, 1.06, 288, 400));
-  scr('S_bau', A('M04'), A('M04') + 1.62, (t, lt) => { const t0 = lt + A('M04'), lid = E.spring2(clamp((lt - 0.15) / 0.4));
+  scr('S_bau', A('M04'), A('M04') + 1.62, (t, lt) => { const t0 = lt + A('M04');
     let s = R(0, 0, 576, 1024, '#241c30') + `<defs><radialGradient id="bg3" cx="0.5" cy="0.5" r="0.7"><stop offset="0" stop-color="#ffd98a" stop-opacity=".35"/><stop offset="1" stop-color="#0c0a1e" stop-opacity=".85"/></radialGradient></defs><rect width="576" height="1024" fill="url(#bg3)"/>`;
-    s += `<g transform="translate(288,700) scale(2.1)">${R(-90, -110, 180, 110, '#e8553d', 12, NAVY, 3.5)}${T(0, -34, 'ZAP', 54, '#fff')}</g>`;
-    s += `<g transform="translate(288,${f(480)})">`; for (let i = 0; i < 3; i++) { const k = E.spring(clamp((t0 - wA('M04', 3) + 0.05 - i * 0.13) / 0.3)); s += `<g transform="translate(${f((i - 1) * 6)},${f(-i * 22 - (1 - k) * 160)}) scale(1.6)" opacity="${f(clamp(k * 2))}">${K.pizzaBox(190)}</g>`; }
-    s += `</g><g transform="translate(288,560)"><path d="M-190,0 L190,0 L170,-36 L-170,-36Z" fill="#b9402b" stroke="${NAVY}" stroke-width="4" transform="rotate(${f(-lid * 14)} -190 0)"/></g>`;
+    for (let i = 0; i < 3; i++) { const k = E.spring(clamp((t0 - wA('M04', 3) + 0.05 - i * 0.14) / 0.3)); s += `<g transform="translate(288,${f(500 - i * 52 - (1 - k) * 190)}) scale(1.55)" opacity="${f(clamp(k * 2))}">${K.pizzaBox(190, { sub: false })}</g>`; }
+    s += `<g transform="translate(288,740) scale(2.2)">${R(-90, -110, 180, 110, '#e8553d', 12, NAVY, 3.5)}${R(-90, -110, 180, 26, '#b9402b', 8, NAVY, 3)}${T(0, -30, 'ZAP', 54, '#fff')}</g>`;
     return K.pz(s, lt, 1.62, 1.0, 1.06, 288, 560); });
   scr('S_rate1', A('M05'), A('M05') + 2.3, (t, lt) => { const t0 = lt + A('M05'), v = 4.52; return K.pz(UI.bokeh(t * 3) + UI.phone(288, 392, 1.18, rating(lt, v), { t }), lt, 2.3, 1.0, 1.06, 288, 400); });
   scr('S_rate2', A('M05') + 2.3, A('M06'), (t, lt) => { const t0 = lt + A('M05') + 2.3, off = clamp((t0 - wA('M05', 17)) / 0.4);

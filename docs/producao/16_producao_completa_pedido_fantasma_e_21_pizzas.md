@@ -38,6 +38,18 @@ Duas animações verticais (1080×1920, 30 fps) com o **Nando**, o motoboy, como
 | Final | a casa 14 volta | o cartaz muda: "Toque a campainha. Ela funciona." |
 
 ## 5. Verificação (bugs, proporção, "atravessando coisas")
+QA automático do MP4 (`docs/analise/ferramentas/qa_video.py`):
+
+| Item | Pedido Fantasma | 21 Pizzas |
+|---|---|---|
+| Resolução / fps | 1080×1920 / 30 | 1080×1920 / 30 |
+| Loudness / pico | −14,0 LUFS / −1,1 dBFS | −14,5 LUFS / −1,4 dBFS |
+| Mudanças visuais | 57 (mediana de plano 1,68 s) | 44 (mediana 1,73 s) |
+| Mudanças nos primeiros 10 s | 7 | 6 |
+| Flashes / trechos congelados | nenhum / nenhum | nenhum / nenhum |
+| Resultado | 0 falhas, 0 avisos | 0 falhas, 1 aviso (6 planos > 4 s, todos de peso emocional: nota 4,52, bilhetes, perna tremendo, campainha, cartaz, multidão) |
+
+Inspeção visual:
 - Folhas de contato a cada 1–1,7 s de **toda** a linha do tempo das duas histórias, inspecionadas plano a plano; quadros críticos conferidos em resolução cheia.
 - Corrigidos nesta rodada: texto estourando o cartaz, "23:471994" sobreposto, helmet flutuando acima da prateleira, moto espelhada com "ZAP" invertido, legenda por cima do telefone no zoom, campainha e cartaz **revelados antes da hora**, câmera que não chegava à janela do 82, anéis de destaque adiantados em relação às palavras, mato alto no terreno reformado, olhos "em círculo" na transição de expressão sob o capacete, número do relógio do app.
 - Regras mantidas: a mão nunca sobe acima do queixo; personagens sentados atrás da mesa (toalha esconde as pernas); capacete sempre com a mesma rachadura e a mesma fita.

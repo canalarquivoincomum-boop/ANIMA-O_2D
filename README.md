@@ -43,3 +43,8 @@ Da teoria à prática: regras de domínio visual, roteiro original, storyboard t
 ### Protagonista fixo e roteiros
 - [`roteiros/`](roteiros/): bíblia do Nando e dois roteiros completos com texto para gravação.
 - [`docs/producao/15_correcao_dona_cida_e_roteiros.md`](docs/producao/15_correcao_dona_cida_e_roteiros.md): conserto do personagem sentado e resumo.
+
+### Produção completa — as duas histórias do Nando, com a voz Lax (ElevenLabs)
+- [`docs/producao/16_producao_completa_pedido_fantasma_e_21_pizzas.md`](docs/producao/16_producao_completa_pedido_fantasma_e_21_pizzas.md): voz, alinhamento, planos, ganchos, verificação e limites.
+- Vídeos: [`producao/s1/pedido_fantasma_1080x1920.mp4`](producao/s1/pedido_fantasma_1080x1920.mp4) (106 s) e [`producao/s2/predio_21_pizzas_1080x1920.mp4`](producao/s2/predio_21_pizzas_1080x1920.mp4) (103 s).
+- Narração e alinhamento: `producao/eleven/` (MP3 originais, textos enviados, tempos por palavra, scripts de trilha/efeitos). Planos: `producao/engine/s1.js`, `s2.js`, `kit.js`.

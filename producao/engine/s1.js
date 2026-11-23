@@ -77,7 +77,7 @@
     s += st + `<path d="M50,950 L500,740" stroke="#4c4262" stroke-width="12"/>`;
     s += `<text x="500" y="640" font-family="Inter" font-weight="800" font-size="90" fill="#fff4d6" opacity=".35" text-anchor="middle">14</text><rect width="576" height="1024" fill="url(#wl)"/>`;
     const ring = (cx, cy, rx, ry, a0, label, ly) => { const k = clamp((t0 - a0) / 0.3), off = clamp((t0 - a0 - 1.1) / 0.4); return k > 0 ? `<ellipse cx="${cx}" cy="${cy}" rx="${f(rx * (0.75 + 0.25 * E.spring(k)))}" ry="${f(ry * (0.75 + 0.25 * E.spring(k)))}" fill="none" stroke="#ffd24a" stroke-width="7" opacity="${f(k * (1 - off * 0.6))}"/><g opacity="${f(k * (1 - off))}" transform="translate(${cx},${ly})"><rect x="-124" y="-26" width="248" height="46" rx="23" fill="#10142e" stroke="#ffd24a" stroke-width="3"/>${T(0, 7, label, 23, '#ffd24a')}</g>` : ''; };
-    s += ring(190, 226, 188, 150, K.wordAt('L20', 7), 'AZULEJO', 420) + ring(320, 660, 168, 210, K.wordAt('L20', 9), 'MANCHA DO FORNO', 420) + ring(275, 900, 250, 120, K.wordAt('L20', 13), 'MARCA DA ESCADA', 760);
+    s += ring(190, 226, 188, 150, K.wordAt('L20', 7), 'AZULEJO', 52) + ring(320, 660, 168, 210, K.wordAt('L20', 9), 'MANCHA DO FORNO', 420) + ring(275, 900, 250, 120, K.wordAt('L20', 13), 'MARCA DA ESCADA', 760);
     const a = clamp((t0 - K.wordAt('L20', 7) + 0.4) / 0.5), b = clamp((t0 - K.wordAt('L20', 9) + 0.3) / 0.5), c = clamp((t0 - K.wordAt('L20', 13) + 0.3) / 0.5);
     const c0 = [288, 512, 1.0], c1 = [220, 260, 1.25], c2 = [320, 560, 1.2], c3 = [288, 780, 1.1], mix3 = (A, B, k) => A.map((v, i) => lerp(v, B[i], E.io(k)));
     const cam = c > 0 ? mix3(c2, c3, c) : (b > 0 ? mix3(c1, c2, b) : mix3(c0, c1, a));
