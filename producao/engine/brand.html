@@ -142,5 +142,82 @@ function banner2(){
   s+=`<text x="${tx}" y="842" text-anchor="middle" font-family="Inter" font-weight="800" font-size="38" fill="#10163f">Histórias animadas do Nando, o motoboy</text>`;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${innerWidth}" height="${innerHeight}" viewBox="0 0 ${Wd} ${Hd}">${s}</svg>`;
 }
-function render(){ document.getElementById('r').innerHTML = K_==='banner2'?banner2():(K_==='banner'?banner():(K_==='avatar3'?avatar3():(K_==='avatar2'?avatar2():avatar()))); }
+
+function avatar4(){
+  let s=`<defs>
+  <radialGradient id="ab" cx="0.5" cy="0.42" r="0.78"><stop offset="0" stop-color="#34459a"/><stop offset="0.6" stop-color="#1a2160"/><stop offset="1" stop-color="#070a22"/></radialGradient>
+  <radialGradient id="ag" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ffe9a8" stop-opacity=".9"/><stop offset="0.45" stop-color="#ffd878" stop-opacity=".3"/><stop offset="1" stop-color="#ffd878" stop-opacity="0"/></radialGradient>
+  <radialGradient id="cool" cx="0.1" cy="0.95" r="0.7"><stop offset="0" stop-color="#3fb8ff" stop-opacity=".55"/><stop offset="1" stop-color="#3fb8ff" stop-opacity="0"/></radialGradient>
+  <linearGradient id="shaft" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe9a8" stop-opacity=".30"/><stop offset="1" stop-color="#ffe9a8" stop-opacity="0"/></linearGradient>
+  <filter id="bk" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.2"/></filter>
+  <filter id="bk2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="1.3"/></filter>
+  <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="16"/></filter>
+  <filter id="soft2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>
+  <filter id="char" filterUnits="userSpaceOnUse" x="0" y="0" width="800" height="800" color-interpolation-filters="sRGB">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="16" result="sb"/><feOffset in="sb" dx="-14" dy="18" result="sbo"/><feFlood flood-color="#03051a" flood-opacity=".65"/><feComposite in2="sbo" operator="in" result="dsh"/>
+    <feMorphology in="SourceAlpha" operator="erode" radius="3" result="ai"/>
+    <feOffset in="ai" dx="-8" dy="7" result="o1"/><feComposite in="ai" in2="o1" operator="out" result="e1"/><feGaussianBlur in="e1" stdDeviation="1.8" result="e1b"/><feFlood flood-color="#ffe6a0" flood-opacity=".85"/><feComposite in2="e1b" operator="in" result="rim"/>
+    <feOffset in="ai" dx="9" dy="-8" result="o2"/><feComposite in="ai" in2="o2" operator="out" result="e2"/><feGaussianBlur in="e2" stdDeviation="2.4" result="e2b"/><feFlood flood-color="#46c8ff" flood-opacity=".5"/><feComposite in2="e2b" operator="in" result="cool"/>
+    <feMerge><feMergeNode in="dsh"/><feMergeNode in="SourceGraphic"/><feMergeNode in="cool"/><feMergeNode in="rim"/></feMerge>
+  </filter>
+  <linearGradient id="shell" x1="0.85" y1="0.05" x2="0.15" y2="0.95"><stop offset="0" stop-color="#ffd9a0" stop-opacity=".34"/><stop offset="0.38" stop-color="#ffffff" stop-opacity="0"/><stop offset="1" stop-color="#1a0a30" stop-opacity=".5"/></linearGradient>
+  <radialGradient id="lampL" cx="0.82" cy="0.12" r="0.8"><stop offset="0" stop-color="#ffe9b0" stop-opacity=".5"/><stop offset="0.5" stop-color="#ffcf80" stop-opacity=".1"/><stop offset="1" stop-color="#0a0f40" stop-opacity=".42"/></radialGradient>
+  <radialGradient id="vg" cx="0.5" cy="0.5" r="0.72"><stop offset="0.6" stop-color="#05061a" stop-opacity="0"/><stop offset="1" stop-color="#05061a" stop-opacity=".5"/></radialGradient>
+  <linearGradient id="brimsh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a0a14" stop-opacity=".5"/><stop offset="1" stop-color="#1a0a14" stop-opacity="0"/></linearGradient>
+  <clipPath id="opening"><rect x="246" y="300" width="304" height="196" rx="44"/></clipPath>
+  </defs><rect width="800" height="800" fill="url(#ab)"/>`;
+  // fundo (mesma ideia: noite, lua/poste e luzes da cidade em bokeh) — agora com profundidade em duas camadas
+  for(let i=0;i<22;i++){ const cx=f(40+rnd(i*3.3)*720), cy=f(40+rnd(i*7.1)*560), far=i%3===0, r=f(far?12+rnd(i)*20:20+rnd(i)*50), col=['#ffd88a','#7fd6ff','#ffb870','#9fb4ff'][i%4], op=(far?0.16:0.07)+rnd(i*5)*0.1;
+    s+=`<g filter="url(#${far?'bk2':'bk'})"><circle cx="${cx}" cy="${cy}" r="${r}" fill="${col}" opacity="${f(op)}"/></g>${far?'':`<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${col}" stroke-width="2" opacity="${f(op*0.8)}" filter="url(#bk2)"/>`}`; }
+  s+=`<path d="M720,0 L560,0 L120,800 L430,800Z" fill="url(#shaft)" opacity=".55"/>`;
+  s+=`<circle cx="640" cy="150" r="270" fill="url(#ag)"/><circle cx="640" cy="150" r="30" fill="#fff6cf" stroke="${NAVY}" stroke-width="5"/><circle cx="640" cy="150" r="30" fill="none" stroke="#fffbe8" stroke-width="2" opacity=".7" filter="url(#bk2)"/>`;
+  s+=`<ellipse cx="380" cy="470" rx="300" ry="340" fill="#050830" opacity=".38" filter="url(#soft)"/>`;
+  // Nando: mesmo desenho; olhar firme e meio sorriso (mais adulto), olhando para a luz do poste
+  const ex=Object.assign({},EXPR.focus,{browY:-2,browA:-2,lid:0.2,mc:1.0,mw:17,pup:1.05});
+  const ch=drawChar({cast:'nando',x:400,y:1140,s:3.55,flip:1,t:1,idle:0,pose:Object.assign({},POSE0,{headTilt:-2}),expr:ex,look:[760,250],turn:0.2,helmet:1,light:{ox:1,oy:-0.8,rim:'#ffe9a8'}}).svg;
+  s+=`<g filter="url(#char)">${ch}`;
+  s+=`<g transform="translate(300,260) rotate(-24)"><rect x="-22" y="-80" width="44" height="170" rx="3" fill="#000" opacity=".28" filter="url(#bk2)"/></g>`+tape(292,252,-24,170,44);
+  s+=`<g transform="translate(292,252) rotate(-24)"><path d="M-14,-80 L-14,80" stroke="#9a9aae" stroke-width="3.5" opacity=".6" stroke-linecap="round"/></g>`;
+  s+=`<path d="M560,206 C612,262 626,350 606,430" fill="none" stroke="#fff6dc" stroke-width="15" stroke-linecap="round" opacity=".5" filter="url(#bk2)"/><path d="M566,218 C610,268 620,340 606,408" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" opacity=".8"/><circle cx="534" cy="176" r="10" fill="#fff" opacity=".9" filter="url(#bk2)"/><circle cx="534" cy="176" r="4.5" fill="#fff"/>`;
+  s+=`<path d="M400,120 C560,120 642,250 640,400 C638,500 560,552 400,556 C240,552 158,500 160,400 C158,250 240,120 400,120Z" fill="url(#shell)" style="mix-blend-mode:soft-light"/>`;
+  s+=`<g clip-path="url(#opening)"><rect x="240" y="296" width="320" height="86" fill="url(#brimsh)"/><circle cx="520" cy="350" r="70" fill="#ffd9a0" opacity=".14" filter="url(#soft2)"/><circle cx="270" cy="470" r="90" fill="#46c8ff" opacity=".18" filter="url(#soft2)"/></g>`;
+  s+=`</g><ellipse cx="402" cy="598" rx="150" ry="26" fill="#070a2c" opacity=".4" filter="url(#soft2)"/>`;
+  // luz do celular (azul-frio) vinda de baixo-esquerda + luz quente do poste: contraste quente/frio
+  s+=`<rect width="800" height="800" fill="url(#cool)" style="mix-blend-mode:screen"/><rect width="800" height="800" fill="url(#lampL)" style="mix-blend-mode:soft-light"/><rect width="800" height="800" fill="url(#vg)"/>`;
+  for(let i=0;i<300;i++) s+=`<circle cx="${f(rnd(i*2.3)*800)}" cy="${f(rnd(i*5.1)*800)}" r="${f(0.6+rnd(i)*0.9)}" fill="#fff" opacity="${f(0.035+rnd(i*7)*0.05)}"/>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${innerWidth}" height="${innerHeight}" viewBox="0 0 800 800">${s}</svg>`;
+}
+function banner3(){
+  const Wd=2560,Hd=1440, G0=935; let s=`<defs>
+  <linearGradient id="bs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#050820"/><stop offset="0.5" stop-color="#232962"/><stop offset="0.72" stop-color="#6b5a86"/><stop offset="1" stop-color="#1a1d44"/></linearGradient>
+  <radialGradient id="bm"><stop offset="0" stop-color="#f4f0d8" stop-opacity="1"/><stop offset="1" stop-color="#f4f0d8" stop-opacity="0"/></radialGradient>
+  <linearGradient id="haze" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8a7ab8" stop-opacity="0"/><stop offset="1" stop-color="#8a7ab8" stop-opacity=".35"/></linearGradient>
+  <linearGradient id="road" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#363b6e"/><stop offset="1" stop-color="#0d1030"/></linearGradient>
+  <linearGradient id="bt" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#05061a" stop-opacity=".5"/><stop offset="0.45" stop-color="#05061a" stop-opacity="0"/><stop offset="1" stop-color="#05061a" stop-opacity=".5"/></linearGradient>
+  <filter id="bl" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="8"/></filter><filter id="bl2" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="30"/></filter>
+  </defs><rect width="${Wd}" height="${Hd}" fill="url(#bs)"/>`;
+  for(let i=0;i<140;i++) s+=`<circle cx="${f(rnd(i*3.7)*Wd)}" cy="${f(rnd(i*9.1)*700)}" r="${f(1.2+rnd(i)*2.8)}" fill="#fff" opacity="${f(0.2+0.55*rnd(i*2))}"/>`;
+  s+=`<circle cx="2240" cy="300" r="260" fill="url(#bm)" opacity=".5"/><circle cx="2240" cy="300" r="68" fill="#f6f1d4"/>`;
+  for(let i=0;i<24;i++){ const wM=7+(i*5%7), fl=4+(i*3%9); s+=`<g transform="translate(0,820) scale(0.5)">${WORLD.building(i*260+80,wM,fl,['#2c3270','#3a2f62','#2a3a66'][i%3],{seed:i+3,dark:0.5})}</g>`; }
+  s+=`<rect x="0" y="560" width="${Wd}" height="340" fill="url(#haze)"/>`;
+  const side=(x,wM,fl,col,seed)=>`<g transform="translate(0,${G0}) scale(1.0)">${WORLD.building(x,wM,fl,col,{seed,dark:0.45})}</g>`;
+  s+=side(120,9,6,'#46407e',1)+side(380,7,5,'#6a4062',2)+side(2300,9,7,'#2f4f78',3)+side(2480,8,5,'#6b4d52',4);
+  s+=`<rect x="0" y="${G0}" width="${Wd}" height="${Hd-G0}" fill="url(#road)"/><rect x="0" y="${G0-30}" width="${Wd}" height="38" fill="#6d6f93" stroke="${NAVY}" stroke-width="6"/><rect x="0" y="${G0}" width="${Wd}" height="16" fill="#8a8cb0"/>`;
+  for(let i=0;i<12;i++) s+=R(i*240+40,1220,150,14,'#d9d2b4',6);
+  // poças de luz e reflexos molhados no asfalto
+  [[300,1],[2300,1]].forEach(([x])=>{ s+=`<g transform="translate(${x},${G0}) scale(1.3)">${WORLD.lampGlow(0,1)}${WORLD.lampPost(0)}</g><ellipse cx="${x+240}" cy="${G0+70}" rx="170" ry="26" fill="#ffe9a8" opacity=".22" filter="url(#bl)"/><rect x="${x+224}" y="${G0+20}" width="32" height="300" fill="#ffe9a8" opacity=".12" filter="url(#bl)"/>`; });
+  s+=`<ellipse cx="900" cy="${G0+14}" rx="680" ry="34" fill="#ffe9a8" opacity=".10"/>`;
+  // Nando na moto (dentro da faixa 508–932), com a fita no capacete
+  const br=V3.bikeRider(0,1,1,{poses:[{t:0,v:'rideIdle'}],exprs:[{t:0,v:'smile'}],helmet:1,turn:0.72,look:[900,500],beam:0.6,light:{ox:1,oy:-0.8,rim:'#ffe9a8'}});
+  const RX=700,RY=G0,RS=1.15; const hxp=RX+br.head[0]*RS, hyp=RY+(br.head[1]-900)*RS;
+  s+=`<ellipse cx="${RX+140}" cy="${G0+12}" rx="380" ry="22" fill="${NAVY}" opacity=".45"/><g transform="translate(${RX},${RY}) scale(${RS}) translate(0,-900)">${br.svg}</g>`;
+  s+=`<g transform="translate(${f(hxp-30)},${f(hyp-66)}) rotate(-24) scale(1.15)">${tape(0,0,0,54,16)}</g>`;
+  s+=`<rect width="${Wd}" height="${Hd}" fill="url(#bt)"/>`;
+  // texto (área segura)
+  const tx=1590; const T3=(y,txt,fill,fs)=>`<text x="${tx}" y="${y}" text-anchor="middle" font-family="Inter" font-weight="800" font-size="${fs}" fill="#070a24" stroke="#070a24" stroke-width="22" stroke-linejoin="round" opacity=".9">${txt}</text><text x="${tx}" y="${y}" text-anchor="middle" font-family="Inter" font-weight="800" font-size="${fs}" fill="${fill}">${txt}</text>`;
+  s+=T3(660,'Cada entrega','#ffffff',84)+T3(764,'esconde uma história.','#ffc93c',84);
+  s+=`<text x="${tx}" y="840" text-anchor="middle" font-family="Inter" font-weight="700" font-size="38" fill="#c9d2ff" stroke="#070a24" stroke-width="9" stroke-linejoin="round" paint-order="stroke">Histórias animadas do Nando, o motoboy</text>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${innerWidth}" height="${innerHeight}" viewBox="0 0 ${Wd} ${Hd}">${s}</svg>`;
+}
+function render(){ const m={avatar:avatar,avatar2:avatar2,avatar3:avatar3,avatar4:avatar4,banner:banner,banner2:banner2,banner3:banner3}; document.getElementById('r').innerHTML=(m[K_]||avatar)(); }
 </script></body></html>
