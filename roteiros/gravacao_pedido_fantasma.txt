@@ -1,0 +1,62 @@
+PEDIDO FANTASMA — TEXTO PARA GRAVAÇÃO
+310 palavras · duração estimada 124 s a 165 palavras/min
+Como gravar: leia uma linha por vez, com um respiro natural entre as linhas; [pausa] = deixe 0,3–0,7 s de silêncio de verdade; (direção) não se lê.
+As falas de personagens estão marcadas: grave com a voz indicada (pode ser a mesma voz, mudando só o tom).
+------------------------------------------------------------------------------
+
+== ATO 1 GANCHO ==
+L01  Onze e quarenta e sete da noite. Chegou um pedido.   (seco, direto, sem preparar)
+L02  Rua das Acácias, número catorze.   (leve estranhamento)
+L03  Só que a casa catorze foi demolida há trinta anos.   (cai a voz em 'demolida')
+
+== ATO 2 APOSTA ==
+L04  O aplicativo deu onze minutos.   (neutro, informativo)
+L05  Cancelar custava a minha semana inteira.   (pesa em 'semana inteira')
+L06  E o aluguel vencia na sexta.   (cansaço)
+
+== ATO 3 CAMINHO ==
+L07  Eu fui.   (decidido, curto)
+L08  No caminho, abri o histórico daquele endereço.   (curiosidade)
+L09  Onze pedidos, todos cancelados.   (cada palavra separada)
+L10  Mesmo endereço, mesmo dia, uma vez por ano.   (acelera e freia no fim)
+L11  E hoje era doze de outubro.   (baixa, quase sussurro)
+
+== ATO 4 CHEGADA ==
+L12  Cheguei com um minuto e meio de sobra.   (aliviado, ofegante)
+L13  Era só mato alto e um portão sem casa.   (descrição seca)
+L14  E lá no fundo, uma luz acesa.   (suspende no 'acesa')
+
+== ATO 5 REVELAÇÃO ==
+L15  Uma mesa posta pra dois.   (devagar)
+L16  E uma senhora, olhando o relógio.   (devagar; pausa longa depois)
+[pausa]
+L17  DONA CIDA: Você demorou.   (voz de senhora, calma, sem raiva)
+
+== ATO 6 CONFLITO ==
+L18  Mostrei o celular. Disse que ali não existia casa.   (sem graça, educado)
+L19  DONA CIDA: Existe pra mim. A cozinha era ali.   (firme e doce)
+L20  Ela apontou a parede do vizinho: o azulejo, a mancha do forno, a marca da escada.   (olhando, descobrindo)
+L21  DONA CIDA: Senta. Falta um minuto.   (convite, não ordem)
+L22  O relógio do aplicativo contava. Eu podia entregar e ir embora, ou sentar e deixar vencer.   (dilema; a última frase mais baixa)
+L23  Eu sentei.   (pausa longa antes; simples)
+
+== ATO 7 PISTAS ==
+L24  Na cadeira vazia, uma caixa fechada, com laço.   (curioso)
+L25  DONA CIDA: Meu marido, o Zé, chegava em seis minutos. Você levou nove e meio.   (um sorriso na voz)
+L26  DONA CIDA: Primeiro entregador do Forno Vivo. Saiu daqui às onze e quarenta e sete, em noventa e quatro. De capacete rachado.   (vai ficando grave; 'rachado' quase sem voz)
+L27  Olhei o meu capacete: a fita isolante segurando a rachadura.   (percebendo)
+
+== ATO 8 VIRADA ==
+L28  DONA CIDA: Faz onze anos que eu peço uma pizza pra cá. Onze rapazes cancelaram.   (sem acusar)
+L29  DONA CIDA: Eu não quero a pizza. Eu procuro quem chegue.   (a frase central; devagar)
+L30  DONA CIDA: O Forno Vivo é meu. Entregador nosso tem salário fixo, plano de saúde e capacete que não racha.   (leve, quase brincando)
+L31  O celular vibrou. Pedido expirado. Menos trezentos e quarenta.   (engole seco)
+L32  DONA CIDA: Esse eu pago em dobro. Abre a caixa.   (calor)
+
+== ATO 9 FINAL ==
+[pausa]
+L33  Na sexta, paguei o aluguel com o primeiro salário fixo da minha vida.   (voz mais aberta, sorrindo)
+L34  Guardei o capacete velho. Com a fita e tudo.   (carinho)
+L35  No ano seguinte, no mesmo terreno: um forno, mesa pra dois e um capacete na cadeira.   (imagem; sem pressa)
+[pausa]
+L36  A casa catorze voltou.   (a última; deixa cair)

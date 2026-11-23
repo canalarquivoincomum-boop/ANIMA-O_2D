@@ -10,7 +10,7 @@
     isis: { skin: '#b9774f', hair: '#2a1b1d', cloth: '#4fb3a9', cloth2: '#3b958d', shoe: '#f0e7d8', sock: '#ffffff', W: 62, H: 56, style: 'curly', limb: [34, 32, 19], torso: 'dress', ribbon: '#ffcf33', brow: '#2a1b1d', lash: 1, freckles: 1, nose: 1 },
     genaro: { skin: '#a8683f', hair: '#6d6a6a', cloth: '#e2a53b', cloth2: '#b9802a', pants: '#37466e', shoe: '#3a2b2a', sock: '#d8d2c6', W: 64, H: 54, style: 'cap', limb: [38, 36, 21], torso: 'jacket', cap: '#c9473d', mustache: '#cfcac4', brow: '#4e4a4a', nose: 1.7, wrinkle: 1, stripes: 1 },
     nando: { glove: '#2b2f48', skin: '#8a5a3d', hair: '#1c1618', cloth: '#2f4a8c', cloth2: '#243a70', pants: '#2b2f45', shoe: '#2a2a30', sock: '#2a2a30', W: 54, H: 50, style: 'short', limb: [38, 36, 21], torso: 'jacket', brow: '#1c1618', nose: 1.35, stripes: 1, stubble: 1 },
-    cida: { cardigan: 1, skin: '#d8a888', hair: '#ece8e6', cloth: '#b96a7c', cloth2: '#965468', pants: '#6a4f5e', shoe: '#6a4f5e', sock: '#e8e0dc', W: 54, H: 52, style: 'bun', limb: [34, 33, 18], torso: 'dress', brow: '#b8b2ae', nose: 1.3, wrinkle: 1, glasses: 1 },
+    cida: { longSleeve: 1, cardigan: 1, skin: '#d8a888', hair: '#ece8e6', cloth: '#b96a7c', cloth2: '#965468', pants: '#6a4f5e', shoe: '#6a4f5e', sock: '#e8e0dc', W: 54, H: 52, style: 'bun', limb: [34, 33, 18], torso: 'dress', brow: '#b8b2ae', nose: 1.3, wrinkle: 1, glasses: 1 },
     alcides: { skin: '#dba783', hair: '#bdb8b2', cloth: '#7e9482', cloth2: '#627868', pants: '#5c6178', shoe: '#4a3f3a', sock: '#d8d2c6', W: 56, H: 58, style: 'bald', limb: [38, 36, 20], torso: 'coat', mustache: '#e8e4de', brow: '#8f8a85', nose: 1.9, wrinkle: 1 }
   };
 
@@ -226,6 +226,9 @@
     }
     return s;
   }
+  function neckSvg(c) {
+    const sk = c.skin; return `<path d="M-16,-176 L-16,-150 Q0,-142 16,-150 L16,-176Z" fill="${sk}" stroke="${NAVY}" stroke-width="3"/><path d="M-16,-160 Q0,-150 16,-160 L16,-150 Q0,-142 -16,-150Z" fill="${shade(sk, -0.22)}" opacity=".7"/>`;
+  }
   function legSvg(c, hip, foot, kd) {
     const r = ik(hip, foot, 34, 34, p => p[0] * kd), t = tube(hip, r.mid, r.end, 23, 19), base = c.pants || c.skin;
     let s = path(t.d, base) + lit(t.d, 6, shade(base, -0.22), 0.8, 0.25);
@@ -290,7 +293,7 @@
     const angL = Math.atan2(aL.end[1] - aL.mid[1], aL.end[0] - aL.mid[0]) * 180 / Math.PI, angR = Math.atan2(aR.end[1] - aR.mid[1], aR.end[0] - aR.mid[0]) * 180 / Math.PI;
     const armSvg = (S, ar, tt, ang, g) => {
       let a = path(tt.d, c.skin) + lit(tt.d, 5, shade(c.skin, -0.25), 0.8, 0.3);
-      if (c.torso === 'dress') { const m = [lerp(S[0], ar.mid[0], 0.55), lerp(S[1], ar.mid[1], 0.55)], sl = tube(S, lerp2(S, m, 0.5), m, aw + 8, aw + 5, 6); a += path(sl.d, c.cloth) + lit(sl.d, 5, c.cloth2, 0.85, 0.2); }
+      if (c.torso === 'dress' && !c.longSleeve) { const m = [lerp(S[0], ar.mid[0], 0.55), lerp(S[1], ar.mid[1], 0.55)], sl = tube(S, lerp2(S, m, 0.5), m, aw + 8, aw + 5, 6); a += path(sl.d, c.cloth) + lit(sl.d, 5, c.cloth2, 0.85, 0.2); }
       else { const m = [lerp(ar.mid[0], ar.end[0], 0.82), lerp(ar.mid[1], ar.end[1], 0.82)], tt2 = tube(S, ar.mid, m, aw + 5, aw + 1, 14), cf = tube(lerp2(m, ar.end, -0.1), m, lerp2(m, ar.end, 0.38), aw + 3.5, aw + 3.5, 4); a += path(tt2.d, c.cloth) + lit(tt2.d, 5, c.cloth2, 0.85, 0.2) + path(cf.d, shade(c.cloth, 0.3), NAVY, 3); }
       return a + hand(c, ar.end, ang, g);
     };
@@ -305,7 +308,7 @@
     if (!o.bodyless) {
     if (pose.farBehind) main += armSvg(sh[0], aL, tL, angL, pose.gL);
     main += legSvg(c, hip[0], fL, pose.kd) + legSvg(c, hip[1], fR, pose.kd);
-    main += `<g transform="rotate(${f(lean)} 0 ${f(hipY)})"><g transform="translate(${f(wsx)},${f(bob * 0.5)}) scale(1,${f(1 + br * 0.012)})">${torsoSvg(c)}</g></g>`;
+    main += `<g transform="rotate(${f(lean)} 0 ${f(hipY)})"><g transform="translate(${f(wsx)},${f(bob * 0.5 + hd * 0.9)}) scale(1,${f(1 + br * 0.012)})">${torsoSvg(c)}${neckSvg(c)}</g></g>`;
     if (!pose.farBehind) main += armSvg(sh[0], aL, tL, angL, pose.gL);
     main += armSvg(sh[1], aR, tR, angR, pose.gR);
     }

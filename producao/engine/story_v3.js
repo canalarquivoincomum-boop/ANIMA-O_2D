@@ -79,7 +79,7 @@
     const up = !watching ? E.io(clamp((lt - 0.1) / 0.5)) : 0;
     const ex = Object.assign({}, EXPR.calm, { browY: -2 - up * 4, browA: 3 + up * 3, mc: 0.12, blush: 0.4, lid: watching ? 0.2 : 0.1 });
     if (speaking) { const a = 0.25 + 0.5 * Math.abs(Math.sin((t - PH.Q[0]) * 13)); ex.mo = a; ex.mw = 11 + a * 4; ex.mc = 0.3; }
-    const pose = Object.assign({}, POSE0, POSE.sit, { hipDrop: 40, hL: [lerp(-30, 24, raise), lerp(-60, -138, raise)], hR: [30, -58], lean: watching ? 1 + raise * 2 : 0, headTilt: watching ? -3 * raise : 1 + up * 0, headDown: watching ? raise * 3 : 0, gL: raise > 0.3 ? 'mitt' : 'mitt' });
+    const pose = Object.assign({}, POSE0, POSE.sit, { hipDrop: 40, hL: [lerp(-30, 8, raise), lerp(-60, -84, raise)], hR: [lerp(30, 24, raise * 0.5), -58], lean: watching ? raise * 2 : 0, headTilt: watching ? -3 * raise : 1, headDown: watching ? raise * 9 : 0, gL: raise > 0.3 ? 'mitt' : 'mitt' });
     const wrist = J => `<g transform="translate(${f(J.hL[0] + 4)},${f(J.hL[1] + 8)}) rotate(${f(J.angL)})"><rect x="-8" y="-6" width="18" height="12" rx="2" fill="#6b4a2f" stroke="${NAVY}" stroke-width="2"/><circle cx="12" cy="0" r="9" fill="#e8c36a" stroke="${NAVY}" stroke-width="2.6"/><circle cx="12" cy="0" r="6" fill="#fffbe8"/><path d="M12,0 L12,-4.5 M12,0 L15,1.5" stroke="${NAVY}" stroke-width="1.6" stroke-linecap="round"/></g>`;
     s += drawChar({ cast: 'cida', x: 288, y: 740, s: 1.9, flip: 1, t, ph: 2.2, pose, expr: ex, look, turn: 0.0, light: { ox: -1, oy: -0.7, rim: '#ffe0a0' }, propsFn: J => wrist(J) }).svg;
     // mesa na frente: tampo, dois pratos, caixa de pizza com o rótulo do pedido, vela e a bolsa no colo

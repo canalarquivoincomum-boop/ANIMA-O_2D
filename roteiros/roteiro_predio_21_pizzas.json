@@ -1,0 +1,267 @@
+{
+ "titulo": "O Prédio das 21 Pizzas",
+ "palavras": 306,
+ "duracao_est_s": 119.9,
+ "linhas": [
+  {
+   "id": "M01",
+   "ato": "1 GANCHO",
+   "quem": "N",
+   "texto": "Sexta, onze da noite. O aplicativo me mandou vinte e uma pizzas.",
+   "pausa": 0.0,
+   "direcao": "incrédulo, rápido",
+   "inicio_est": 0.0,
+   "fim_est": 4.4
+  },
+  {
+   "id": "M02",
+   "ato": "1 GANCHO",
+   "quem": "N",
+   "texto": "Para o mesmo prédio. O mesmo apartamento. Oitenta e dois.",
+   "pausa": 0.2,
+   "direcao": "cada item separado",
+   "inicio_est": 4.6,
+   "fim_est": 8.2
+  },
+  {
+   "id": "M03",
+   "ato": "2 APOSTA",
+   "quem": "N",
+   "texto": "Quarenta minutos para entregar tudo. E o elevador estava quebrado.",
+   "pausa": 0.32,
+   "direcao": "ritmo de contagem",
+   "inicio_est": 8.5,
+   "fim_est": 12.2
+  },
+  {
+   "id": "M04",
+   "ato": "2 APOSTA",
+   "quem": "N",
+   "texto": "Meu baú leva três pizzas. Oito andares de escada. Sete viagens.",
+   "pausa": 0.2,
+   "direcao": "fazendo a conta",
+   "inicio_est": 12.4,
+   "fim_est": 16.4
+  },
+  {
+   "id": "M05",
+   "ato": "2 APOSTA",
+   "quem": "N",
+   "texto": "A minha nota era quatro vírgula cinquenta e dois. Abaixo de quatro e meio, o aplicativo me tirava da noite.",
+   "pausa": 0.24,
+   "direcao": "o risco, sem drama",
+   "inicio_est": 16.6,
+   "fim_est": 23.9
+  },
+  {
+   "id": "M06",
+   "ato": "2 APOSTA",
+   "quem": "N",
+   "texto": "Subi.",
+   "pausa": 0.36,
+   "direcao": "curto, decidido",
+   "inicio_est": 24.2,
+   "fim_est": 24.6
+  },
+  {
+   "id": "M07",
+   "ato": "3 ESCALADA",
+   "quem": "N",
+   "texto": "Na primeira viagem, o porteiro riu: o oitenta e dois é do seu Aníbal, e ninguém fala com ele.",
+   "pausa": 0.32,
+   "direcao": "divertido",
+   "inicio_est": 24.9,
+   "fim_est": 31.8
+  },
+  {
+   "id": "M08",
+   "ato": "3 ESCALADA",
+   "quem": "N",
+   "texto": "Bati duas vezes, como pedia o pedido: ele escuta mal.",
+   "pausa": 0.24,
+   "direcao": "ofegante",
+   "inicio_est": 32.1,
+   "fim_est": 35.7
+  },
+  {
+   "id": "M09",
+   "ato": "3 ESCALADA",
+   "quem": "N",
+   "texto": "Ninguém abriu.",
+   "pausa": 0.28,
+   "direcao": "seco",
+   "inicio_est": 36.0,
+   "fim_est": 36.7
+  },
+  {
+   "id": "M10",
+   "ato": "3 ESCALADA",
+   "quem": "N",
+   "texto": "Na terceira viagem, vi o bilhete preso numa das caixas.",
+   "pausa": 0.36,
+   "direcao": "ofegante, curioso",
+   "inicio_est": 37.1,
+   "fim_est": 40.7
+  },
+  {
+   "id": "M11",
+   "ato": "3 ESCALADA",
+   "quem": "VIZINHA",
+   "texto": "Obrigada pela torneira, seu Aníbal. Dona Lúcia, apartamento trinta e um.",
+   "pausa": 0.24,
+   "direcao": "lendo o bilhete, voz suave",
+   "inicio_est": 40.9,
+   "fim_est": 44.9
+  },
+  {
+   "id": "M12",
+   "ato": "3 ESCALADA",
+   "quem": "N",
+   "texto": "Todas as caixas tinham bilhete, cada um com uma letra: pelo chuveiro, pela luz da escada, pelo berço.",
+   "pausa": 0.24,
+   "direcao": "lendo rápido, descobrindo",
+   "inicio_est": 45.2,
+   "fim_est": 51.7
+  },
+  {
+   "id": "M13",
+   "ato": "3 ESCALADA",
+   "quem": "N",
+   "texto": "Alguém ali devia muito àquele homem. E ninguém tinha coragem de dizer.",
+   "pausa": 0.32,
+   "direcao": "pensativo",
+   "inicio_est": 52.0,
+   "fim_est": 56.4
+  },
+  {
+   "id": "M14",
+   "ato": "4 PRESSÃO",
+   "quem": "N",
+   "texto": "Na sexta viagem, faltavam quatro minutos e a porta seguia fechada. As minhas pernas tremiam.",
+   "pausa": 0.4,
+   "direcao": "exausto, acelerando",
+   "inicio_est": 56.8,
+   "fim_est": 62.3
+  },
+  {
+   "id": "M15",
+   "ato": "4 PRESSÃO",
+   "quem": "N",
+   "texto": "Foi aí que eu vi a campainha. Um fio solto, pendurado, e uma fita velha: quebrada, bata na porta.",
+   "pausa": 0.28,
+   "direcao": "descobrindo",
+   "inicio_est": 62.5,
+   "fim_est": 69.5
+  },
+  {
+   "id": "M16",
+   "ato": "4 PRESSÃO",
+   "quem": "N",
+   "texto": "E, na porta, um cartaz desbotado: conserto de tudo, grátis, toque a campainha.",
+   "pausa": 0.24,
+   "direcao": "lendo devagar",
+   "inicio_est": 69.7,
+   "fim_est": 74.4
+  },
+  {
+   "id": "M17",
+   "ato": "4 PRESSÃO",
+   "quem": "N",
+   "texto": "O homem que consertava tudo nunca teve a campainha consertada. E por isso ninguém ia pedir nada.",
+   "pausa": 0.36,
+   "direcao": "a frase-chave; devagar",
+   "inicio_est": 74.8,
+   "fim_est": 81.0
+  },
+  {
+   "id": "M18",
+   "ato": "5 VIRADA",
+   "quem": "N",
+   "texto": "No meu capacete tem fita isolante há dois anos. Eu emendei o fio com ela.",
+   "pausa": 0.44,
+   "direcao": "mão na massa, rápido",
+   "inicio_est": 81.4,
+   "fim_est": 86.9
+  },
+  {
+   "id": "M19",
+   "ato": "5 VIRADA",
+   "quem": "N",
+   "texto": "Apertei o botão.",
+   "pausa": 0.4,
+   "direcao": "quase sussurro",
+   "inicio_est": 87.3,
+   "fim_est": 88.3
+  },
+  {
+   "id": "M20",
+   "ato": "5 VIRADA",
+   "quem": "N",
+   "texto": "Dim-dom.",
+   "pausa": 0.59,
+   "direcao": "o som, simples",
+   "inicio_est": 88.9,
+   "fim_est": 89.3
+  },
+  {
+   "id": "M21",
+   "ato": "5 VIRADA",
+   "quem": "N",
+   "texto": "Das escadas, dos andares de cima e de baixo, saíram vinte e uma pessoas, cada uma com um prato.",
+   "pausa": 0.44,
+   "direcao": "surpresa crescendo",
+   "inicio_est": 89.7,
+   "fim_est": 96.7
+  },
+  {
+   "id": "M22",
+   "ato": "5 VIRADA",
+   "quem": "N",
+   "texto": "Ninguém tinha pedido pizza pra comer. Pediram pra ter um motivo de bater naquela porta.",
+   "pausa": 0.32,
+   "direcao": "a descoberta; devagar",
+   "inicio_est": 97.0,
+   "fim_est": 102.4
+  },
+  {
+   "id": "M23",
+   "ato": "5 VIRADA",
+   "quem": "N",
+   "texto": "Seu Aníbal abriu. Ficou parado. Fazia onze anos que ninguém tocava aquela campainha.",
+   "pausa": 0.36,
+   "direcao": "terno",
+   "inicio_est": 102.8,
+   "fim_est": 107.5
+  },
+  {
+   "id": "M24",
+   "ato": "5 VIRADA",
+   "quem": "SEU ANÍBAL",
+   "texto": "Eu estava esperando alguém tocar.",
+   "pausa": 0.4,
+   "direcao": "voz de velho, emocionado, baixa",
+   "inicio_est": 107.9,
+   "fim_est": 109.7
+  },
+  {
+   "id": "M25",
+   "ato": "6 FINAL",
+   "quem": "N",
+   "texto": "O celular vibrou: vinte e uma avaliações, todas de cinco estrelas. Nota: quatro vírgula nove.",
+   "pausa": 0.55,
+   "direcao": "alegria contida",
+   "inicio_est": 110.3,
+   "fim_est": 115.7
+  },
+  {
+   "id": "M26",
+   "ato": "6 FINAL",
+   "quem": "N",
+   "texto": "No sábado, o cartaz mudou. Toque a campainha. Ela funciona.",
+   "pausa": 0.51,
+   "direcao": "a última; deixa cair",
+   "inicio_est": 116.2,
+   "fim_est": 119.9
+  }
+ ]
+}

@@ -1,0 +1,367 @@
+{
+ "titulo": "Pedido Fantasma",
+ "palavras": 310,
+ "duracao_est_s": 123.6,
+ "linhas": [
+  {
+   "id": "L01",
+   "ato": "1 GANCHO",
+   "quem": "N",
+   "texto": "Onze e quarenta e sete da noite. Chegou um pedido.",
+   "pausa": 0.0,
+   "direcao": "seco, direto, sem preparar",
+   "inicio_est": 0.0,
+   "fim_est": 3.6
+  },
+  {
+   "id": "L02",
+   "ato": "1 GANCHO",
+   "quem": "N",
+   "texto": "Rua das Acácias, número catorze.",
+   "pausa": 0.2,
+   "direcao": "leve estranhamento",
+   "inicio_est": 3.8,
+   "fim_est": 5.7
+  },
+  {
+   "id": "L03",
+   "ato": "1 GANCHO",
+   "quem": "N",
+   "texto": "Só que a casa catorze foi demolida há trinta anos.",
+   "pausa": 0.24,
+   "direcao": "cai a voz em 'demolida'",
+   "inicio_est": 5.9,
+   "fim_est": 9.5
+  },
+  {
+   "id": "L04",
+   "ato": "2 APOSTA",
+   "quem": "N",
+   "texto": "O aplicativo deu onze minutos.",
+   "pausa": 0.32,
+   "direcao": "neutro, informativo",
+   "inicio_est": 9.9,
+   "fim_est": 11.7
+  },
+  {
+   "id": "L05",
+   "ato": "2 APOSTA",
+   "quem": "N",
+   "texto": "Cancelar custava a minha semana inteira.",
+   "pausa": 0.16,
+   "direcao": "pesa em 'semana inteira'",
+   "inicio_est": 11.8,
+   "fim_est": 14.0
+  },
+  {
+   "id": "L06",
+   "ato": "2 APOSTA",
+   "quem": "N",
+   "texto": "E o aluguel vencia na sexta.",
+   "pausa": 0.24,
+   "direcao": "cansaço",
+   "inicio_est": 14.3,
+   "fim_est": 16.4
+  },
+  {
+   "id": "L07",
+   "ato": "3 CAMINHO",
+   "quem": "N",
+   "texto": "Eu fui.",
+   "pausa": 0.36,
+   "direcao": "decidido, curto",
+   "inicio_est": 16.8,
+   "fim_est": 17.5
+  },
+  {
+   "id": "L08",
+   "ato": "3 CAMINHO",
+   "quem": "N",
+   "texto": "No caminho, abri o histórico daquele endereço.",
+   "pausa": 0.24,
+   "direcao": "curiosidade",
+   "inicio_est": 17.8,
+   "fim_est": 20.3
+  },
+  {
+   "id": "L09",
+   "ato": "3 CAMINHO",
+   "quem": "N",
+   "texto": "Onze pedidos, todos cancelados.",
+   "pausa": 0.24,
+   "direcao": "cada palavra separada",
+   "inicio_est": 20.5,
+   "fim_est": 22.0
+  },
+  {
+   "id": "L10",
+   "ato": "3 CAMINHO",
+   "quem": "N",
+   "texto": "Mesmo endereço, mesmo dia, uma vez por ano.",
+   "pausa": 0.16,
+   "direcao": "acelera e freia no fim",
+   "inicio_est": 22.2,
+   "fim_est": 25.1
+  },
+  {
+   "id": "L11",
+   "ato": "3 CAMINHO",
+   "quem": "N",
+   "texto": "E hoje era doze de outubro.",
+   "pausa": 0.24,
+   "direcao": "baixa, quase sussurro",
+   "inicio_est": 25.3,
+   "fim_est": 27.5
+  },
+  {
+   "id": "L12",
+   "ato": "4 CHEGADA",
+   "quem": "N",
+   "texto": "Cheguei com um minuto e meio de sobra.",
+   "pausa": 0.36,
+   "direcao": "aliviado, ofegante",
+   "inicio_est": 27.9,
+   "fim_est": 30.8
+  },
+  {
+   "id": "L13",
+   "ato": "4 CHEGADA",
+   "quem": "N",
+   "texto": "Era só mato alto e um portão sem casa.",
+   "pausa": 0.24,
+   "direcao": "descrição seca",
+   "inicio_est": 31.0,
+   "fim_est": 34.3
+  },
+  {
+   "id": "L14",
+   "ato": "4 CHEGADA",
+   "quem": "N",
+   "texto": "E lá no fundo, uma luz acesa.",
+   "pausa": 0.28,
+   "direcao": "suspende no 'acesa'",
+   "inicio_est": 34.6,
+   "fim_est": 37.1
+  },
+  {
+   "id": "L15",
+   "ato": "5 REVELAÇÃO",
+   "quem": "N",
+   "texto": "Uma mesa posta pra dois.",
+   "pausa": 0.44,
+   "direcao": "devagar",
+   "inicio_est": 37.5,
+   "fim_est": 39.4
+  },
+  {
+   "id": "L16",
+   "ato": "5 REVELAÇÃO",
+   "quem": "N",
+   "texto": "E uma senhora, olhando o relógio.",
+   "pausa": 0.28,
+   "direcao": "devagar; pausa longa depois",
+   "inicio_est": 39.6,
+   "fim_est": 41.8
+  },
+  {
+   "id": "L17",
+   "ato": "5 REVELAÇÃO",
+   "quem": "DONA CIDA",
+   "texto": "Você demorou.",
+   "pausa": 0.55,
+   "direcao": "voz de senhora, calma, sem raiva",
+   "inicio_est": 42.4,
+   "fim_est": 43.1
+  },
+  {
+   "id": "L18",
+   "ato": "6 CONFLITO",
+   "quem": "N",
+   "texto": "Mostrei o celular. Disse que ali não existia casa.",
+   "pausa": 0.4,
+   "direcao": "sem graça, educado",
+   "inicio_est": 43.5,
+   "fim_est": 46.8
+  },
+  {
+   "id": "L19",
+   "ato": "6 CONFLITO",
+   "quem": "DONA CIDA",
+   "texto": "Existe pra mim. A cozinha era ali.",
+   "pausa": 0.24,
+   "direcao": "firme e doce",
+   "inicio_est": 47.0,
+   "fim_est": 49.6
+  },
+  {
+   "id": "L20",
+   "ato": "6 CONFLITO",
+   "quem": "N",
+   "texto": "Ela apontou a parede do vizinho: o azulejo, a mancha do forno, a marca da escada.",
+   "pausa": 0.24,
+   "direcao": "olhando, descobrindo",
+   "inicio_est": 49.8,
+   "fim_est": 55.6
+  },
+  {
+   "id": "L21",
+   "ato": "6 CONFLITO",
+   "quem": "DONA CIDA",
+   "texto": "Senta. Falta um minuto.",
+   "pausa": 0.24,
+   "direcao": "convite, não ordem",
+   "inicio_est": 55.9,
+   "fim_est": 57.3
+  },
+  {
+   "id": "L22",
+   "ato": "6 CONFLITO",
+   "quem": "N",
+   "texto": "O relógio do aplicativo contava. Eu podia entregar e ir embora, ou sentar e deixar vencer.",
+   "pausa": 0.24,
+   "direcao": "dilema; a última frase mais baixa",
+   "inicio_est": 57.5,
+   "fim_est": 63.4
+  },
+  {
+   "id": "L23",
+   "ato": "6 CONFLITO",
+   "quem": "N",
+   "texto": "Eu sentei.",
+   "pausa": 0.44,
+   "direcao": "pausa longa antes; simples",
+   "inicio_est": 63.8,
+   "fim_est": 64.5
+  },
+  {
+   "id": "L24",
+   "ato": "7 PISTAS",
+   "quem": "N",
+   "texto": "Na cadeira vazia, uma caixa fechada, com laço.",
+   "pausa": 0.32,
+   "direcao": "curioso",
+   "inicio_est": 64.9,
+   "fim_est": 67.8
+  },
+  {
+   "id": "L25",
+   "ato": "7 PISTAS",
+   "quem": "DONA CIDA",
+   "texto": "Meu marido, o Zé, chegava em seis minutos. Você levou nove e meio.",
+   "pausa": 0.24,
+   "direcao": "um sorriso na voz",
+   "inicio_est": 68.0,
+   "fim_est": 72.7
+  },
+  {
+   "id": "L26",
+   "ato": "7 PISTAS",
+   "quem": "DONA CIDA",
+   "texto": "Primeiro entregador do Forno Vivo. Saiu daqui às onze e quarenta e sete, em noventa e quatro. De capacete rachado.",
+   "pausa": 0.24,
+   "direcao": "vai ficando grave; 'rachado' quase sem voz",
+   "inicio_est": 73.0,
+   "fim_est": 80.2
+  },
+  {
+   "id": "L27",
+   "ato": "7 PISTAS",
+   "quem": "N",
+   "texto": "Olhei o meu capacete: a fita isolante segurando a rachadura.",
+   "pausa": 0.44,
+   "direcao": "percebendo",
+   "inicio_est": 80.7,
+   "fim_est": 84.3
+  },
+  {
+   "id": "L28",
+   "ato": "8 VIRADA",
+   "quem": "DONA CIDA",
+   "texto": "Faz onze anos que eu peço uma pizza pra cá. Onze rapazes cancelaram.",
+   "pausa": 0.4,
+   "direcao": "sem acusar",
+   "inicio_est": 84.7,
+   "fim_est": 89.4
+  },
+  {
+   "id": "L29",
+   "ato": "8 VIRADA",
+   "quem": "DONA CIDA",
+   "texto": "Eu não quero a pizza. Eu procuro quem chegue.",
+   "pausa": 0.28,
+   "direcao": "a frase central; devagar",
+   "inicio_est": 89.7,
+   "fim_est": 93.0
+  },
+  {
+   "id": "L30",
+   "ato": "8 VIRADA",
+   "quem": "DONA CIDA",
+   "texto": "O Forno Vivo é meu. Entregador nosso tem salário fixo, plano de saúde e capacete que não racha.",
+   "pausa": 0.28,
+   "direcao": "leve, quase brincando",
+   "inicio_est": 93.3,
+   "fim_est": 99.8
+  },
+  {
+   "id": "L31",
+   "ato": "8 VIRADA",
+   "quem": "N",
+   "texto": "O celular vibrou. Pedido expirado. Menos trezentos e quarenta.",
+   "pausa": 0.4,
+   "direcao": "engole seco",
+   "inicio_est": 100.2,
+   "fim_est": 103.5
+  },
+  {
+   "id": "L32",
+   "ato": "8 VIRADA",
+   "quem": "DONA CIDA",
+   "texto": "Esse eu pago em dobro. Abre a caixa.",
+   "pausa": 0.28,
+   "direcao": "calor",
+   "inicio_est": 103.8,
+   "fim_est": 106.7
+  },
+  {
+   "id": "L33",
+   "ato": "9 FINAL",
+   "quem": "N",
+   "texto": "Na sexta, paguei o aluguel com o primeiro salário fixo da minha vida.",
+   "pausa": 0.59,
+   "direcao": "voz mais aberta, sorrindo",
+   "inicio_est": 107.3,
+   "fim_est": 112.0
+  },
+  {
+   "id": "L34",
+   "ato": "9 FINAL",
+   "quem": "N",
+   "texto": "Guardei o capacete velho. Com a fita e tudo.",
+   "pausa": 0.24,
+   "direcao": "carinho",
+   "inicio_est": 112.2,
+   "fim_est": 115.5
+  },
+  {
+   "id": "L35",
+   "ato": "9 FINAL",
+   "quem": "N",
+   "texto": "No ano seguinte, no mesmo terreno: um forno, mesa pra dois e um capacete na cadeira.",
+   "pausa": 0.32,
+   "direcao": "imagem; sem pressa",
+   "inicio_est": 115.8,
+   "fim_est": 121.7
+  },
+  {
+   "id": "L36",
+   "ato": "9 FINAL",
+   "quem": "N",
+   "texto": "A casa catorze voltou.",
+   "pausa": 0.51,
+   "direcao": "a última; deixa cair",
+   "inicio_est": 122.2,
+   "fim_est": 123.6
+  }
+ ]
+}

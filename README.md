@@ -39,3 +39,7 @@ Da teoria à prática: regras de domínio visual, roteiro original, storyboard t
 
 ### v5 — profundidade de campo, moto remontada, gancho da idosa
 - [`docs/producao/14_revisao_v5.md`](docs/producao/14_revisao_v5.md). Vídeo: `producao/v3/piloto_v5_pedido_fantasma_1080x1920.mp4`.
+
+### Protagonista fixo e roteiros
+- [`roteiros/`](roteiros/): bíblia do Nando e dois roteiros completos com texto para gravação.
+- [`docs/producao/15_correcao_dona_cida_e_roteiros.md`](docs/producao/15_correcao_dona_cida_e_roteiros.md): conserto do personagem sentado e resumo.

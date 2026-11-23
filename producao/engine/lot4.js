@@ -57,7 +57,7 @@
     { const dd = 6.4, x0 = -1.75, w = 0.95, h = 2.1; s += poly(`${pt(x0, dd, 0)} ${pt(x0 + w, dd, 0)} ${pt(x0 + w, dd, h)} ${pt(x0, dd, h)}`, '#171b40', 0.6) + `<polyline points="${pt(x0, dd, 0)} ${pt(x0, dd, h)} ${pt(x0 + w, dd, h)} ${pt(x0 + w, dd, 0)}" fill="none" stroke="#8a6a44" stroke-width="${f(8 * sc(dd) * 2.2)}" stroke-linejoin="round"/><polyline points="${pt(x0, dd, 0)} ${pt(x0, dd, h)} ${pt(x0 + w, dd, h)} ${pt(x0 + w, dd, 0)}" fill="none" stroke="${NAVY}" stroke-width="1.6" opacity=".6"/>`; }
     // mato: tufos por profundidade (de trás para frente), com clareira em volta da mesa (ela mantém o lugar limpo)
     const cols = ['#3c6a54', '#2f5a48', '#4a7a5c', '#33624f'];
-    const clumps = []; for (let i = 0; i < 90; i++) { const d = 0.5 + rnd(i * 2.1) * 13, xm = (rnd(i * 5.7) * 2 - 1) * (HALF - 0.1); if (d > 8.6 && Math.abs(xm - 0.1) < 1.35) continue; if (d < 10.8 && Math.abs(xm - 0.5) < 1.25) continue; if (d > 1.4 && d < 10.8 && Math.abs(xm) < 1.9 && rnd(i * 9) > 0.18) continue; clumps.push([d, xm, i]); }
+    const clumps = []; for (let i = 0; i < 90; i++) { const d = 0.5 + rnd(i * 2.1) * 13, xm = (rnd(i * 5.7) * 2 - 1) * (HALF - 0.1); if (d > 8.6 && Math.abs(xm - 0.1) < 1.35) continue; if (d < 10.8 && Math.abs(xm - 0.7) < 1.7) continue; if (d > 1.4 && d < 10.8 && Math.abs(xm) < 1.9 && rnd(i * 9) > 0.18) continue; clumps.push([d, xm, i]); }
     clumps.sort((a, b) => b[0] - a[0]);
     // mesa + luz ao fundo
     const dT = 11.3, tx = 0.1; const tpx = PX(dT), tgy = gy(dT);

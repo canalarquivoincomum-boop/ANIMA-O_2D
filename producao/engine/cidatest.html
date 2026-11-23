@@ -1,0 +1,16 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0}svg{display:block}</style>
+<script src="lib.js"></script><script src="ch.js"></script><script src="sets.js"></script><script src="world.js"></script></head><body><div id="r"></div>
+<script>
+function render(t){
+  const {drawChar,EXPR,POSE,POSE0}=CH; let s='<rect width="1700" height="900" fill="#3a3050"/>';
+  const L={ox:-1,oy:-.7,rim:'#ffe0a0'};
+  const P=(o)=>Object.assign({},POSE0,POSE.sit,o);
+  const cfg=[
+   {n:'sit (novo)',pose:P({}),ex:'calm'},
+   {n:'relógio (novo)',pose:P({hL:[10,-98],hR:[34,-62],headDown:8,headTilt:-3}),ex:'calm'},
+   {n:'em pé',pose:POSE.stand,ex:'warm'}];
+  cfg.forEach((k,i)=>{ s+=drawChar({cast:'cida',x:260+i*520,y:760,s:2.1,pose:k.pose,expr:EXPR[k.ex],t,turn:0,light:L,look:[260+i*520,500]}).svg;
+    s+=`<text x="${260+i*520}" y="880" font-size="26" fill="#fff" text-anchor="middle">${k.n}</text>`; });
+  document.getElementById('r').innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="900" viewBox="0 0 1700 900">${s}</svg>`;
+}
+</script></body></html>
