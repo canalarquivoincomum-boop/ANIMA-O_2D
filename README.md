@@ -13,3 +13,13 @@ Leia nesta ordem:
 5. [`docs/analise/04_checklist_qualidade.md`](docs/analise/04_checklist_qualidade.md): checklist de detecção e correção de erros.
 
 Ferramenta: [`docs/analise/ferramentas/qa_video.py`](docs/analise/ferramentas/qa_video.py) (QA automático de um MP4). Dados: [`docs/analise/dados/metricas_por_video.csv`](docs/analise/dados/metricas_por_video.csv).
+
+## Produção — "A Última Música"
+
+Da teoria à prática: regras de domínio visual, roteiro original, storyboard técnico de 52 planos e **piloto renderizado** (0–29,8 s) com validação.
+
+- [`docs/producao/05_dominio_visual.md`](docs/producao/05_dominio_visual.md): regras técnicas consolidadas.
+- [`docs/producao/06_roteiro_original.md`](docs/producao/06_roteiro_original.md): roteiro com tabela de pistas.
+- [`docs/producao/07_storyboard_tecnico.md`](docs/producao/07_storyboard_tecnico.md): storyboard plano a plano.
+- [`docs/producao/08_validacao_piloto.md`](docs/producao/08_validacao_piloto.md): comparação com as referências, falhas e correções.
+- [`producao/`](producao/): motor, áudio e o piloto em MP4.

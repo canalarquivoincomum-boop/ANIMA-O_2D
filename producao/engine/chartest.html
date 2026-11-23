@@ -1,0 +1,18 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0;background:#f1dfc0}svg{display:block}</style>
+<script src="lib.js"></script><script src="ch.js"></script></head><body><div id="r"></div>
+<script>
+function render(t){
+  const {drawChar,EXPR,POSE,flute}=CH; let s='';
+  const names=['neutral','curious','worry','wince','sheepish','smile','shock','sad','happy','warm'];
+  names.forEach((n,i)=>{const x=95+(i%5)*190,y=330+Math.floor(i/5)*340;
+    s+=drawChar({cast:'isis',x,y,s:0.62,pose:POSE.stand,expr:EXPR[n],look:[x+60,y-120],t:t+i*.3,turn:0}).svg;
+    s+=`<text x="${x}" y="${y+22}" font-size="15" text-anchor="middle" fill="#333">${n}</text>`;});
+  // poses e transparência
+  const row=[['holdUp',{R:.9}],['inspect',{R:.7}],['play',{R:.5,L:.4}],['wave',{R:1.0,body:.5}],['pinch',{}]];
+  row.forEach(([p,fd],i)=>{const x=95+i*190,y=760;
+    s+=drawChar({cast:'isis',x,y,s:0.62,pose:POSE[p],expr:EXPR.neutral,look:[x+80,y-180],fade:fd,t:t+i,turn:.0,propsFn:(J)=>p==='holdUp'||p==='play'?`<g transform="translate(${J.hR[0]-20},${J.hR[1]}) ">${flute(110,p==='holdUp'?-80:-8)}</g>`:''}).svg;});
+  s+=drawChar({cast:'genaro',x:1010,y:760,s:0.55,pose:POSE.pinch,expr:EXPR.warm,t,turn:.3}).svg;
+  s+=drawChar({cast:'alcides',x:1120,y:760,s:0.55,pose:POSE.sitHand,expr:EXPR.resigned,t,turn:-.3}).svg;
+  document.getElementById('r').innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820">${s}</svg>`;
+}
+</script></body></html>

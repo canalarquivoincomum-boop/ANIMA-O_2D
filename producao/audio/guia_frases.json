@@ -1,0 +1,284 @@
+[
+ {
+  "cena": "S1",
+  "texto": "Meu pai prometeu chegar antes da última música.",
+  "ini": 0.12,
+  "fim": 2.767
+ },
+ {
+  "cena": "S1",
+  "texto": "Faltavam três horas, e eu já estava ficando transparente.",
+  "ini": 3.067,
+  "fim": 6.364
+ },
+ {
+  "cena": "S2",
+  "texto": "Na minha rua, quem espera vai sumindo.",
+  "ini": 6.814,
+  "fim": 8.951
+ },
+ {
+  "cena": "S2",
+  "texto": "Uma hora, a mão.",
+  "ini": 9.2,
+  "fim": 10.582
+ },
+ {
+  "cena": "S2",
+  "texto": "Duas, o braço.",
+  "ini": 10.832,
+  "fim": 12.214
+ },
+ {
+  "cena": "S2",
+  "texto": "A dona Odete espera o filho há dez anos.",
+  "ini": 12.564,
+  "fim": 15.095
+ },
+ {
+  "cena": "S2",
+  "texto": "Só dá pra ver o avental.",
+  "ini": 15.345,
+  "fim": 17.063
+ },
+ {
+  "cena": "S3",
+  "texto": "Eu sou a Ísis, tenho nove anos e toco flauta mal.",
+  "ini": 17.513,
+  "fim": 20.531
+ },
+ {
+  "cena": "S3",
+  "texto": "Meu pai dirige caminhão.",
+  "ini": 20.831,
+  "fim": 22.306
+ },
+ {
+  "cena": "S3",
+  "texto": "Todo dia ele diz: daqui a pouquinho.",
+  "ini": 22.606,
+  "fim": 25.067
+ },
+ {
+  "cena": "S3",
+  "texto": "Na minha rua, daqui a pouquinho é um lugar muito longe.",
+  "ini": 25.367,
+  "fim": 28.572
+ },
+ {
+  "cena": "S4",
+  "texto": "Hoje era o recital.",
+  "ini": 29.022,
+  "fim": 30.357
+ },
+ {
+  "cena": "S4",
+  "texto": "Eu escolhi a última música, pra ele chegar a tempo de ouvir.",
+  "ini": 30.607,
+  "fim": 33.811
+ },
+ {
+  "cena": "S4",
+  "texto": "A vó prendeu a minha trança com a fita amarela.",
+  "ini": 34.111,
+  "fim": 36.596
+ },
+ {
+  "cena": "S5",
+  "texto": "Primeiro, fiquei na varanda.",
+  "ini": 37.046,
+  "fim": 38.787
+ },
+ {
+  "cena": "S5",
+  "texto": "A vó sentou do meu lado e segurou a minha mão.",
+  "ini": 39.037,
+  "fim": 41.429
+ },
+ {
+  "cena": "S5",
+  "texto": "Quando ela levantou pra mexer a panela, eu já estava no cotovelo.",
+  "ini": 41.729,
+  "fim": 45.177
+ },
+ {
+  "cena": "S5",
+  "texto": "Depois, ensaiei sozinha.",
+  "ini": 45.577,
+  "fim": 47.504
+ },
+ {
+  "cena": "S5",
+  "texto": "No espelho, só a flauta tocava.",
+  "ini": 47.754,
+  "fim": 49.67
+ },
+ {
+  "cena": "S5",
+  "texto": "Já estava no ombro.",
+  "ini": 49.92,
+  "fim": 51.324
+ },
+ {
+  "cena": "S5",
+  "texto": "Liguei pro meu pai.",
+  "ini": 51.724,
+  "fim": 52.944
+ },
+ {
+  "cena": "S5",
+  "texto": "Caixa postal.",
+  "ini": 53.144,
+  "fim": 54.281
+ },
+ {
+  "cena": "S5",
+  "texto": "Daqui a pouquinho, ele disse.",
+  "ini": 54.481,
+  "fim": 56.351
+ },
+ {
+  "cena": "S5",
+  "texto": "Liguei de novo.",
+  "ini": 56.7,
+  "fim": 57.85
+ },
+ {
+  "cena": "S5",
+  "texto": "A voz estava mais baixa.",
+  "ini": 58.1,
+  "fim": 59.76
+ },
+ {
+  "cena": "S5",
+  "texto": "Na terceira, tive que encostar o telefone no ouvido.",
+  "ini": 60.06,
+  "fim": 63.055
+ },
+ {
+  "cena": "S6",
+  "texto": "No colégio, a dona Marlene leu o programa.",
+  "ini": 63.555,
+  "fim": 65.994
+ },
+ {
+  "cena": "S6",
+  "texto": "Bento. Camila. Joaquim.",
+  "ini": 66.244,
+  "fim": 68.763
+ },
+ {
+  "cena": "S6",
+  "texto": "Passou pelo meu nome sem parar.",
+  "ini": 69.213,
+  "fim": 71.07
+ },
+ {
+  "cena": "S6",
+  "texto": "De mim, só ficou a fita amarela.",
+  "ini": 71.42,
+  "fim": 73.603
+ },
+ {
+  "cena": "S7",
+  "texto": "O Bento olhou direto pra fita.",
+  "ini": 74.203,
+  "fim": 76.142
+ },
+ {
+  "cena": "S7",
+  "texto": "Tô vendo você, ele disse, e sentou do meu lado.",
+  "ini": 76.392,
+  "fim": 79.202
+ },
+ {
+  "cena": "S7",
+  "texto": "A cor voltou no pulso.",
+  "ini": 79.552,
+  "fim": 81.049
+ },
+ {
+  "cena": "S7",
+  "texto": "Aí eu entendi.",
+  "ini": 81.449,
+  "fim": 82.645
+ },
+ {
+  "cena": "S7",
+  "texto": "A vó, na varanda.",
+  "ini": 82.895,
+  "fim": 84.335
+ },
+ {
+  "cena": "S7",
+  "texto": "O avental da dona Odete, com uma flor nova todo dia.",
+  "ini": 84.585,
+  "fim": 87.743
+ },
+ {
+  "cena": "S7",
+  "texto": "A espera só apaga quem espera sozinha.",
+  "ini": 88.093,
+  "fim": 90.426
+ },
+ {
+  "cena": "S8",
+  "texto": "Subi no palco e toquei a última música pra eles.",
+  "ini": 90.976,
+  "fim": 94.041
+ },
+ {
+  "cena": "S8",
+  "texto": "A porta do fundo abriu.",
+  "ini": 94.441,
+  "fim": 95.95
+ },
+ {
+  "cena": "S8",
+  "texto": "Meu pai.",
+  "ini": 96.25,
+  "fim": 97.156
+ },
+ {
+  "cena": "S8",
+  "texto": "Transparente até o ombro.",
+  "ini": 97.456,
+  "fim": 99.058
+ },
+ {
+  "cena": "S8",
+  "texto": "A voz baixinha do telefone não era sinal ruim.",
+  "ini": 99.408,
+  "fim": 102.032
+ },
+ {
+  "cena": "S8",
+  "texto": "Ele também tinha esperado, sozinho, no engarrafamento.",
+  "ini": 102.282,
+  "fim": 105.301
+ },
+ {
+  "cena": "S9",
+  "texto": "Toquei olhando pra ele.",
+  "ini": 105.851,
+  "fim": 107.43
+ },
+ {
+  "cena": "S9",
+  "texto": "A cor foi descendo do ombro até a mão.",
+  "ini": 107.73,
+  "fim": 109.854
+ },
+ {
+  "cena": "S9",
+  "texto": "O pouquinho tinha chegado.",
+  "ini": 110.304,
+  "fim": 111.813
+ },
+ {
+  "cena": "S9",
+  "texto": "Hoje a minha mão faz sombra.",
+  "ini": 112.363,
+  "fim": 114.0
+ }
+]

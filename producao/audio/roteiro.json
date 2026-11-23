@@ -1,0 +1,61 @@
+{
+ "titulo": "A Última Música",
+ "cenas": [
+  {"id":"S1","nome":"Gancho","frases":[
+    {"t":"Meu pai prometeu chegar antes da última música.","pausa":0.0},
+    {"t":"Faltavam três horas, e eu já estava ficando transparente.","pausa":0.30}]},
+  {"id":"S2","nome":"A regra","frases":[
+    {"t":"Na minha rua, quem espera vai sumindo.","pausa":0.45},
+    {"t":"Uma hora, a mão.","pausa":0.25},
+    {"t":"Duas, o braço.","pausa":0.25},
+    {"t":"A dona Odete espera o filho há dez anos.","pausa":0.35},
+    {"t":"Só dá pra ver o avental.","pausa":0.25}]},
+  {"id":"S3","nome":"A protagonista","frases":[
+    {"t":"Eu sou a Ísis, tenho nove anos e toco flauta mal.","pausa":0.45},
+    {"t":"Meu pai dirige caminhão.","pausa":0.30},
+    {"t":"Todo dia ele diz: daqui a pouquinho.","pausa":0.30},
+    {"t":"Na minha rua, daqui a pouquinho é um lugar muito longe.","pausa":0.30}]},
+  {"id":"S4","nome":"O gatilho","frases":[
+    {"t":"Hoje era o recital.","pausa":0.45},
+    {"t":"Eu escolhi a última música, pra ele chegar a tempo de ouvir.","pausa":0.25},
+    {"t":"A vó prendeu a minha trança com a fita amarela.","pausa":0.30}]},
+  {"id":"S5","nome":"Três tentativas","frases":[
+    {"t":"Primeiro, fiquei na varanda.","pausa":0.45},
+    {"t":"A vó sentou do meu lado e segurou a minha mão.","pausa":0.25},
+    {"t":"Quando ela levantou pra mexer a panela, eu já estava no cotovelo.","pausa":0.30},
+    {"t":"Depois, ensaiei sozinha.","pausa":0.40},
+    {"t":"No espelho, só a flauta tocava.","pausa":0.25},
+    {"t":"Já estava no ombro.","pausa":0.25},
+    {"t":"Liguei pro meu pai.","pausa":0.40},
+    {"t":"Caixa postal.","pausa":0.20},
+    {"t":"Daqui a pouquinho, ele disse.","pausa":0.20},
+    {"t":"Liguei de novo.","pausa":0.35},
+    {"t":"A voz estava mais baixa.","pausa":0.25},
+    {"t":"Na terceira, tive que encostar o telefone no ouvido.","pausa":0.30}]},
+  {"id":"S6","nome":"O ponto mais baixo","frases":[
+    {"t":"No colégio, a dona Marlene leu o programa.","pausa":0.50},
+    {"t":"Bento. Camila. Joaquim.","pausa":0.25},
+    {"t":"Passou pelo meu nome sem parar.","pausa":0.45},
+    {"t":"De mim, só ficou a fita amarela.","pausa":0.35}]},
+  {"id":"S7","nome":"A virada","frases":[
+    {"t":"O Bento olhou direto pra fita.","pausa":0.60},
+    {"t":"Tô vendo você, ele disse, e sentou do meu lado.","pausa":0.25},
+    {"t":"A cor voltou no pulso.","pausa":0.35},
+    {"t":"Aí eu entendi.","pausa":0.40},
+    {"t":"A vó, na varanda.","pausa":0.25},
+    {"t":"O avental da dona Odete, com uma flor nova todo dia.","pausa":0.25},
+    {"t":"A espera só apaga quem espera sozinha.","pausa":0.35}]},
+  {"id":"S8","nome":"A ação","frases":[
+    {"t":"Subi no palco e toquei a última música pra eles.","pausa":0.55},
+    {"t":"A porta do fundo abriu.","pausa":0.40},
+    {"t":"Meu pai.","pausa":0.30},
+    {"t":"Transparente até o ombro.","pausa":0.30},
+    {"t":"A voz baixinha do telefone não era sinal ruim.","pausa":0.35},
+    {"t":"Ele também tinha esperado, sozinho, no engarrafamento.","pausa":0.25}]},
+  {"id":"S9","nome":"O final","frases":[
+    {"t":"Toquei olhando pra ele.","pausa":0.55},
+    {"t":"A cor foi descendo do ombro até a mão.","pausa":0.30},
+    {"t":"O pouquinho tinha chegado.","pausa":0.45},
+    {"t":"Hoje a minha mão faz sombra.","pausa":0.55}]}
+ ]
+}

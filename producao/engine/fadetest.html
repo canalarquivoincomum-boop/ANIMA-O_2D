@@ -1,0 +1,13 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0}svg{display:block}</style>
+<script src="lib.js"></script><script src="ch.js"></script></head><body><div id="r"></div>
+<script>
+function render(t){
+  const {drawChar,EXPR,POSE,flute}=CH; let s='';
+  s+=`<rect width="1200" height="760" fill="#f6d9a0"/><rect x="0" y="560" width="1200" height="200" fill="#d6a273"/>`;
+  s+=`<rect x="560" y="40" width="240" height="330" rx="10" fill="#fff6cf" stroke="#1d2747" stroke-width="6"/>`; // janela clara atrás da mão
+  const cfg=[['holdUp',{R:.35},'neutral'],['holdUp',{R:.85},'curious'],['inspect',{R:1.0,body:.35},'worry'],['stand',{R:1,L:1,body:.8},'worry']];
+  cfg.forEach(([p,fd,ex],i)=>{const x=160+i*270,y=690;
+    s+=drawChar({cast:'isis',x,y,s:0.95,pose:POSE[p],expr:EXPR[ex],look:[x+60,y-300],fade:fd,t:t+i,propsFn:(J)=>p==='holdUp'?`<g transform="translate(${J.hR[0]-6},${J.hR[1]+14})">${flute(120,-86)}</g>`:''}).svg;});
+  document.getElementById('r').innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">${s}</svg>`;
+}
+</script></body></html>
