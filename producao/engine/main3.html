@@ -1,0 +1,41 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0;background:#000}svg{display:block}</style>
+<script src="lib.js"></script><script src="ch.js"></script><script src="sets.js"></script><script src="world.js"></script><script src="sets3.js"></script><script src="ui3.js"></script><script src="data3.js"></script><script src="story_v3.js"></script></head>
+<body><div id="r"></div><script>
+const W0=576,H0=1024, SC = window.innerWidth/576; const {SHOTS}=STORY3; const {clamp,lerp,E,f,noise1}=L;
+const Q=new URLSearchParams(location.search); const NOCAM=Q.get('nocam')==='1', NOCAP=Q.get('nocap')==='1';
+function camAt(shot,lt,t){ const k=shot.cam; let out;
+  if(lt<=k[0][0]) out=k[0]; else { out=k[k.length-1]; for(let i=1;i<k.length;i++){ if(lt<=k[i][0]){ const a=k[i-1],b=k[i],u=E[b[4]||'io']((lt-a[0])/Math.max(1e-6,b[0]-a[0])); out=[lt,lerp(a[1],b[1],u),lerp(a[2],b[2],u),lerp(a[3],b[3],u)]; break; } } }
+  if(NOCAM) return {cx:k[0][1],cy:k[0][2],z:k[0][3]};
+  let sx=0,sy=0; (shot.shake||[]).forEach(s=>{ const d=lt-s[0]; if(d>=0&&d<s[2]){ const a=s[1]*Math.exp(-d/s[2]*3.2); sx+=noise1(t*47,21)*a; sy+=noise1(t*53,22)*a; } });
+  return {cx:out[1]+noise1(t*0.9,1)*1.1+sx, cy:out[2]+noise1(t*0.8,2)*1.1+sy, z:out[3]*(1+noise1(t*0.5,3)*0.003)};
+}
+function layerT(c,fac){ const sl=1+(c.z-1)*fac; return `translate(288,512) scale(${f(sl)}) translate(${f(-c.cx*fac)},${f(-c.cy*fac)})`; }
+function captions(t){
+  const Wd=WORDS, size=44; const cv=captions._cv||(captions._cv=document.createElement('canvas').getContext('2d')); cv.font='800 44px Inter';
+  const clean=s=>s.replace(/[.,:;]$/,''); const wid=w=>cv.measureText(clean(w.w)).width+4, SP=size*0.34, MAXW=500;
+  if(!captions._chunks){ const chunks=[]; let cur=[],cw=0;
+    Wd.forEach((w,i)=>{ const ww=wid(w); if(cur.length&&(cw+SP+ww>MAXW||cur.length>=4||Wd[i-1].frase!==w.frase||/[,.:?!]$/.test(Wd[i-1].w))){chunks.push(cur);cur=[];cw=0;} cur.push(i); cw+=(cur.length>1?SP:0)+ww; });
+    if(cur.length)chunks.push(cur); captions._chunks=chunks; }
+  const chunks=captions._chunks; let ch=null;
+  for(let i=0;i<chunks.length;i++){ const a=Wd[chunks[i][0]], b=Wd[chunks[i][chunks[i].length-1]]; const nxt=chunks[i+1]?Wd[chunks[i+1][0]].ini:1e9; if(t>=a.ini-0.04&&t<Math.min(b.fim+0.22,nxt-0.01)){ch=chunks[i];break;} }
+  if(!ch) return '';
+  const words=ch.map(i=>Wd[i]); const txt=words.map(w=>clean(w.w)); const widths=txt.map(s=>cv.measureText(s).width+4), total=widths.reduce((a,b)=>a+b,0)+SP*(txt.length-1);
+  let x=288-total/2; let out='';
+  txt.forEach((s,k)=>{ const act=t>=words[k].ini-0.02 && (k===txt.length-1 || t<words[k+1].ini-0.02); const wc=act?'#ffc93c':'#ffffff';
+    out+=`<text x="${f(x+widths[k]/2)}" y="800" text-anchor="middle" font-family="Inter" font-weight="800" font-size="${size}" fill="${wc}" stroke="#1a2038" stroke-width="9" stroke-linejoin="round" paint-order="stroke">${s}</text>`; x+=widths[k]+SP; });
+  return out;
+}
+function shotSVG(t,shot){
+  const lt=t-shot.t0;
+  if(shot.kind==='screen') return shot.draw(t,lt);
+  const cam=camAt(shot,lt,t), B=shot.build(t,lt);
+  return `<g transform="${layerT(cam,0.42)}">${B.far}</g><g transform="${layerT(cam,0.78)}">${B.mid}</g><g transform="${layerT(cam,1)}">${B.near}</g>`+(B.fore?`<g transform="${layerT(cam,1.35)}">${B.fore}</g>`:'');
+}
+function shotAt(t){ for(const sh of SHOTS) if(t>=sh.t0&&t<sh.t1) return sh; return SHOTS[SHOTS.length-1]; }
+function render(t){
+  const shot=shotAt(t); let body=shotSVG(t,shot);
+  const grade=`<defs><radialGradient id="vg" cx="50%" cy="48%" r="78%"><stop offset="0.5" stop-color="#05061a" stop-opacity="0"/><stop offset="1" stop-color="#05061a" stop-opacity=".5"/></radialGradient><linearGradient id="gn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#24307a" stop-opacity=".16"/><stop offset="1" stop-color="#10163f" stop-opacity=".22"/></linearGradient><pattern id="pg" width="256" height="256" patternUnits="userSpaceOnUse"><image href="grain.png" width="256" height="256"/></pattern></defs>`;
+  const over=`${grade}<rect width="576" height="1024" fill="url(#gn)"/><rect width="576" height="1024" fill="url(#vg)"/><rect width="576" height="1024" fill="url(#pg)" opacity=".42"/>`;
+  document.getElementById('r').innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" width="${W0*SC}" height="${H0*SC}" viewBox="0 0 576 1024"><clipPath id="sc"><rect width="576" height="1024"/></clipPath><g clip-path="url(#sc)">${body}${over}${NOCAP?'':captions(t)}</g></svg>`;
+}
+</script></body></html>

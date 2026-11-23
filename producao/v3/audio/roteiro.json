@@ -1,0 +1,20 @@
+{"titulo":"Pedido Fantasma (piloto S1-S3)","cenas":[
+ {"id":"S1","nome":"Gancho","frases":[
+  {"id":"A","t":"Onze e quarenta e sete da noite. Chegou um pedido.","pausa":0.0},
+  {"id":"B","t":"Rua das Acácias, número catorze.","pausa":0.25},
+  {"id":"C","t":"Só que a casa catorze foi demolida há trinta anos.","pausa":0.3}]},
+ {"id":"S2","nome":"Aposta","frases":[
+  {"id":"D","t":"O aplicativo deu onze minutos.","pausa":0.4},
+  {"id":"E","t":"Cancelar custava a minha semana inteira.","pausa":0.2},
+  {"id":"F","t":"E o aluguel vencia na sexta.","pausa":0.3}]},
+ {"id":"S3","nome":"Caminho","frases":[
+  {"id":"G","t":"Eu fui.","pausa":0.4},
+  {"id":"H","t":"No caminho, abri o histórico daquele endereço.","pausa":0.3},
+  {"id":"I","t":"Onze pedidos, todos cancelados.","pausa":0.3},
+  {"id":"J","t":"Mesmo endereço, mesmo dia, uma vez por ano.","pausa":0.2},
+  {"id":"K","t":"E hoje era doze de outubro.","pausa":0.3}]},
+ {"id":"S4","nome":"Chegada","frases":[
+  {"id":"L","t":"Cheguei com sete minutos de sobra.","pausa":0.45},
+  {"id":"M","t":"Era só mato alto e um portão sem casa.","pausa":0.3},
+  {"id":"N","t":"E lá no fundo, uma luz acesa.","pausa":0.35}]}
+]}

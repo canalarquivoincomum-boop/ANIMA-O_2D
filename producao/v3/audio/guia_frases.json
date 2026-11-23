@@ -1,0 +1,100 @@
+[
+ {
+  "cena": "S1",
+  "id": "A",
+  "texto": "Onze e quarenta e sete da noite. Chegou um pedido.",
+  "ini": 0.12,
+  "fim": 3.336
+ },
+ {
+  "cena": "S1",
+  "id": "B",
+  "texto": "Rua das Acácias, número catorze.",
+  "ini": 3.586,
+  "fim": 5.745
+ },
+ {
+  "cena": "S1",
+  "id": "C",
+  "texto": "Só que a casa catorze foi demolida há trinta anos.",
+  "ini": 6.045,
+  "fim": 8.994
+ },
+ {
+  "cena": "S2",
+  "id": "D",
+  "texto": "O aplicativo deu onze minutos.",
+  "ini": 9.394,
+  "fim": 11.554
+ },
+ {
+  "cena": "S2",
+  "id": "E",
+  "texto": "Cancelar custava a minha semana inteira.",
+  "ini": 11.754,
+  "fim": 13.936
+ },
+ {
+  "cena": "S2",
+  "id": "F",
+  "texto": "E o aluguel vencia na sexta.",
+  "ini": 14.236,
+  "fim": 16.291
+ },
+ {
+  "cena": "S3",
+  "id": "G",
+  "texto": "Eu fui.",
+  "ini": 16.691,
+  "fim": 17.574
+ },
+ {
+  "cena": "S3",
+  "id": "H",
+  "texto": "No caminho, abri o histórico daquele endereço.",
+  "ini": 17.874,
+  "fim": 20.474
+ },
+ {
+  "cena": "S3",
+  "id": "I",
+  "texto": "Onze pedidos, todos cancelados.",
+  "ini": 20.774,
+  "fim": 22.969
+ },
+ {
+  "cena": "S3",
+  "id": "J",
+  "texto": "Mesmo endereço, mesmo dia, uma vez por ano.",
+  "ini": 23.169,
+  "fim": 25.978
+ },
+ {
+  "cena": "S3",
+  "id": "K",
+  "texto": "E hoje era doze de outubro.",
+  "ini": 26.278,
+  "fim": 27.997
+ },
+ {
+  "cena": "S4",
+  "id": "L",
+  "texto": "Cheguei com sete minutos de sobra.",
+  "ini": 28.447,
+  "fim": 30.49
+ },
+ {
+  "cena": "S4",
+  "id": "M",
+  "texto": "Era só mato alto e um portão sem casa.",
+  "ini": 30.79,
+  "fim": 33.379
+ },
+ {
+  "cena": "S4",
+  "id": "N",
+  "texto": "E lá no fundo, uma luz acesa.",
+  "ini": 33.729,
+  "fim": 35.865
+ }
+]

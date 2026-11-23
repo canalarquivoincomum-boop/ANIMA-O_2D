@@ -1,0 +1,15 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0}svg{display:block}</style>
+<script src="lib.js"></script><script src="ch.js"></script><script src="sets.js"></script><script src="world.js"></script><script src="sets3.js"></script></head><body><div id="r"></div>
+<script>
+function render(t){
+  const {drawChar,EXPR,POSE,CAST}=CH, W=WORLD, S=SETS3;
+  const sc=60*t; let s=`<g>${S.rua.far(sc,t)}</g><g>${S.rua.mid(sc,t)}</g><g>${S.rua.near(sc,t,{parked:[[1500,'#5aa0c8']]})}</g>`;
+  const L={ox:1,oy:-.7,rim:'#ffe9a8'};
+  // pessoas na MESMA profundidade (y=900): adulto 1,75 m, idosa 1,58 m, criança 1,3 m
+  s+=drawChar({cast:'nando',x:760,y:900,s:W.charScale(1.75),pose:POSE.stand,expr:EXPR.calm,t,light:L,helmet:0}).svg;
+  s+=drawChar({cast:'cida',x:900,y:900,s:W.charScale(1.58),pose:POSE.stand,expr:EXPR.warm,t,light:L,flip:-1}).svg;
+  s+=drawChar({cast:'isis',x:1020,y:900,s:W.charScale(1.3),pose:POSE.stand,expr:EXPR.calm,t,light:L}).svg;
+  s+=W.car(1450,'#e8795f'); s+=W.moto(430,t,0,{beam:.5});
+  document.getElementById('r').innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1100" viewBox="0 0 1700 1100"><rect width="1700" height="1100" fill="#222"/>${s}</svg>`;
+}
+</script></body></html>

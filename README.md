@@ -28,3 +28,7 @@ Da teoria à prática: regras de domínio visual, roteiro original, storyboard t
 - [`docs/producao/09_autoavaliacao_v1.md`](docs/producao/09_autoavaliacao_v1.md): crítica do v1, com métrica de fluidez a câmera congelada.
 - [`docs/producao/10_coco_personagem_fixo.md`](docs/producao/10_coco_personagem_fixo.md): o personagem fixo.
 - [`docs/producao/11_autoavaliacao_v2.md`](docs/producao/11_autoavaliacao_v2.md): resultados do v2 e plano do v3.
+
+### v3 — reinício após as críticas
+- [`docs/producao/12_reboot_v3_pedido_fantasma.md`](docs/producao/12_reboot_v3_pedido_fantasma.md): diagnóstico, bíblia de escala, roteiro "Pedido Fantasma" e autocrítica.
+- Piloto: `producao/v3/piloto_v3_pedido_fantasma_1080x1920.mp4`; conferência frase × imagem: `producao/v3/narracao_x_imagem.jpg`.

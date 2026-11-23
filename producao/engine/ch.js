@@ -9,6 +9,8 @@
   const CAST = {
     isis: { skin: '#b9774f', hair: '#2a1b1d', cloth: '#4fb3a9', cloth2: '#3b958d', shoe: '#f0e7d8', sock: '#ffffff', W: 62, H: 56, style: 'curly', limb: [34, 32, 19], torso: 'dress', ribbon: '#ffcf33', brow: '#2a1b1d', lash: 1, freckles: 1, nose: 1 },
     genaro: { skin: '#a8683f', hair: '#6d6a6a', cloth: '#e2a53b', cloth2: '#b9802a', pants: '#37466e', shoe: '#3a2b2a', sock: '#d8d2c6', W: 64, H: 54, style: 'cap', limb: [38, 36, 21], torso: 'jacket', cap: '#c9473d', mustache: '#cfcac4', brow: '#4e4a4a', nose: 1.7, wrinkle: 1, stripes: 1 },
+    nando: { skin: '#8a5a3d', hair: '#1c1618', cloth: '#2f4a8c', cloth2: '#243a70', pants: '#2b2f45', shoe: '#2a2a30', sock: '#2a2a30', W: 54, H: 50, style: 'short', limb: [38, 36, 21], torso: 'jacket', brow: '#1c1618', nose: 1.35, stripes: 1, stubble: 1 },
+    cida: { skin: '#d8a888', hair: '#ece8e6', cloth: '#b96a7c', cloth2: '#965468', pants: '#6a4f5e', shoe: '#6a4f5e', sock: '#e8e0dc', W: 54, H: 52, style: 'bun', limb: [34, 33, 18], torso: 'dress', brow: '#b8b2ae', nose: 1.3, wrinkle: 1, glasses: 1 },
     alcides: { skin: '#dba783', hair: '#bdb8b2', cloth: '#7e9482', cloth2: '#627868', pants: '#5c6178', shoe: '#4a3f3a', sock: '#d8d2c6', W: 56, H: 58, style: 'bald', limb: [38, 36, 20], torso: 'coat', mustache: '#e8e4de', brow: '#8f8a85', nose: 1.9, wrinkle: 1 }
   };
 
@@ -56,6 +58,7 @@
     turnAway: P({ lean: 2, headTurn: -0.5, hL: [-34, -84], hR: [30, -90] }),
     point: P({ hR: [82, -168], gR: 'point', lean: -2 }),
     handsHip: P({ hL: [-44, -96], hR: [44, -96], lean: 0 }),
+    ride: P({ hipDrop: 14, lean: 14, headDown: 6, hL: [54, -70], hR: [58, -73], fL: [-6, 0], fR: [8, 0], gL: 'grip', gR: 'grip', farBehind: 1 }),
     hug: P({ lean: 4, hL: [22, -122], hR: [-22, -122], gL: 'fist', gR: 'fist' })
   };
 
@@ -140,6 +143,8 @@
     s += nz > 1.3 ? `<path d="M${-5 * nz + ox},${ny + 2} Q${-7 * nz + ox},${ny + 10} ${ox},${ny + 9} Q${7 * nz + ox},${ny + 10} ${5 * nz + ox},${ny + 2} Q${ox},${ny - 6} ${-5 * nz + ox},${ny + 2}Z" fill="${shade(sk, -0.1)}" stroke="${shade(sk, -0.5)}" stroke-width="2.4" stroke-linejoin="round"/>`
       : `<path d="M${-4 + ox},${ny} Q${ox},${ny + 6 + e.nose * 2} ${5 + ox},${ny}" fill="none" stroke="${shade(sk, -0.38)}" stroke-width="3.2" stroke-linecap="round"/>`;
     if (e.nose > 0.3) s += `<path d="M${-16 + ox},${ny - 3} q4,-3 8,0 M${8 + ox},${ny - 3} q4,-3 8,0" stroke="${shade(sk, -0.4)}" stroke-width="2" fill="none" stroke-linecap="round"/>`;
+    if (c.glasses) s += `<g fill="none" stroke="#5a4a52" stroke-width="3.2"><ellipse cx="${f(-ex + ox)}" cy="${ey}" rx="21" ry="23"/><ellipse cx="${f(ex + ox)}" cy="${ey}" rx="21" ry="23"/><path d="M${f(-ex + ox + 21)},${ey - 2} Q${ox},${ey - 8} ${f(ex + ox - 21)},${ey - 2}"/></g><ellipse cx="${f(-ex + ox - 7)}" cy="${ey - 9}" rx="4" ry="9" fill="#fff" opacity=".18"/>`;
+    if (c.stubble) s += `<path d="M${-30 * k + ox},38 Q${ox},${58} ${30 * k + ox},38 Q${ox},${51} ${-30 * k + ox},38Z" fill="${shade(sk, -0.28)}" opacity=".55"/>`;
     if (c.wrinkle) s += `<path d="M${-44 * k + ox},12 q-5,8 0,16 M${44 * k + ox},12 q5,8 0,16" stroke="${shade(sk, -0.35)}" stroke-width="2.2" fill="none" stroke-linecap="round"/>`;
     const mw = e.mw * k, my = 45, mx = ox * 0.9;
     if (e.mround > 0.4) s += ell(mx, my + 2, 6 + e.mround * 2.5, 8 + e.mround * 3, '#6a2a2e', NAVY, 2.8);
@@ -179,6 +184,8 @@
   function hairFront(c) {
     const W = c.W, H = c.H;
     if (c.style === 'curly') { const d = curlyD(c); return path(d, c.hair) + lit(d, 8, shade(c.hair, -0.3), 0.7, 0) + `<path d="M${-W * 0.2},${-H * 1.1} Q${W * 0.3},${-H * 1.05} ${W * 0.55},${-H * 0.6}" stroke="${shade(c.hair, 0.4)}" stroke-width="3.2" fill="none" stroke-linecap="round" opacity=".8"/><path d="M${-W * 0.5},${-H * 0.7} Q${-W * 0.3},${-H * 0.9} ${-W * 0.05},${-H * 0.95}" stroke="${shade(c.hair, 0.3)}" stroke-width="2.4" fill="none" stroke-linecap="round" opacity=".6"/>`; }
+    if (c.style === 'short') { const d = `M${-W - 2},-2 C${-W - 5},${-H * 0.95} ${-W * 0.5},${-H - 8} 0,${-H - 8} C${W * 0.5},${-H - 8} ${W + 5},${-H * 0.95} ${W + 2},-2 Q${W * 0.9},${-H * 0.42} ${W * 0.4},${-H * 0.55} Q0,${-H * 0.4} ${-W * 0.4},${-H * 0.55} Q${-W * 0.9},${-H * 0.42} ${-W - 2},-2Z`; return path(d, c.hair) + lit(d, 8, shade(c.hair, -0.2), 0.7, 0.3) + `<path d="M${-W * 0.2},${-H - 4} Q${W * 0.3},${-H} ${W * 0.55},${-H * 0.62}" stroke="${shade(c.hair, 0.45)}" stroke-width="3" fill="none" stroke-linecap="round" opacity=".7"/>`; }
+    if (c.style === 'bun') { const d = `M${-W - 1},4 C${-W - 4},${-H * 0.9} ${-W * 0.5},${-H - 6} 0,${-H - 6} C${W * 0.5},${-H - 6} ${W + 4},${-H * 0.9} ${W + 1},4 Q${W * 0.8},${-H * 0.5} 0,${-H * 0.62} Q${-W * 0.8},${-H * 0.5} ${-W - 1},4Z`; return ell(0, -H - 20, 22, 18, c.hair) + path(d, c.hair) + lit(d, 8, shade(c.hair, -0.25), 0.6, 0.3); }
     if (c.style === 'cap') {
       const cd = `M${-W - 1},-4 C${-W - 4},${-H * 0.95} ${-W * 0.5},${-H - 12} 0,${-H - 12} C${W * 0.5},${-H - 12} ${W + 4},${-H * 0.95} ${W + 1},-4 Q${W * 0.5},${-H * 0.28} 0,${-H * 0.3} Q${-W * 0.5},${-H * 0.28} ${-W - 1},-4Z`;
       return path(cd, c.cap) + lit(cd, 9, shade(c.cap, -0.3), 0.7, 0.35) +
@@ -222,6 +229,7 @@
 
   // ---------- personagem completo ----------
   function drawChar(o) {
+    if (o.helmet === undefined && CAST[o.cast].helmet) o.helmet = CAST[o.cast].helmet;
     const c = CAST[o.cast], uid = ++UID, s = o.s || 1, flip = o.flip || 1, t = o.t || 0, ph = o.ph || 0;
     const pose = Object.assign({}, POSE0, o.pose || {}), e = Object.assign({}, BASE, o.expr || {});
     LT = o.light === null ? null : (o.light ? { ox: o.light.ox * flip, oy: o.light.oy, rim: o.light.rim || '#fff1c8' } : { ox: 1 * flip, oy: -0.7, rim: '#fff1c8' });
@@ -275,6 +283,7 @@
       const hs = headShape(c);
       head += ell(-c.W * 0.97, 5, 11, 13, c.skin) + ell(c.W * 0.97, 5, 11, 13, c.skin) + path(hs, c.skin) + lit(hs, 9, shade(c.skin, -0.24), 0.78, 0.28);
       head += `<g>${face(c, e, turn, look, uid)}${mustache(c, turn)}</g>` + hairFront(c);
+      if (o.helmet) { const W = c.W, H = c.H, vis = o.helmet === 2 ? 1 : 0.0; const hd = `M${-W - 9},6 C${-W - 12},${-H * 1.1} ${-W * 0.5},${-H - 24} 0,${-H - 24} C${W * 0.5},${-H - 24} ${W + 12},${-H * 1.1} ${W + 9},6 L${W + 6},${H * 0.3} Q${W * 0.5},${H * 0.55} 0,${H * 0.55} Q${-W * 0.5},${H * 0.55} ${-W - 6},${H * 0.3}Z`; const wnd = `M${-W * 0.82},${-H * 0.5} Q0,${-H * 0.8} ${W * 0.82},${-H * 0.5} L${W * 0.84},${H * 0.18} Q0,${H * 0.34} ${-W * 0.84},${H * 0.18}Z`; head += path(hd, '#d9503f') + lit(hd, 8, '#9d2f27', 0.7, 0.45) + (vis ? path(wnd, '#1d2438', NAVY, 3) + `<path d="M${-W * 0.6},${-H * 0.42} Q${-W * 0.2},${-H * 0.62} ${W * 0.1},${-H * 0.58}" stroke="#7fb0ff" stroke-width="4" fill="none" opacity=".5" stroke-linecap="round"/>` : path(`M${-W * 0.82},${-H * 0.46} Q0,${-H * 0.72} ${W * 0.82},${-H * 0.46}`, '#aeb7d6', NAVY, 3) + `<path d="M${-W * 0.7},${-H * 0.5} L${W * 0.7},${-H * 0.5}" stroke="#fff" stroke-width="2" opacity=".35"/>`) + `<path d="M${-W * 0.3},${-H - 22} Q0,${-H - 30} ${W * 0.3},${-H - 22}" stroke="#fff" stroke-width="4" fill="none" opacity=".45" stroke-linecap="round"/>`; }
     } else head += path(headShape(c), c.hair) + ((c.style === 'curly' || c.style === 'cap') ? hairFront(c) : '');
     main += `<g transform="${headT}">${head}</g></g>`;
 
