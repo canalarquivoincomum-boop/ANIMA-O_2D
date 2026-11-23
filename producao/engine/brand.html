@@ -1,0 +1,40 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0;background:#000}svg{display:block}</style>
+<script>['lib','ch','sets','world','sets3','ui3','data_s1','rider','lot4','kit','story_v3'].forEach(n=>document.write('<script src="'+n+'.js"><\/script>'));</script></head>
+<body><div id="r"></div><script>
+const {f,rnd,shade,NAVY,E,clamp}=L; const {R,C}=SETS; const {drawChar,EXPR,POSE,POSE0}=CH; const K_=new URLSearchParams(location.search).get('k')||'avatar';
+function tape(x,y,rot,len,w){ return `<g transform="translate(${x},${y}) rotate(${rot})"><rect x="${-w/2}" y="${-len/2}" width="${w}" height="${len}" rx="3" fill="#26262e" stroke="${NAVY}" stroke-width="6"/><path d="M${-w/2},${-len*0.28} L${w/2},${-len*0.25} M${-w/2},${len*0.05} L${w/2},${len*0.08} M${-w/2},${len*0.32} L${w/2},${len*0.29}" stroke="#4a4a56" stroke-width="3"/><path d="M${-w*0.28},${-len/2+6} L${-w*0.28},${len/2-6}" stroke="#7a7a8a" stroke-width="3" opacity=".5"/></g>`; }
+function avatar(){
+  let s=`<defs><radialGradient id="ab" cx="0.5" cy="0.42" r="0.75"><stop offset="0" stop-color="#34459a"/><stop offset="0.6" stop-color="#1a2160"/><stop offset="1" stop-color="#090c28"/></radialGradient><radialGradient id="ag" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ffe9a8" stop-opacity=".8"/><stop offset="1" stop-color="#ffd878" stop-opacity="0"/></radialGradient></defs><rect width="800" height="800" fill="url(#ab)"/>`;
+  for(let i=0;i<16;i++) s+=`<circle cx="${f(60+rnd(i*3.3)*680)}" cy="${f(60+rnd(i*7.1)*520)}" r="${f(18+rnd(i)*46)}" fill="${['#ffd88a','#9fb4ff','#ffb870'][i%3]}" opacity="${f(0.08+rnd(i*5)*0.12)}"/>`;
+  s+=`<circle cx="640" cy="150" r="230" fill="url(#ag)"/><circle cx="640" cy="150" r="30" fill="#fff6cf" stroke="${NAVY}" stroke-width="5"/>`;
+  s+=drawChar({cast:'nando',x:400,y:1140,s:3.55,flip:1,t:1,idle:0,pose:Object.assign({},POSE0,{headTilt:-2}),expr:Object.assign({},EXPR.smile,{browY:-4,browA:4,lid:0.04,mc:1.1}),look:[400,430],turn:0.1,helmet:1,light:{ox:-1,oy:-0.7,rim:'#ffe9a8'}}).svg;
+  s+=tape(292,252,-24,170,44)+`<path d="M258,150 L276,196 L246,224" fill="none" stroke="${NAVY}" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity=".0"/>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${innerWidth}" height="${innerHeight}" viewBox="0 0 800 800">${s}</svg>`;
+}
+function banner(){
+  const Wd=2560,Hd=1440; let s=`<defs><linearGradient id="bs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#070a24"/><stop offset="0.55" stop-color="#262b66"/><stop offset="1" stop-color="#6b5a86"/></linearGradient><radialGradient id="bm"><stop offset="0" stop-color="#f4f0d8" stop-opacity="1"/><stop offset="1" stop-color="#f4f0d8" stop-opacity="0"/></radialGradient><linearGradient id="bt" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#05061a" stop-opacity=".55"/><stop offset="0.5" stop-color="#05061a" stop-opacity="0"/><stop offset="1" stop-color="#05061a" stop-opacity=".45"/></linearGradient></defs><rect width="${Wd}" height="${Hd}" fill="url(#bs)"/>`;
+  for(let i=0;i<110;i++) s+=`<circle cx="${f(rnd(i*3.7)*Wd)}" cy="${f(rnd(i*9.1)*820)}" r="${f(1.5+rnd(i)*3)}" fill="#fff" opacity="${f(0.25+0.5*rnd(i*2))}"/>`;
+  s+=`<circle cx="2230" cy="300" r="240" fill="url(#bm)" opacity=".55"/><circle cx="2230" cy="300" r="66" fill="#f6f1d4"/>`;
+  // cidade ao longe (escala 0,5)
+  for(let i=0;i<22;i++){ const wM=7+(i*5%7), fl=4+(i*3%9); s+=`<g transform="translate(0,800) scale(0.5)">${WORLD.building(i*260+80,wM,fl,['#2c3270','#3a2f62','#2a3a66'][i%3],{seed:i+3,dark:0.5})}</g>`; }
+  s+=`<rect x="0" y="880" width="${Wd}" height="40" fill="#6b5a86" opacity=".35"/>`;
+  // prédios do meio: laterais fora da área segura; um com janela acesa
+  const side=(x,wM,fl,col,seed)=>`<g transform="translate(0,925) scale(1.0)">${WORLD.building(x,wM,fl,col,{seed,dark:0.45})}</g>`;
+  s+=side(120,9,6,'#46407e',1)+side(380,7,5,'#6a4062',2)+side(2300,9,7,'#2f4f78',3)+side(2480,8,5,'#6b4d52',4);
+  // rua
+  s+=R(0,925,Wd,515,'#2e3250')+R(0,895,Wd,40,'#6d6f93',0,NAVY,6)+R(0,925,Wd,18,'#8a8cb0');
+  for(let i=0;i<12;i++) s+=R(i*240+40,1190,150,16,'#d9d2b4',6);
+  // postes com cone de luz
+  [[300,1],[2300,1]].forEach(([x])=>{ s+=`<g transform="translate(${x},925) scale(1.3)">${WORLD.lampGlow(0,1)}${WORLD.lampPost(0)}</g>`; });
+  s+=`<ellipse cx="900" cy="945" rx="700" ry="30" fill="#ffe9a8" opacity=".12"/>`;
+  // Nando na moto (dentro da área segura: x 507..2053)
+  const br=V3.bikeRider(0,1,1,{poses:[{t:0,v:'rideIdle'}],exprs:[{t:0,v:'smile'}],helmet:1,turn:0.72,look:[900,500],beam:0.55,light:{ox:1,oy:-0.8,rim:'#ffe9a8'}});
+  s+=`<ellipse cx="760" cy="935" rx="300" ry="22" fill="${NAVY}" opacity=".4"/><g transform="translate(640,925) scale(1.0) translate(0,-900)">${br.svg}</g>`;
+  // texto (dentro da área segura 1546×423)
+  s+=`<rect width="${Wd}" height="${Hd}" fill="url(#bt)"/>`;
+  const tx=1500; s+=`<text x="${tx}" y="660" text-anchor="middle" font-family="Inter" font-weight="800" font-size="86" fill="#fff" stroke="#10163f" stroke-width="16" stroke-linejoin="round" paint-order="stroke">Cada entrega</text><text x="${tx}" y="762" text-anchor="middle" font-family="Inter" font-weight="800" font-size="86" fill="#ffc93c" stroke="#10163f" stroke-width="16" stroke-linejoin="round" paint-order="stroke">esconde uma história.</text>`;
+  s+=`<text x="${tx}" y="836" text-anchor="middle" font-family="Inter" font-weight="700" font-size="38" fill="#c9d2ff" stroke="#10163f" stroke-width="9" stroke-linejoin="round" paint-order="stroke">Histórias animadas do Nando, o motoboy</text>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${innerWidth}" height="${innerHeight}" viewBox="0 0 ${Wd} ${Hd}">${s}</svg>`;
+}
+function render(){ document.getElementById('r').innerHTML = K_==='banner'?banner():avatar(); }
+</script></body></html>
