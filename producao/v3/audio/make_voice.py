@@ -18,8 +18,13 @@ sil(0.12)
 for c in r["cenas"]:
     for i, f in enumerate(c["frases"]):
         if f["pausa"] > 0: sil(f["pausa"])
-        chunks = [ch.audio_int16_array for ch in voice.synthesize(f["t"], syn_config=cfg)]
-        a = np.concatenate(chunks); st = t
+        cida = f.get("voz") == "cida"
+        cfg_i = SynthesisConfig(length_scale=ls * (1.22 if cida else 1.0), noise_scale=0.6, noise_w_scale=0.7)
+        chunks = [ch.audio_int16_array for ch in voice.synthesize(f["t"], syn_config=cfg_i)]
+        a = np.concatenate(chunks)
+        if cida:   # voz provisória da dona Cida: mais aguda (reamostragem +20%) e mais baixa em volume
+            a = np.interp(np.arange(0, len(a) - 1, 1.20), np.arange(len(a)), a.astype(np.float32)).astype(np.int16)
+        st = t
         audio.append(a); t += len(a)/sr
         marks.append({"cena": c["id"], "id": f["id"], "texto": f["t"], "ini": round(st,3), "fim": round(t,3)})
 sil(0.4)

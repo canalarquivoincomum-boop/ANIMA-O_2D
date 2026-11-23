@@ -20,8 +20,8 @@
     for (let fl = 0; fl < floors; fl++) for (let c = 0; c < cols; c++) {
       const wx = -w / 2 + gap + c * (ww + gap), wy = -h + m(M.floor) * fl + m(0.7), on = rnd(seed * 7 + fl * 3.1 + c * 1.7) > (o.dark || 0.5);
       if (fl === floors - 1 && o.ground) continue;
-      s += R(wx, wy, ww, wh, on ? '#ffd88a' : shade(col, -0.35), 3, NAVY, stroke * 0.8);
-      if (on) s += `<rect x="${f(wx)}" y="${f(wy)}" width="${f(ww)}" height="${f(wh * 0.5)}" fill="#fff4cc" opacity=".35"/><path d="M${f(wx)},${f(wy + wh)} h${f(ww)}" stroke="${shade(col, -0.4)}" stroke-width="3"/>`;
+      s += R(wx - 7, wy - 7, ww + 14, wh + 14, shade(col, -0.28), 3, NAVY, stroke * 0.8) + R(wx, wy, ww, wh, on ? '#ffcf78' : shade(col, -0.45), 2, NAVY, 2.4);
+      if (on) s += `<defs><linearGradient id="wg${Math.round(wx)}_${Math.round(wy)}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0c0"/><stop offset="1" stop-color="#f0a850"/></linearGradient></defs><rect x="${f(wx)}" y="${f(wy)}" width="${f(ww)}" height="${f(wh)}" fill="url(#wg${Math.round(wx)}_${Math.round(wy)})"/><rect x="${f(wx)}" y="${f(wy)}" width="${f(ww * 0.34)}" height="${f(wh)}" fill="#c9733a" opacity=".55"/><path d="M${f(wx + ww / 2)},${f(wy)} v${f(wh)} M${f(wx)},${f(wy + wh * 0.5)} h${f(ww)}" stroke="#7a4a2a" stroke-width="3"/><path d="M${f(wx - 9)},${f(wy + wh + 8)} h${f(ww + 18)}" stroke="${shade(col, 0.2)}" stroke-width="6" stroke-linecap="round"/>`;
       else s += `<path d="M${f(wx)},${f(wy + wh * 0.6)} l${f(ww)},${f(-wh * 0.5)}" stroke="#7a86b8" stroke-width="3" opacity=".35"/>`;
       const rr = rnd(seed * 3 + fl * 5.3 + c * 2.9);
       if (rr > 0.78) s += R(wx + ww * 0.2, wy + wh + 6, ww * 0.6, m(0.45), '#b9bfd6', 4, NAVY, 2.4) + `<circle cx="${f(wx + ww * 0.5)}" cy="${f(wy + wh + 6 + m(0.22))}" r="${m(0.15)}" fill="#8a90ac" stroke="${NAVY}" stroke-width="1.8"/>`;
@@ -50,21 +50,33 @@
     [-L * 0.3, L * 0.3].forEach(wx => { s += C(wx, -m(0.32), m(0.32), '#23263a', NAVY, stroke) + C(wx, -m(0.32), m(0.19), '#aeb3c8', NAVY, 3) + C(wx, -m(0.32), m(0.05), '#6e7390', NAVY, 2.5); });
     return s + '</g>';
   }
-  function moto(x, t, spin, o = {}) {            // moto de entregas, olhando para a direita (origem: ground sob o centro)
+  function moto(x, t, spin, o = {}) {            // moto de entregas, olhando para a direita (origem: chão sob o centro); 2,0 m × 1,05 m
     const r = m(0.3), wb = m(1.25); let s = `<g transform="translate(${f(x)},0)">`;
-    const wheel = cx => { let w = C(cx, -r, r, '#20233a', NAVY, stroke) + C(cx, -r, r * 0.62, '#aab2cf', NAVY, 3); for (let i = 0; i < 6; i++) { const a = spin + i * Math.PI / 3; w += `<line x1="${f(cx)}" y1="${f(-r)}" x2="${f(cx + Math.cos(a) * r * 0.58)}" y2="${f(-r + Math.sin(a) * r * 0.58)}" stroke="#555d7c" stroke-width="3"/>`; } return w + C(cx, -r, 8, '#7a84a8', NAVY, 2.5); };
+    const wheel = cx => { let w = C(cx, -r, r, '#1b1e34', NAVY, stroke) + C(cx, -r, r * 0.66, '#9aa3c4', NAVY, 3) + C(cx, -r, r * 0.5, '#2a2f4c', null); for (let i = 0; i < 8; i++) { const a = spin + i * Math.PI / 4; w += `<line x1="${f(cx)}" y1="${f(-r)}" x2="${f(cx + Math.cos(a) * r * 0.64)}" y2="${f(-r + Math.sin(a) * r * 0.64)}" stroke="#d3d9ee" stroke-width="2.6" opacity=".85"/>`; } return w + C(cx, -r, 9, '#7a84a8', NAVY, 2.5) + `<path d="M${f(cx - r * 0.9)},${f(-r - 6)} A${f(r * 0.9)},${f(r * 0.9)} 0 0 1 ${f(cx - r * 0.2)},${f(-r - r * 0.9)}" fill="none" stroke="#fff" stroke-width="3.4" opacity=".28" stroke-linecap="round"/>`; };
     s += `<ellipse cx="0" cy="4" rx="${m(1.1)}" ry="12" fill="${NAVY}" opacity=".3"/>`;
-    s += wheel(-wb / 2) + wheel(wb / 2);
-    s += Pth(`M${wb / 2},${-r} L${wb / 2 - 12},${-m(0.86)}`, 'none', '#6c7496', 9) + Pth(`M${wb / 2 - 10},${-m(0.84)} L${wb / 2 - 2},${-m(0.86)}`, 'none', NAVY, 3);
-    s += Pth(`M${-wb / 2 - 10},${-m(0.46)} Q${-wb / 2 - 40},${-m(0.52)} ${-wb / 2 - 52},${-m(0.4)}`, 'none', '#6a6f8a', 7);
-    s += Pth(`M${-wb * 0.42},${-m(0.55)} L${-wb * 0.38},${-m(0.78)} L${wb * 0.18},${-m(0.78)} L${wb * 0.3},${-m(0.62)} L${wb * 0.22},${-m(0.4)} L${-wb * 0.2},${-m(0.34)}Z`, '#c9473d', NAVY, stroke);
-    s += Pth(`M${-wb * 0.45},${-m(0.82)} Q${-wb * 0.1},${-m(0.9)} ${wb * 0.12},${-m(0.8)} L${wb * 0.12},${-m(0.76)} L${-wb * 0.42},${-m(0.76)}Z`, '#2c2f42', NAVY, 3.2);
-    s += R(-wb * 0.16, -m(0.36), m(0.55), m(0.28), '#7d84a2', 6, NAVY, 3) + R(-wb * 0.06, -m(0.3), m(0.35), 8, '#555d7c', 3);
-    s += Pth(`M${wb / 2 - 12},${-m(0.86)} L${wb / 2 - 28},${-m(1.0)}`, 'none', '#6c7496', 7) + R(wb / 2 - 42, -m(1.07), 36, 10, '#2c2f42', 4, NAVY, 2.8);
-    s += `<ellipse cx="${f(wb / 2 + 8)}" cy="${f(-m(0.84))}" rx="14" ry="12" fill="#fff6cf" stroke="${NAVY}" stroke-width="3"/>`;
-    // baú de entregas
-    s += R(-wb / 2 - m(0.55), -m(1.12), m(0.52), m(0.42), '#e8553d', 7, NAVY, stroke) + R(-wb / 2 - m(0.55), -m(1.12), m(0.52), 12, '#b9402b', 4, NAVY, 2.8) + `<text x="${f(-wb / 2 - m(0.29))}" y="${f(-m(0.82))}" font-family="Inter" font-weight="800" font-size="30" fill="#fff" text-anchor="middle">ZAP</text>`;
-    if (o.beam) s += `<defs><linearGradient id="beam" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff6cf" stop-opacity=".85"/><stop offset="1" stop-color="#fff6cf" stop-opacity="0"/></linearGradient></defs><path d="M${wb / 2 + 20},${-m(0.88)} L${wb / 2 + m(5.5)},${-m(1.9)} L${wb / 2 + m(5.5)},${m(0.1)}Z" fill="url(#beam)" opacity="${o.beam}"/>`;
+    s += wheel(-wb / 2);
+    // para-lama traseiro + rabeta
+    s += Pth(`M${-wb / 2 - r * 1.05},${-r * 1.1} Q${-wb / 2},${-r * 2.05} ${-wb / 2 + r * 1.1},${-r * 1.15} L${-wb / 2 + r * 1.1},${-r * 1.0} Q${-wb / 2},${-r * 1.82} ${-wb / 2 - r * 1.05},${-r * 0.98}Z`, '#b93d33', NAVY, 3.2);
+    s += wheel(wb / 2);
+    // garfo, amortecedor, disco, para-lama dianteiro
+    s += Pth(`M${wb / 2},${-r} L${wb / 2 - 14},${-m(0.88)}`, 'none', '#6c7496', 10) + Pth(`M${wb / 2 + 7},${-r} L${wb / 2 - 7},${-m(0.88)}`, 'none', '#aab3d4', 4) + C(wb / 2, -r, r * 0.34, 'none', '#d9dff2', 3) + Pth(`M${wb / 2 - r * 0.9},${-r * 1.55} Q${wb / 2},${-r * 2.15} ${wb / 2 + r * 1.0},${-r * 1.5} L${wb / 2 + r * 0.9},${-r * 1.42} Q${wb / 2},${-r * 1.98} ${wb / 2 - r * 0.8},${-r * 1.42}Z`, '#b93d33', NAVY, 3);
+    // escapamento + corrente
+    s += Pth(`M${-wb * 0.2},${-m(0.4)} Q${-wb * 0.5},${-m(0.3)} ${-wb * 0.5 - m(0.62)},${-m(0.46)}`, 'none', '#757c9c', 9) + Pth(`M${-wb * 0.2},${-m(0.4)} Q${-wb * 0.5},${-m(0.3)} ${-wb * 0.5 - m(0.62)},${-m(0.46)}`, 'none', '#c9d0ea', 3) + `<path d="M${-wb / 2},${-r + 8} L${-wb * 0.12},${-m(0.4)}" stroke="#2a2f4c" stroke-width="3" opacity=".8"/>`;
+    // motor e quadro
+    s += R(-wb * 0.2, -m(0.5), m(0.6), m(0.36), '#7d84a2', 8, NAVY, 3.2) + R(-wb * 0.1, -m(0.42), m(0.34), 10, '#555d7c', 3) + C(-wb * 0.02, -m(0.3), 12, '#9aa3c4', NAVY, 2.5);
+    s += Pth(`M${-wb * 0.38},${-m(0.58)} L${-wb * 0.34},${-m(0.8)} L${wb * 0.2},${-m(0.8)} L${wb * 0.32},${-m(0.64)} L${wb * 0.24},${-m(0.46)} L${-wb * 0.18},${-m(0.42)}Z`, '#c9473d', NAVY, stroke);
+    s += `<path d="M${-wb * 0.3},${-m(0.7)} L${wb * 0.22},${-m(0.7)}" stroke="#fff" stroke-width="5" opacity=".35" stroke-linecap="round"/>`;
+    // banco
+    s += Pth(`M${-wb * 0.5},${-m(0.82)} Q${-wb * 0.1},${-m(0.9)} ${wb * 0.14},${-m(0.8)} L${wb * 0.14},${-m(0.75)} L${-wb * 0.46},${-m(0.75)}Z`, '#26293c', NAVY, 3.2);
+    // guidão + espelho + farol
+    s += Pth(`M${wb / 2 - 14},${-m(0.88)} L${wb / 2 - 30},${-m(1.02)}`, 'none', '#6c7496', 8) + R(wb / 2 - 44, -m(1.09), 38, 11, '#2c2f42', 5, NAVY, 2.8) + Pth(`M${wb / 2 - 36},${-m(1.09)} L${wb / 2 - 46},${-m(1.3)}`, 'none', '#6c7496', 3.5) + `<ellipse cx="${f(wb / 2 - 50)}" cy="${f(-m(1.34))}" rx="12" ry="7" fill="#aab3d4" stroke="${NAVY}" stroke-width="2.6"/>`;
+    s += `<path d="M${f(wb / 2 - 10)},${f(-m(0.9))} L${f(wb / 2 + 16)},${f(-m(0.97))} L${f(wb / 2 + 16)},${f(-m(0.74))} L${f(wb / 2 - 10)},${f(-m(0.78))}Z" fill="#d9503f" stroke="${NAVY}" stroke-width="3"/><ellipse cx="${f(wb / 2 + 14)}" cy="${f(-m(0.85))}" rx="9" ry="14" fill="#fff6cf" stroke="${NAVY}" stroke-width="3"/>`;
+    // bagageiro + baú de entregas PRESO (barras da rabeta ao baú)
+    const bx0 = -wb / 2 - m(0.5), bx1 = -wb / 2 + m(0.12), by0 = -m(1.22), by1 = -m(0.82);
+    s += `<path d="M${-wb * 0.46},${-m(0.78)} L${bx1 - 8},${by1} M${-wb / 2 - r * 0.9},${-r * 1.7} L${bx0 + 12},${by1} M${-wb * 0.5},${-m(0.76)} L${-wb / 2 - r * 0.95},${-r * 1.85}" stroke="#3a3f5e" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M${bx0 - 8},${by1 + 6} L${bx1 + 8},${by1 + 6}" stroke="#3a3f5e" stroke-width="9" stroke-linecap="round"/>`;
+    s += R(bx0, by0, bx1 - bx0, by1 - by0, '#e8553d', 9, NAVY, stroke) + R(bx0, by0, bx1 - bx0, 14, '#b9402b', 5, NAVY, 2.8) + `<path d="M${bx0 + 8},${by0 + 24} L${bx1 - 8},${by0 + 24}" stroke="#fff" stroke-width="3" opacity=".25"/><text x="${f((bx0 + bx1) / 2)}" y="${f(by0 + (by1 - by0) * 0.74)}" font-family="Inter" font-weight="800" font-size="34" fill="#fff" text-anchor="middle">ZAP</text>` + R(bx0 + (bx1 - bx0) * 0.42, by0 - 4, (bx1 - bx0) * 0.16, 8, '#8d2f21', 3, NAVY, 2);
+    s += `<rect x="${f(-wb / 2 - m(0.58))}" y="${f(-m(0.62))}" width="22" height="14" rx="3" fill="#ff5a4a" stroke="${NAVY}" stroke-width="2.4"/>`;  // lanterna
+    if (o.beam) s += `<defs><linearGradient id="beam" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff6cf" stop-opacity=".8"/><stop offset="1" stop-color="#fff6cf" stop-opacity="0"/></linearGradient></defs><path d="M${wb / 2 + 22},${-m(0.88)} L${wb / 2 + m(5.5)},${-m(1.9)} L${wb / 2 + m(5.5)},${m(0.1)}Z" fill="url(#beam)" opacity="${o.beam}"/>`;
     return s + '</g>';
   }
   const trafficLight = (x, col) => `<g transform="translate(${f(x)},0)">${R(-5, -m(3.4), 10, m(3.4), '#3a4160', 2, NAVY, 3)}${R(-14, -m(3.4) - 70, 28, 74, '#23263a', 7, NAVY, 3)}${C(0, -m(3.4) - 52, 8, col === 'r' ? '#ff5a4a' : '#552a2a', NAVY, 2)}${C(0, -m(3.4) - 33, 8, col === 'y' ? '#ffd24a' : '#554a2a', NAVY, 2)}${C(0, -m(3.4) - 14, 8, col === 'g' ? '#5aff8a' : '#2a5538', NAVY, 2)}</g>`;

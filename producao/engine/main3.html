@@ -2,7 +2,7 @@
 <script src="lib.js"></script><script src="ch.js"></script><script src="sets.js"></script><script src="world.js"></script><script src="sets3.js"></script><script src="ui3.js"></script><script src="data3.js"></script><script src="rider.js"></script><script src="lot4.js"></script><script src="story_v3.js"></script></head>
 <body><div id="r"></div><script>
 const W0=576,H0=1024, SC = window.innerWidth/576; const {SHOTS}=STORY3; const {clamp,lerp,E,f,noise1}=L;
-const Q=new URLSearchParams(location.search); const NOCAM=Q.get('nocam')==='1', NOCAP=Q.get('nocap')==='1';
+const Q=new URLSearchParams(location.search); const DBG=Q.get('dbg')||''; const NOCAM=Q.get('nocam')==='1', NOCAP=Q.get('nocap')==='1';
 function camAt(shot,lt,t){ const k=shot.cam; let out;
   if(lt<=k[0][0]) out=k[0]; else { out=k[k.length-1]; for(let i=1;i<k.length;i++){ if(lt<=k[i][0]){ const a=k[i-1],b=k[i],u=E[b[4]||'io']((lt-a[0])/Math.max(1e-6,b[0]-a[0])); out=[lt,lerp(a[1],b[1],u),lerp(a[2],b[2],u),lerp(a[3],b[3],u)]; break; } } }
   if(NOCAM) return {cx:k[0][1],cy:k[0][2],z:k[0][3]};
@@ -26,18 +26,21 @@ function captions(t){
     out+=`<text x="${f(x+widths[k]/2)}" y="850" text-anchor="middle" font-family="Inter" font-weight="800" font-size="${size}" fill="${wc}" stroke="#1a2038" stroke-width="9" stroke-linejoin="round" paint-order="stroke">${s}</text>`; x+=widths[k]+SP; });
   return out;
 }
+const BLR=[2,4,6,8,12,16];
+const blurDefs=BLR.map(n=>`<filter id="bl${n}" filterUnits="userSpaceOnUse" x="-3000" y="-3000" width="7000" height="7000"><feGaussianBlur stdDeviation="${n}"/></filter>`).join('');
+const bw=(px,s)=>px?`<g filter="url(#bl${px})">${s}</g>`:s;
 function shotSVG(t,shot){
   const lt=t-shot.t0;
   if(shot.kind==='screen') return shot.draw(t,lt);
   const cam=camAt(shot,lt,t), B=shot.build(t,lt);
   const haze=`<g transform="${layerT(cam,0.42)}"><defs><linearGradient id="hz" gradientUnits="userSpaceOnUse" x1="0" y1="380" x2="0" y2="860"><stop offset="0" stop-color="#6f74b8" stop-opacity="0"/><stop offset="1" stop-color="#6f74b8" stop-opacity=".38"/></linearGradient></defs><rect x="-3000" y="300" width="7000" height="900" fill="url(#hz)"/></g>`;
-  return `<g transform="${layerT(cam,0.42)}">${B.far}</g>${haze}<g transform="${layerT(cam,0.78)}">${B.mid}</g><g transform="${layerT(cam,1)}">${B.near}</g>`+(B.fore?`<g transform="${layerT(cam,1.35)}">${B.fore}</g>`:'');
+  return (DBG.includes('f')?'':bw((shot.dof||{}).far,`<g transform="${layerT(cam,0.42)}">${B.far}</g>${haze}`))+(DBG.includes('m')?'':bw((shot.dof||{}).mid,`<g transform="${layerT(cam,0.78)}">${B.mid}</g>`))+(DBG.includes('n')?'':`<g transform="${layerT(cam,1)}">${B.near}</g>`)+(B.fore?`<g transform="${layerT(cam,1.35)}">${B.fore}</g>`:'');
 }
 function shotAt(t){ for(const sh of SHOTS) if(t>=sh.t0&&t<sh.t1) return sh; return SHOTS[SHOTS.length-1]; }
 function render(t){
   const shot=shotAt(t); let body=shotSVG(t,shot);
   const grade=`<defs><radialGradient id="vg" cx="50%" cy="48%" r="78%"><stop offset="0.5" stop-color="#05061a" stop-opacity="0"/><stop offset="1" stop-color="#05061a" stop-opacity=".5"/></radialGradient><linearGradient id="gn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#24307a" stop-opacity=".16"/><stop offset="1" stop-color="#10163f" stop-opacity=".22"/></linearGradient><pattern id="pg" width="256" height="256" patternUnits="userSpaceOnUse"><image href="grain.png" width="256" height="256"/></pattern></defs>`;
   const over=`${grade}<rect width="576" height="1024" fill="url(#gn)"/><rect width="576" height="1024" fill="url(#vg)"/><rect width="576" height="1024" fill="url(#pg)" opacity=".42"/>`;
-  document.getElementById('r').innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" width="${W0*SC}" height="${H0*SC}" viewBox="0 0 576 1024"><clipPath id="sc"><rect width="576" height="1024"/></clipPath><g clip-path="url(#sc)">${body}${over}${NOCAP?'':`<defs><linearGradient id="cb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#05061a" stop-opacity="0"/><stop offset="1" stop-color="#05061a" stop-opacity=".62"/></linearGradient></defs><rect x="0" y="744" width="576" height="280" fill="url(#cb)"/>`+captions(t)}</g></svg>`;
+  document.getElementById('r').innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" width="${W0*SC}" height="${H0*SC}" viewBox="0 0 576 1024"><defs>${blurDefs}</defs><clipPath id="sc"><rect width="576" height="1024"/></clipPath><g clip-path="url(#sc)">${body}${over}${NOCAP?'':`<defs><linearGradient id="cb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#05061a" stop-opacity="0"/><stop offset="1" stop-color="#05061a" stop-opacity=".62"/></linearGradient></defs><rect x="0" y="744" width="576" height="280" fill="url(#cb)"/>`+captions(t)}</g></svg>`;
 }
 </script></body></html>

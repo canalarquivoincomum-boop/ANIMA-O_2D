@@ -36,3 +36,6 @@ Da teoria à prática: regras de domínio visual, roteiro original, storyboard t
 ### v4 — revisão após o feedback do v3
 - [`docs/producao/13_revisao_v4.md`](docs/producao/13_revisao_v4.md): o que foi corrigido (piloto na moto, capacete, casa demolida, Cida, legenda, profundidade, bugs).
 - Vídeo: `producao/v3/piloto_v4_pedido_fantasma_1080x1920.mp4`.
+
+### v5 — profundidade de campo, moto remontada, gancho da idosa
+- [`docs/producao/14_revisao_v5.md`](docs/producao/14_revisao_v5.md). Vídeo: `producao/v3/piloto_v5_pedido_fantasma_1080x1920.mp4`.

@@ -1,6 +1,6 @@
 #!/bin/bash
 # build3.sh FRAMES_DIR SAIDA.mp4 [DUR]
-FR=$1; OUT=$2; D=${3:-36.4}; A=$(dirname $0)/audio
+FR=$1; OUT=$2; D=${3:-44.0}; A=$(dirname $0)/audio
 ffmpeg -v error -y -framerate 30 -i "$FR/f%05d.png" -i $A/voice.wav -i $A/bed.wav -i $A/sfx.wav -filter_complex "
 [0:v]noise=alls=3:allf=t,format=yuv420p[v];
 [1:a]asplit=2[vo][vsc];
