@@ -26,3 +26,6 @@ Este diretório é a **memória da série**: guarda o estilo visual, a regra de 
 1. Atualizar `03_canon_e_continuidade.md` e `canon.json` (o que aconteceu, o que mudou no Nando, fios abertos).
 2. Se o estilo mudou **de propósito**: atualizar `01_biblia_visual.md` e rodar `regressao_visual.py --gerar`; se mudou **sem querer**, desfazer.
 3. Rodar a checklist de qualidade e anexar o resultado do QA ao documento do episódio.
+
+## Baseline do estilo
+O estado do motor e dos episódios que definem o padrão é o commit **`14525ab`** (branch `claude/analise-10-videos-referencia-je7ivz`). Para comparar ou voltar ao motor "aprovado": `git diff 14525ab -- producao/engine` ou `git checkout 14525ab -- producao/engine`.
