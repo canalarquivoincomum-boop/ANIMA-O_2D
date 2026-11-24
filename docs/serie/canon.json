@@ -1,0 +1,94 @@
+{
+  "serie": "Nando Entrega (nome do canal ainda não decidido)",
+  "versao": 1,
+  "ordem_cronologica": ["predio_21_pizzas", "pedido_fantasma"],
+  "ordem_de_publicacao_recomendada": ["predio_21_pizzas", "pedido_fantasma"],
+  "motivo_da_ordem": "Em 'Prédio das 21 Pizzas' o Nando ainda usa o capacete velho com fita há 2 anos e vive da nota do app. 'Pedido Fantasma' termina com salário fixo e capacete novo, então vem depois.",
+  "protagonista": {
+    "nome": "Nando", "idade": 19, "oficio": "motoboy noturno", "voz_narracao": "Lax - Funny, Sarcastic and Smooth (ElevenLabs, voice_id tS45q0QcrDHqHoaWdCDR, modelo eleven_v4)",
+    "aparencia": "pele #8a5a3d, barba por fazer, jaqueta azul com faixas refletivas e remendo ZAP, luvas escuras, capacete vermelho com listra branca, FITA ISOLANTE diagonal sobre a rachadura",
+    "personalidade": "cansado mas gentil, fala pouco, ironia seca; resolve com atenção, nunca como herói de ação; a sobrancelha esquerda sobe quando desconfia"
+  },
+  "mundo": {
+    "app": "ZAP (entregas)", "pizzaria": "Forno Vivo (dona: Dona Cida)", "bairro": "Jardim Aurora",
+    "enderecos": {"terreno": "Rua das Acácias, 14", "predio": "Edifício Aurora, apto 82 (8º andar)"},
+    "estetica": "cidade à noite, luz de poste, escala real"
+  },
+  "episodios": {
+    "predio_21_pizzas": {
+      "titulo": "O Prédio das 21 Pizzas", "arquivo": "producao/s2/predio_21_pizzas_1080x1920.mp4", "duracao_s": 103.1,
+      "quando": "uma sexta-feira, 23:00",
+      "fatos": [
+        "O app manda 21 pizzas para o apartamento 82 do Edifício Aurora, 40 minutos para entregar.",
+        "Elevador quebrado, 8 andares, o baú leva 3 pizzas, 7 viagens.",
+        "A nota do Nando é 4,52; abaixo de 4,5 o app o tira da noite.",
+        "O porteiro ri: o 82 é do seu Aníbal e ninguém fala com ele.",
+        "Os pedidos vinham com bilhetes de vizinhos (torneira: Dona Lúcia, apto 31; chuveiro: apto 42; luz da escada: apto 53; berço: apto 64).",
+        "A campainha do 82 está quebrada há 11 anos; um cartaz desbotado diz 'Conserto de tudo, grátis, toque a campainha'.",
+        "O Nando emenda o fio da campainha com a FITA ISOLANTE do capacete (que usa há 2 anos).",
+        "Dim-dom: 21 vizinhos aparecem com um prato cada; pediram pizza só para ter motivo de bater na porta.",
+        "Seu Aníbal: 'Eu estava esperando alguém tocar.'",
+        "21 avaliações de 5 estrelas, nota sobe para 4,9. No sábado o cartaz vira 'Toque a campainha. Ela funciona.'"
+      ],
+      "estado_final_do_nando": "nota 4,9; segue entregando pelo app ZAP; capacete velho com fita (agora com menos fita, usada na campainha)"
+    },
+    "pedido_fantasma": {
+      "titulo": "Pedido Fantasma", "arquivo": "producao/s1/pedido_fantasma_1080x1920.mp4", "duracao_s": 106.3,
+      "quando": "uma quinta-feira, 12 de outubro (calendário de 2023), 23:47",
+      "fatos": [
+        "Pedido do Forno Vivo para Rua das Acácias, 14: casa demolida há 30 anos (1994). 11 minutos no app; cancelar custa R$ 340,00 (a semana inteira). Aluguel de R$ 1.250,00 vence na sexta.",
+        "Histórico do endereço: 11 pedidos, todos cancelados, sempre em 12/10 (2012 a 2022).",
+        "No terreno, uma luz acesa e uma mesa posta pra dois: Dona Cida, dona do Forno Vivo, espera 'quem chegue'.",
+        "O marido dela, o Zé, foi o primeiro entregador do Forno Vivo: saiu às 23:47 em 1994, chegava em 6 minutos, de capacete rachado. O Nando levou 9 min 30 s.",
+        "O Nando escolhe sentar e deixar o pedido vencer (-R$ 340,00). Dona Cida paga em dobro, dá emprego: salário fixo, plano de saúde, capacete que não racha (caixa com laço = capacete novo).",
+        "Na sexta o Nando paga o aluguel com o primeiro salário fixo (R$ 2.350). Guarda o capacete velho, com a fita, numa prateleira ao lado da foto do Zé.",
+        "Um ano depois o terreno tem forno, mesa pra dois e um capacete na cadeira. 'A casa 14 voltou.'"
+      ],
+      "estado_final_do_nando": "empregado do Forno Vivo (salário fixo R$ 2.350, plano de saúde), capacete NOVO vermelho com adesivo FORNO VIVO, capacete velho com fita guardado como relíquia"
+    }
+  },
+  "estado_atual_do_nando": {
+    "depois_de": "pedido_fantasma",
+    "emprego": "entregador fixo do Forno Vivo (proposta: ainda atende pedidos do ZAP em folgas, para manter a assinatura do app e do cronômetro — CONFIRMAR com o usuário)",
+    "capacete": "novo, vermelho, adesivo FORNO VIVO, sem rachadura; o velho com fita fica na prateleira do Forno Vivo ao lado da foto do Zé",
+    "dinheiro": "aluguel em dia; já não vive de nota",
+    "conhecidos_que_podem_voltar": ["Dona Cida", "seu Aníbal (conserta tudo, grátis)", "Dona Lúcia (apto 31, bebê no 64)", "o porteiro do Edifício Aurora"]
+  },
+  "objetos_que_se_repetem": {
+    "capacete_com_fita": "assinatura da série; cada episódio usa a fita para resolver algo e o objeto tem de aparecer",
+    "app_zap_e_cronometro": "notificação de abertura + relógio visível = tensão",
+    "luz_acesa_no_escuro": "imagem-refrão (lâmpada do terreno, janela do 82)",
+    "porta_e_campainha": "alguém na porta que ninguém escuta",
+    "bau_zap": "baú vermelho preso ao bagageiro da moto"
+  },
+  "fios_abertos": [
+    "O que aconteceu com o Zé depois de sair às 23:47 de 1994? (deixar em aberto ou resolver com muito cuidado)",
+    "Seu Aníbal conserta tudo: pode consertar o capacete velho do Nando ou algo do Forno Vivo (pagamento da fita).",
+    "Dona Lúcia e o berço: um bebê no prédio pode virar episódio.",
+    "O porteiro que ria: pode ter o próprio momento.",
+    "Quem eram os outros 11 entregadores que cancelaram? (cada cancelamento tinha um motivo)",
+    "Como o Nando vive agora que o dinheiro não aperta? A aposta do próximo episódio precisa ser outra (tempo, confiança, uma pessoa) e não só dinheiro."
+  ],
+  "regras_lint": {
+    "max_palavras": 330,
+    "palavras_por_segundo": 2.95,
+    "frases_proibidas": ["nesta cidade", "inscreva-se", "se inscreva", "deixe seu like", "deixe o seu like", "ative o sininho", "compartilhe este vídeo"],
+    "gancho_regex_nas_3_primeiras_linhas": "\\d|\\bhoras?\\b|\\bda (noite|madrugada|manhã)\\b|\\bnúmero\\b|\\bapartamento\\b|\\bminutos?\\b",
+    "assinatura": {
+      "app": "\\b(aplicativo|app|ZAP)\\b",
+      "capacete_ou_fita": "\\b(capacete|fita)\\b",
+      "escolha_do_heroi": "\\b(sentei|subi|toquei|apertei|fiquei|abri|entreguei|esperei|bati|fui|escolhi|parei)\\b"
+    },
+    "contradicoes_apos": {
+      "pedido_fantasma": [
+        {"regex": "capacete (rachado|velho|com fita)", "aviso": "Depois de 'Pedido Fantasma' o capacete em uso é o NOVO; o velho com fita está guardado. Só use o velho como flashback/relíquia."},
+        {"regex": "aluguel (vencia|vence|atrasad)", "aviso": "O Nando já tem salário fixo (R$ 2.350). Uma aposta de aluguel não tem mais a mesma força."},
+        {"regex": "nota (abaixo|de) ?4", "aviso": "Depois do emprego fixo a nota do app deixa de ser a aposta principal."}
+      ],
+      "predio_21_pizzas": [
+        {"regex": "campainha (quebrada|solta)", "aviso": "A campainha do 82 foi consertada e o cartaz mudou para 'Toque a campainha. Ela funciona.'"},
+        {"regex": "ninguém fala com (o )?(seu )?an[ií]bal", "aviso": "Seu Aníbal agora tem os vizinhos: ele recebeu 21 visitas."}
+      ]
+    }
+  }
+}

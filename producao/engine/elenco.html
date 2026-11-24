@@ -1,0 +1,9 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0;background:#1d2347}</style>
+<script>['lib','ch','sets','world','sets3','ui3','data_s1','rider','lot4','kit'].forEach(n=>document.write('<script src="'+n+'.js"><\/script>'));</script></head>
+<body><div id="r"></div><script>
+const {drawChar,EXPR,POSE,POSE0}=CH;
+function render(){ const names=[['nando','Nando'],['cida','Dona Cida'],['ze','Zé (foto)'],['aniba','Seu Aníbal'],['porteiro','Porteiro'],['lucia','Dona Lúcia'],['v1','Vizinha 1'],['v2','Vizinho 2'],['v3','Vizinho 3'],['v4','Vizinha 4'],['v5','Vizinho 5'],['v6','Vizinha 6']];
+ let s='<rect width="1600" height="1200" fill="#1d2347"/>';
+ names.forEach(([c,n],i)=>{ const x=200+(i%4)*400, y=330+Math.floor(i/4)*390; s+=`<text x="${x}" y="${y+40}" text-anchor="middle" font-family="Inter" font-weight="800" font-size="30" fill="#ffc93c">${n}</text>`+drawChar({cast:c,x,y:y,s:1.1,flip:1,t:1,idle:0,pose:POSE.stand,expr:EXPR.smile,look:[x,y-180],turn:0,helmet:c==='nando'?1:0,light:{ox:1,oy:-0.8,rim:'#ffe9a8'}}).svg; });
+ document.getElementById('r').innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="'+innerWidth+'" height="'+innerHeight+'" viewBox="0 0 1600 1200">'+s+'</svg>'; }
+</script></body></html>

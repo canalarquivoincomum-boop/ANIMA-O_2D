@@ -66,3 +66,8 @@ Cada imagem mostra **literalmente** o que a frase diz (regra aprendida no v3).
 - Pausas marcadas `[pausa]` são **de verdade** (0,4–0,7 s); fora delas, corto qualquer silêncio > 140 ms.
 - Grave cada ato em takes separados; o ruído de sala deve ser constante.
 
+
+## Herda do cânone (episódio 1 da série, em ordem cronológica)
+- **Estado do Nando no início:** vive da nota do app (4,52, mínimo 4,5); capacete **velho, com fita isolante há 2 anos**; sem emprego fixo.
+- **Plantado aqui para ser pago depois:** a fita do capacete (conserta a campainha); o baú ZAP; a luz acesa na janela do 82; "Toque a campainha. Ela funciona."
+- **O que muda no cânone:** nota 4,9; seu Aníbal volta a ter visitas; o prédio inteiro (Dona Lúcia, apto 31) passa a conhecer o Nando. Ver `docs/serie/canon.json`.

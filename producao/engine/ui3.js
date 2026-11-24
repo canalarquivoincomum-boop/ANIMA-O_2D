@@ -7,7 +7,7 @@
   const UI = {};
   UI.lock = (lt, o = {}) => { // tela bloqueada com relógio grande + notificação
     let s = R(0, 0, 300, 600, '#161a3a') + `<defs><linearGradient id="lkg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a3170"/><stop offset="1" stop-color="#0f1230"/></linearGradient></defs>` + R(0, 0, 300, 600, 'url(#lkg)');
-    s += status('') + T(150, 150, o.time || '23:47', 92, '#ffffff', 800, 'middle') + T(150, 186, 'sexta-feira, 12 de outubro', 17, '#b9c3ff', 600, 'middle');
+    s += status('') + T(150, 150, o.time || '23:47', 92, '#ffffff', 800, 'middle') + T(150, 186, 'quinta-feira, 12 de outubro', 17, '#b9c3ff', 600, 'middle');
     const k = E.spring2(clamp((lt - (o.notifAt || 1.35)) / 0.5)); if (k > 0.01) { const y = 600 - 215 * k; s += `<g transform="translate(0,${f(y)})">` + R(14, 0, 272, 110, '#242b60', 18, '#4a55a8', 2) + R(28, 14, 34, 34, RED, 9) + T(45, 38, 'ZAP', 11, '#fff', 800, 'middle') + T(74, 28, 'NOVO PEDIDO', 15, '#fff', 800) + T(74, 48, 'agora', 12, '#9aa6e8', 600) + T(28, 78, 'Forno Vivo • Rua das Acácias, 14', 14, '#e4e9ff', 700) + T(28, 98, '1 pizza grande • R$ 38,90', 13, '#aab4ee', 600) + '</g>'; }
     return s;
   };
@@ -50,7 +50,7 @@
     let s = R(0, 0, 300, 600, BG) + status('23:56') + T(16, 70, 'Histórico do endereço', 19, '#fff', 800) + T(16, 92, 'Rua das Acácias, 14', 13, '#9aa6e8', 600);
     s += `<clipPath id="hcl"><rect x="0" y="104" width="300" height="496"/></clipPath><g clip-path="url(#hcl)"><g transform="translate(0,${f(-sc)})">`;
     for (let i = 0; i < 11; i++) { const y = 112 + i * 62, on = i < n, a = on ? 1 : 0; if (!on) continue; const pop = E.spring2(clamp((lt - (o.t0 || 0) - i * (o.dt || 0.2)) / 0.25));
-      s += `<g opacity="${f(a)}" transform="translate(${f((1 - pop) * 40)},0)">` + R(12, y, 276, 54, CARD, 12, LINE, 1.5) + T(26, y + 24, '12/10/' + (2014 + i), 17, '#fff', 800) + T(26, y + 44, 'Forno Vivo • pizza grande', 12, '#9aa6e8', 600) + R(190, y + 14, 88, 26, '#4a1f26', 13) + T(234, y + 32, 'CANCELADO', 11, '#ff8a7c', 800, 'middle') + '</g>'; }
+      s += `<g opacity="${f(a)}" transform="translate(${f((1 - pop) * 40)},0)">` + R(12, y, 276, 54, CARD, 12, LINE, 1.5) + T(26, y + 24, '12/10/' + (2012 + i), 17, '#fff', 800) + T(26, y + 44, 'Forno Vivo • pizza grande', 12, '#9aa6e8', 600) + R(190, y + 14, 88, 26, '#4a1f26', 13) + T(234, y + 32, 'CANCELADO', 11, '#ff8a7c', 800, 'middle') + '</g>'; }
     if (n === 0) s += T(150, 310, 'Carregando histórico…', 17, '#9aa6e8', 700, 'middle') + `<circle cx="150" cy="350" r="16" fill="none" stroke="#6b7bd8" stroke-width="5" stroke-dasharray="30 80" transform="rotate(${(lt * 360) % 360} 150 350)"/>`;
     s += '</g></g>' + R(0, 540, 300, 60, '#1b2142') + T(150, 576, n === 0 ? 'endereço: Rua das Acácias, 14' : (n === 1 ? '1 cancelado' : `${n} cancelados`), 18, RED, 800, 'middle');
     return s;

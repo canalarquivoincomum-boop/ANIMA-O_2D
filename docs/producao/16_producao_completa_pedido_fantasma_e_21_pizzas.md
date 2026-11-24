@@ -59,3 +59,7 @@ Inspeção visual:
 - Multidões de plano aberto usam um elenco de 8 variações recombinadas; a mesma pessoa pode aparecer duas vezes.
 - Corpo de personagem é "chibi" (cabeça grande): cadeiras e mesas foram desenhadas na escala desse corpo, não em metros reais.
 - A voz única para todos os personagens é uma limitação de orçamento, não de criação.
+
+## 7. Correção de continuidade feita depois da entrega
+- O app e o calendário de "Pedido Fantasma" diziam **sexta-feira** enquanto o roteiro diz que o aluguel vence na sexta e que ele o paga "na sexta". Corrigido para **quinta-feira, 12 de outubro**, com calendário coerente (1º de outubro num domingo, dia 12 numa quinta) e histórico de cancelamentos **12/10/2012–2022**. O vídeo foi re-renderizado nesses planos.
+- Ordem cronológica fixada em `docs/serie/canon.json`: **21 Pizzas → Pedido Fantasma**.

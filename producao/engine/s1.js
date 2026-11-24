@@ -30,8 +30,8 @@
   clone('P13', 19.78, 21.5, { draw: (t, lt) => { const u = E.io(clamp(lt / 1.7)); return UI.bokeh(t * 4) + UI.phone(288, lerp(392, 360, u), lerp(1.15, 1.36, u), UI.history(lt + 3, { t0: 0, dt: 0.01, n11: 1, scroll: 330 - clamp(lt / 1.7) * 330 }), { t, shake: 0.8 }); } });
   clone('P14', 21.5, 22.75);
   const calPage = (lt) => { let c = R(0, 0, 300, 600, '#10142e') + R(20, 110, 260, 70, '#c33', 14, NAVY, 3) + T(150, 158, 'OUTUBRO', 40, '#fff'); const names = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S']; names.forEach((n, i) => { c += T(36 + i * 38, 214, n, 16, '#9aa6e8', 700); });
-    for (let d = 1; d <= 31; d++) { const idx = d + 1, cx = 36 + (idx % 7) * 38, cy = 252 + Math.floor(idx / 7) * 52; c += T(cx, cy + 6, String(d), d === 12 ? 24 : 20, d === 12 ? '#fff' : '#c9d2ff', d === 12 ? 800 : 600); }
-    const idx = 13, cx = 36 + (idx % 7) * 38, cy = 252 + Math.floor(idx / 7) * 52, k = clamp((lt - 0.5) / 0.5);
+    for (let d = 1; d <= 31; d++) { const idx = d - 1, cx = 36 + (idx % 7) * 38, cy = 252 + Math.floor(idx / 7) * 52; c += T(cx, cy + 6, String(d), d === 12 ? 24 : 20, d === 12 ? '#fff' : '#c9d2ff', d === 12 ? 800 : 600); }
+    const idx = 11, cx = 36 + (idx % 7) * 38, cy = 252 + Math.floor(idx / 7) * 52, k = clamp((lt - 0.5) / 0.5);
     c += `<circle cx="${cx}" cy="${cy}" r="25" fill="none" stroke="#ff5a4a" stroke-width="6" pathLength="1" stroke-dasharray="1" stroke-dashoffset="${f(1 - E.io(k))}" transform="rotate(-90 ${cx} ${cy})"/>`; return c; };
   clone('P15', 22.75, 25.3, { draw: (t, lt) => { const k = E.spring2(clamp((lt - 0.5) / 0.5)); return UI.bokeh(t * 3) + UI.phone(288, 392, 1.14, calPage(lt), { t }) + `<g transform="translate(288,${f(660 - (1 - k) * 30)}) scale(${f(0.6 + 0.4 * k)})" opacity="${f(k)}"><rect x="-216" y="-44" width="432" height="86" rx="43" fill="#ffd24a" stroke="${NAVY}" stroke-width="5"/>${T(0, 16, 'HOJE · 12 OUT', 40, '#1d2747')}</g>`; } });
   clone('P16', 25.3, 27.45, { build: (t, lt) => { const scr = 11000 + 2300 * ((lt < 0.2 ? lt : 0.2) + 0.55 * 1.1 * (1 - Math.pow(1 - clamp((lt - 0.2) / 1.1), 2))); const r = V.ride(t, lt, { scrollFn: () => scr, helmet: 1, pitch: lt => lt > 0.9 && lt < 1.5 ? 4 * Math.sin(clamp((lt - 0.9) / 0.6) * Math.PI) : 0, poses: [{ t: 0, v: 'rideGo' }, { t: 1.0, v: 'rideCrouch', d: 0.3 }, { t: 1.5, v: 'rideIdle', d: 0.4, e: 'spring2' }], exprs: [{ t: 0, v: 'focus' }, { t: 1.4, v: 'resigned', d: 0.4 }], beam: 0.6, bx: 290 });
@@ -148,7 +148,7 @@
     let s = R(0, 0, 576, 1024, '#10142e') + UI.bokeh(t * 2).replace(/<rect[^>]*url\(#bkg\)[^>]*\/>/, '');
     const n = clamp(Math.floor(lt / 0.145) + 1, 1, 11);
     for (let i = 0; i < n; i++) { const a = E.spring(clamp((lt - i * 0.145) / 0.2)), cx = 110 + (i % 3) * 178, cy = 190 + Math.floor(i / 3) * 190;
-      s += `<g transform="translate(${cx},${cy}) rotate(${f(((i * 37) % 9) - 4)}) scale(${f(a)})">` + R(-78, -72, 156, 148, '#f4efe0', 10, NAVY, 3.5) + R(-78, -72, 156, 36, '#c33', 10, NAVY, 3.5) + T(0, -46, 'OUTUBRO', 22, '#fff') + T(0, 6, '12', 62, '#222') + T(0, 52, String(2014 + i), 26, '#6a6a7a', 700) + `<g transform="rotate(-12)" opacity="${f(clamp((lt - i * 0.145 - 0.12) / 0.1))}"><rect x="-70" y="-20" width="140" height="40" rx="6" fill="none" stroke="#d33" stroke-width="5"/>${T(0, 10, 'CANCELADO', 22, '#d33')}</g></g>`; }
+      s += `<g transform="translate(${cx},${cy}) rotate(${f(((i * 37) % 9) - 4)}) scale(${f(a)})">` + R(-78, -72, 156, 148, '#f4efe0', 10, NAVY, 3.5) + R(-78, -72, 156, 36, '#c33', 10, NAVY, 3.5) + T(0, -46, 'OUTUBRO', 22, '#fff') + T(0, 6, '12', 62, '#222') + T(0, 52, String(2012 + i), 26, '#6a6a7a', 700) + `<g transform="rotate(-12)" opacity="${f(clamp((lt - i * 0.145 - 0.12) / 0.1))}"><rect x="-70" y="-20" width="140" height="40" rx="6" fill="none" stroke="#d33" stroke-width="5"/>${T(0, 10, 'CANCELADO', 22, '#d33')}</g></g>`; }
     return K.pz(s, lt, 1.7, 1.0, 1.06, 288, 400);
   } });
   // L29 — a frase central

@@ -178,7 +178,7 @@
     return K.pz(s, lt, 1.08, 1.0, 1.05, 288, 480); });
 
   // ============================================================ M01–M05: gancho, aposta ============================================================
-  scr('H1', 0, 1.4, (t, lt) => { const k = E.spring2(clamp((lt - 0.2) / 0.4)), vib = lt > 0.2 && lt < 1.2 ? 5 * Math.exp(-(lt - 0.2) * 1.6) : 0; const sc = UI.lock(lt, { notifAt: 0.2, time: '23:00' }).replace('sexta-feira, 12 de outubro', 'sexta-feira').replace('Forno Vivo • Rua das Acácias, 14', 'Edifício Aurora • apto 82').replace('1 pizza grande • R$ 38,90', '21 pizzas grandes • R$ 816,90');
+  scr('H1', 0, 1.4, (t, lt) => { const k = E.spring2(clamp((lt - 0.2) / 0.4)), vib = lt > 0.2 && lt < 1.2 ? 5 * Math.exp(-(lt - 0.2) * 1.6) : 0; const sc = UI.lock(lt, { notifAt: 0.2, time: '23:00' }).replace('quinta-feira, 12 de outubro', 'sexta-feira').replace('Forno Vivo • Rua das Acácias, 14', 'Edifício Aurora • apto 82').replace('1 pizza grande • R$ 38,90', '21 pizzas grandes • R$ 816,90');
     return K.pz(UI.bokeh(t * 3) + UI.phone(288, 392, 1.16, sc, { t, shake: vib }), lt, 1.4, 1.0, 1.1, 288, 420); });
   scr('H2', 1.4, A('M02'), (t, lt) => K.pz(UI.bokeh(t * 3) + UI.phone(288, 392, 1.16, order21(lt, 21), { t, shake: lt < 0.3 ? 3 : 0.4 }), lt, A('M02') - 1.4, 1.0, 1.08, 288, 400));
   scr('S_tmr', A('M03'), A('M03') + 1.76, (t, lt) => K.pz(UI.bokeh(t * 3) + UI.phone(288, 392, lerp(1.14, 1.22, E.io(clamp(lt / 1.7))), UI.timer(lt, { start: 2400, total: 2400, rate: 60 }).replace('Rua das Acácias, 14', 'Edifício Aurora, apto 82').replace('Forno Vivo • sem cebola', '21 pizzas • 8º andar'), { t }), lt, 1.76, 1.0, 1.06, 288, 400));

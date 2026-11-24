@@ -48,3 +48,6 @@ Da teoria à prática: regras de domínio visual, roteiro original, storyboard t
 - [`docs/producao/16_producao_completa_pedido_fantasma_e_21_pizzas.md`](docs/producao/16_producao_completa_pedido_fantasma_e_21_pizzas.md): voz, alinhamento, planos, ganchos, verificação e limites.
 - Vídeos: [`producao/s1/pedido_fantasma_1080x1920.mp4`](producao/s1/pedido_fantasma_1080x1920.mp4) (106 s) e [`producao/s2/predio_21_pizzas_1080x1920.mp4`](producao/s2/predio_21_pizzas_1080x1920.mp4) (103 s).
 - Narração e alinhamento: `producao/eleven/` (MP3 originais, textos enviados, tempos por palavra, scripts de trilha/efeitos). Planos: `producao/engine/s1.js`, `s2.js`, `kit.js`.
+
+### Memória da série (estilo, roteiro e continuidade)
+Tudo o que precisa ser lembrado a cada episódio novo está em [`docs/serie/`](docs/serie/00_leia_primeiro.md): bíblia visual, bíblia de roteiro, **cânone e continuidade** (`canon.json`), passo a passo de produção, checklist de qualidade e marca do canal. Referências visuais em `docs/serie/referencias/`. Proteções: `producao/tools/checar_roteiro.py` (roteiro × cânone) e `producao/tools/regressao_visual.py` (o estilo dos episódios publicados não pode mudar sem querer). As instruções permanentes para o assistente estão em [`CLAUDE.md`](CLAUDE.md).

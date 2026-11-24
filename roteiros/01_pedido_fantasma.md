@@ -34,7 +34,7 @@ Cada imagem mostra **literalmente** o que a frase diz (regra aprendida no v3).
 | L08 | Narrador | No caminho, abri o histórico daquele endereço. | 18–20 s | Corrida lateral na rua noturna, postes passando; celular no guidão abre o histórico ('Carregando…'). |
 | L09 | Narrador | Onze pedidos, todos cancelados. | 20–22 s | Lista do histórico: 11 linhas CANCELADO entram uma a uma, em sincronia com 'onze pedidos'. |
 | L10 | Narrador | Mesmo endereço, mesmo dia, uma vez por ano. | 22–25 s | Zoom nas datas: 12/10/2014, 12/10/2015 … o mesmo dia repetido. |
-| L11 | Narrador | E hoje era doze de outubro. | 25–28 s | Barra de status do celular: 'sexta, 12 de outubro'. Selo HOJE · 12 OUT. |
+| L11 | Narrador | E hoje era doze de outubro. | 25–28 s | Barra de status do celular: 'quinta, 12 de outubro'. Selo HOJE · 12 OUT. |
 | L12 | Narrador | Cheguei com um minuto e meio de sobra. | 28–31 s | Moto chega devagar; selo do cronômetro **01:30** acima do capacete. |
 | L13 | Narrador | Era só mato alto e um portão sem casa. | 31–34 s | Vista frontal do terreno: grade, pilar com 14, placa VENDE-SE, mato em tufos, laje vazia. A marca colorida da casa na parede do vizinho. |
 | L14 | Narrador | E lá no fundo, uma luz acesa. | 35–37 s | A lâmpada pisca (estalo, zumbido) e acende lá no fundo. Câmera empurra devagar. |
@@ -79,3 +79,8 @@ Cada imagem mostra **literalmente** o que a frase diz (regra aprendida no v3).
 - Pausas marcadas `[pausa]` são **de verdade** (0,4–0,7 s); fora delas, corto qualquer silêncio > 140 ms.
 - Grave cada ato em takes separados; o ruído de sala deve ser constante.
 
+
+## Herda do cânone (episódio 2 em ordem cronológica)
+- **Estado do Nando no início:** ainda no app ZAP, com a **mesma fita no capacete** que consertou a campainha do seu Aníbal; aluguel de R$ 1.250 vencendo na sexta (a história acontece numa **quinta-feira, 12/10**).
+- **Referências visuais a mostrar:** a fita no capacete (Zé também tinha o capacete rachado), o cronômetro do app, a luz acesa no escuro.
+- **O que muda no cânone:** o Nando passa a ser entregador fixo do Forno Vivo (R$ 2.350, plano de saúde), com **capacete novo**; o velho, com a fita, fica na prateleira ao lado da foto do Zé. Ver `docs/serie/canon.json`.
